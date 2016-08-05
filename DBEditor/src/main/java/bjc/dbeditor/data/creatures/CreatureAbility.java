@@ -1,0 +1,93 @@
+package bjc.dbeditor.data.creatures;
+
+public class CreatureAbility {
+	private String				name;
+
+	private CreatureAbilityType	type;
+
+	private String				description;
+
+	public CreatureAbility(String name, String description,
+			CreatureAbilityType type) {
+		this.name = name;
+		this.type = type;
+		this.description = description;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		} else if (obj == null) {
+			return false;
+		} else if (getClass() != obj.getClass()) {
+			return false;
+		}
+
+		CreatureAbility other = (CreatureAbility) obj;
+
+		if (description == null) {
+			if (other.description != null) {
+				return false;
+			}
+		} else if (!description.equals(other.description)) {
+			return false;
+		}
+
+		if (name == null) {
+			if (other.name != null) {
+				return false;
+			}
+		} else if (!name.equals(other.name)) {
+			return false;
+		}
+
+		if (type != other.type) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public CreatureAbilityType getType() {
+		return type;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return name;
+	}
+
+	public String toFullString() {
+		return name + " " + type.toShortString() + ":\n\t" + description;
+	}
+}

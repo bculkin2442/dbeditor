@@ -1,0 +1,154 @@
+package bjc.dbeditor.data;
+
+import bjc.utils.funcdata.FunctionalList;
+import bjc.utils.funcdata.IList;
+
+public class Feat {
+	private String					name;
+
+	private FunctionalList<String>	tags;
+
+	private FunctionalList<String>	featPrereqs;
+	private FunctionalList<String>	nonFeatPrereqs;
+
+	private String					flavor;
+	private String					description;
+
+	private String					source;
+
+	public Feat(String name, FunctionalList<String> tags,
+			FunctionalList<String> featPrereqs,
+			FunctionalList<String> nonFeatPrereqs, String description,
+			String flavor, String source) {
+		this.name = name;
+		this.tags = tags;
+		this.featPrereqs = featPrereqs;
+		this.nonFeatPrereqs = nonFeatPrereqs;
+		this.description = description;
+		this.flavor = flavor;
+		this.source = source;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		} else if (obj == null) {
+			return false;
+		} else if (getClass() != obj.getClass()) {
+			return false;
+		}
+
+		Feat other = (Feat) obj;
+
+		if (name == null) {
+			if (other.name != null) {
+				return false;
+			}
+		} else if (!name.equals(other.name)) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public IList<String> getFeatPrereqs() {
+		return featPrereqs.clone();
+	}
+
+	public String getFlavor() {
+		return flavor;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public IList<String> getNonFeatPrereqs() {
+		return nonFeatPrereqs.clone();
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public IList<String> getTags() {
+		return tags.clone();
+	}
+
+	public boolean hasFeatPrereq(String featName) {
+		return featPrereqs.contains(featName);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	public boolean hasTag(String tagName) {
+		return tags.contains(tagName);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder featText = new StringBuilder(name);
+		featText.append(" ");
+
+		tags.forEach((tag) -> {
+			featText.append("[ " + tag + "] ");
+		});
+
+		return featText.toString();
+	}
+
+	public String toFullString() {
+		StringBuilder featText = new StringBuilder(name);
+		featText.append(" ");
+
+		tags.forEach((tag) -> {
+			featText.append("[ " + tag + "] ");
+		});
+
+		featText.append("\n\t" + flavor);
+
+		if (featPrereqs.getSize() != 0 || nonFeatPrereqs.getSize() != 0) {
+			featText.append("\nPrerequisites: ");
+		}
+
+		featPrereqs.forEach((prereq) -> {
+			featText.append(prereq + ", ");
+		});
+
+		nonFeatPrereqs.forEach((prereq) -> {
+			featText.append(prereq + ", ");
+		});
+
+		if (featPrereqs.getSize() != 0 || nonFeatPrereqs.getSize() != 0) {
+			// Remove trailing comma and space
+			featText.delete(featText.length() - 2, featText.length() - 1);
+		}
+
+		featText.append("\nBenefit: ");
+		featText.append(description);
+
+		featText.append("\n\tSource: " + source);
+		return featText.toString();
+	}
+}
