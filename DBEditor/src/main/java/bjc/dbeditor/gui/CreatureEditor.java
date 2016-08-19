@@ -30,6 +30,7 @@ import bjc.utils.funcdata.IList;
 import bjc.utils.gui.DropdownListPanel;
 import bjc.utils.gui.SimpleInputPanel;
 import bjc.utils.gui.SimpleInternalDialogs;
+import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.SimpleListPanel;
 import bjc.utils.gui.SimpleSpinnerPanel;
 import bjc.utils.gui.SimpleTitledBorder;
@@ -58,12 +59,12 @@ import bjc.dbeditor.db.FeatDB;
 import bjc.dbeditor.gui.components.AbilityEditor;
 import bjc.dbeditor.gui.components.HitdieEditor;
 
-public class CreatureEditor extends DBInternalFrame {
+public class CreatureEditor extends SimpleInternalFrame {
 	private static final long						serialVersionUID	= -889902229115548570L;
 
 	private Creature								baseCreature;
 
-	private DBInternalFrame							refFrame;
+	private SimpleInternalFrame							refFrame;
 
 	private JTextField								nameField;
 

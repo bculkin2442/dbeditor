@@ -20,6 +20,7 @@ import bjc.utils.funcdata.FunctionalList;
 import bjc.utils.funcdata.IList;
 import bjc.utils.gui.DropdownListPanel;
 import bjc.utils.gui.SimpleInternalDialogs;
+import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.SimpleListPanel;
 import bjc.utils.gui.layout.AutosizeLayout;
 import bjc.utils.gui.layout.HLayout;
@@ -29,7 +30,7 @@ import bjc.dbeditor.data.FeatBuilder;
 import bjc.dbeditor.db.FeatDB;
 import bjc.dbeditor.db.FeatTagDB;
 
-public class FeatEditor extends DBInternalFrame {
+public class FeatEditor extends SimpleInternalFrame {
 	private static final long			serialVersionUID		= -4016698246942706462L;
 
 	private JTextField					nameInputField;

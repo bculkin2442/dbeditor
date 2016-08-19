@@ -13,12 +13,13 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import bjc.utils.gui.SimpleInternalDialogs;
+import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.layout.HLayout;
 
 import bjc.dbeditor.data.FeatTag;
 import bjc.dbeditor.db.FeatTagDB;
 
-public class FeatTagEditor extends DBInternalFrame {
+public class FeatTagEditor extends SimpleInternalFrame {
 	private static final long	serialVersionUID	= -1072275991676239181L;
 
 	private FeatTag				baseTag;
@@ -42,7 +43,7 @@ public class FeatTagEditor extends DBInternalFrame {
 	}
 
 	private void setupGUI() {
-		DBInternalFrame refFrame = this;
+		SimpleInternalFrame refFrame = this;
 
 		setLayout(new BorderLayout());
 
