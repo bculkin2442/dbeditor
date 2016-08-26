@@ -18,12 +18,12 @@ import javax.swing.JTextField;
 
 import bjc.utils.funcdata.FunctionalList;
 import bjc.utils.funcdata.IList;
-import bjc.utils.gui.DropdownListPanel;
 import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
-import bjc.utils.gui.SimpleListPanel;
 import bjc.utils.gui.layout.AutosizeLayout;
 import bjc.utils.gui.layout.HLayout;
+import bjc.utils.gui.panels.DropdownListPanel;
+import bjc.utils.gui.panels.SimpleListPanel;
 
 import bjc.dbeditor.data.Feat;
 import bjc.dbeditor.data.FeatBuilder;

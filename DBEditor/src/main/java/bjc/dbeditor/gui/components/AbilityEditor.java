@@ -13,9 +13,9 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 
 import bjc.utils.funcdata.IList;
-import bjc.utils.gui.SimpleInputPanel;
 import bjc.utils.gui.layout.AutosizeLayout;
 import bjc.utils.gui.layout.HLayout;
+import bjc.utils.gui.panels.SimpleInputPanel;
 
 import bjc.dbeditor.data.creatures.CreatureAbility;
 import bjc.dbeditor.data.creatures.CreatureAbilityType;

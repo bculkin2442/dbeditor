@@ -27,16 +27,16 @@ import javax.swing.SpinnerNumberModel;
 
 import bjc.utils.funcdata.FunctionalList;
 import bjc.utils.funcdata.IList;
-import bjc.utils.gui.DropdownListPanel;
-import bjc.utils.gui.SimpleInputPanel;
 import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
-import bjc.utils.gui.SimpleListPanel;
-import bjc.utils.gui.SimpleSpinnerPanel;
 import bjc.utils.gui.SimpleTitledBorder;
 import bjc.utils.gui.layout.AutosizeLayout;
 import bjc.utils.gui.layout.HLayout;
 import bjc.utils.gui.layout.VLayout;
+import bjc.utils.gui.panels.DropdownListPanel;
+import bjc.utils.gui.panels.SimpleInputPanel;
+import bjc.utils.gui.panels.SimpleListPanel;
+import bjc.utils.gui.panels.SimpleSpinnerPanel;
 
 import bjc.dbeditor.data.creatures.Creature;
 import bjc.dbeditor.data.creatures.CreatureAbility;
