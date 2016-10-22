@@ -14,9 +14,21 @@ import bjc.dbeditor.db.FeatDB;
 import bjc.dbeditor.db.FeatTagDB;
 import bjc.dbeditor.gui.DBEditorGUI;
 
+/**
+ * Main application class
+ * 
+ * @author ben
+ *
+ */
 public class DBMain {
+	/*
+	 * The single DB connection
+	 */
 	private static Connection conn;
 
+	/*
+	 * Make sure we close our connections when the main window gets closed
+	 */
 	private static final class ResourceDisposalListener
 			extends WindowAdapter {
 		@Override
@@ -46,6 +58,7 @@ public class DBMain {
 			System.exit(1);
 		}
 
+		// Get DB pass
 		String pass = JOptionPane.showInputDialog(null,
 				"Enter the password for the database", "Enter password",
 				JOptionPane.QUESTION_MESSAGE);
@@ -55,6 +68,7 @@ public class DBMain {
 			System.exit(1);
 		}
 
+		// Establish db connection
 		try {
 			conn = DriverManager.getConnection(
 					"jdbc:postgresql:dand_records", "dand_info", pass);
@@ -74,6 +88,7 @@ public class DBMain {
 			throw isex;
 		}
 
+		// Create the GUI
 		JFrame gui = DBEditorGUI.createGUI();
 
 		gui.setSize(640, 480);

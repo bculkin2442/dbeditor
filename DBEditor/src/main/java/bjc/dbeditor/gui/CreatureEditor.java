@@ -64,7 +64,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 	private Creature								baseCreature;
 
-	private SimpleInternalFrame							refFrame;
+	private SimpleInternalFrame						refFrame;
 
 	private JTextField								nameField;
 

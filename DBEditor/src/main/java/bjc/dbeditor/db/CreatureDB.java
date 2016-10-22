@@ -450,21 +450,17 @@ public class CreatureDB {
 
 		CreatureSaves saves = defenses.getSaves();
 
-		addCreatureStatement
-				.setArray(19,
-						dbConn.createArrayOf("integer",
-								new Integer[] { saves.getFortitude(),
-										saves.getReflex(),
-										saves.getWill() }));
+		addCreatureStatement.setArray(19,
+				dbConn.createArrayOf("integer",
+						new Integer[] { saves.getFortitude(),
+								saves.getReflex(), saves.getWill() }));
 
 		CreatureAttack attack = offenses.getAttackStats();
 
-		addCreatureStatement
-				.setArray(20,
-						dbConn.createArrayOf("integer",
-								new Integer[] {
-										attack.getBaseAttackBonus(),
-										attack.getGrappleMod() }));
+		addCreatureStatement.setArray(20,
+				dbConn.createArrayOf("integer",
+						new Integer[] { attack.getBaseAttackBonus(),
+								attack.getGrappleMod() }));
 
 		CreatureAbilityScores scores = add.getAbilityScores();
 

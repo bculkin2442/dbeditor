@@ -43,10 +43,10 @@ public class Creature {
 	}
 
 	public IList<String> getFeats() {
-		if(feats == null) {
+		if (feats == null) {
 			return null;
 		}
-		
+
 		return feats.clone();
 	}
 
@@ -55,10 +55,10 @@ public class Creature {
 	}
 
 	public IList<String> getSubtypes() {
-		if(subtypes == null) {
+		if (subtypes == null) {
 			return null;
 		}
-		
+
 		return subtypes.clone();
 	}
 

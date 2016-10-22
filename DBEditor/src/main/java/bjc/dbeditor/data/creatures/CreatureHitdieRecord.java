@@ -77,7 +77,7 @@ public class CreatureHitdieRecord {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append("'( " + count + ", " + size + ")'");
-		
+
 		return sb.toString();
 	}
 
