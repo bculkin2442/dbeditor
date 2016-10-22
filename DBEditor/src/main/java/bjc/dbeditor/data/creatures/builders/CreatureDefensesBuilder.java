@@ -1,4 +1,7 @@
-package bjc.dbeditor.data.creatures;
+package bjc.dbeditor.data.creatures.builders;
+
+import bjc.dbeditor.data.creatures.CreatureDefenses;
+import bjc.dbeditor.data.creatures.CreatureSaves;
 
 public class CreatureDefensesBuilder {
 	private int				naturalArmor;

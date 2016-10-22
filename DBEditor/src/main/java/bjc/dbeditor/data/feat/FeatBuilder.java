@@ -1,7 +1,13 @@
-package bjc.dbeditor.data;
+package bjc.dbeditor.data.feat;
 
 import bjc.utils.funcdata.FunctionalList;
 
+/**
+ * Builds feats piece by piece
+ * 
+ * @author ben
+ *
+ */
 public class FeatBuilder {
 	private String					name;
 	private String					flavor;
@@ -14,6 +20,9 @@ public class FeatBuilder {
 	private String					description;
 	private String					source;
 
+	/**
+	 * Create a new blank feat builder
+	 */
 	public FeatBuilder() {
 		tags = new FunctionalList<>();
 
@@ -21,18 +30,41 @@ public class FeatBuilder {
 		nonFeatPrereqs = new FunctionalList<>();
 	}
 
+	/**
+	 * Add a feat as a prerequisite
+	 * 
+	 * @param feat
+	 *            The feat to add as a prerequisite
+	 */
 	public void addFeatPrereq(String feat) {
 		featPrereqs.add(feat);
 	}
 
+	/**
+	 * Add a non-feat as a prerequisite
+	 * 
+	 * @param prereq
+	 *            The prerequisite to add
+	 */
 	public void addNonFeatPrereq(String prereq) {
 		nonFeatPrereqs.add(prereq);
 	}
 
+	/**
+	 * Add a type tag
+	 * 
+	 * @param tag
+	 *            The tag to add
+	 */
 	public void addTag(String tag) {
 		tags.add(tag);
 	}
 
+	/**
+	 * Convert this builder into a feat
+	 * 
+	 * @return The feat this builder represents
+	 */
 	public Feat buildFeat() {
 		return new Feat(name, tags, featPrereqs, nonFeatPrereqs,
 				description, flavor, source);

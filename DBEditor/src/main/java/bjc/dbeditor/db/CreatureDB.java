@@ -14,21 +14,21 @@ import bjc.dbeditor.data.creatures.CreatureAbility;
 import bjc.dbeditor.data.creatures.CreatureAbilityScores;
 import bjc.dbeditor.data.creatures.CreatureAbilityType;
 import bjc.dbeditor.data.creatures.CreatureAttack;
-import bjc.dbeditor.data.creatures.CreatureBuilder;
 import bjc.dbeditor.data.creatures.CreatureDefenses;
-import bjc.dbeditor.data.creatures.CreatureDefensesBuilder;
 import bjc.dbeditor.data.creatures.CreatureFlavor;
-import bjc.dbeditor.data.creatures.CreatureFlavorBuilder;
 import bjc.dbeditor.data.creatures.CreatureHitdieRecord;
 import bjc.dbeditor.data.creatures.CreatureMisc;
-import bjc.dbeditor.data.creatures.CreatureMiscBuilder;
 import bjc.dbeditor.data.creatures.CreatureOffenses;
-import bjc.dbeditor.data.creatures.CreatureOffensesBuilder;
 import bjc.dbeditor.data.creatures.CreatureSaves;
 import bjc.dbeditor.data.creatures.CreatureSize;
 import bjc.dbeditor.data.creatures.CreatureSkill;
 import bjc.dbeditor.data.creatures.CreatureSpeed;
 import bjc.dbeditor.data.creatures.CreatureType;
+import bjc.dbeditor.data.creatures.builders.CreatureBuilder;
+import bjc.dbeditor.data.creatures.builders.CreatureDefensesBuilder;
+import bjc.dbeditor.data.creatures.builders.CreatureFlavorBuilder;
+import bjc.dbeditor.data.creatures.builders.CreatureMiscBuilder;
+import bjc.dbeditor.data.creatures.builders.CreatureOffensesBuilder;
 
 public class CreatureDB {
 	private static Connection			dbConn;

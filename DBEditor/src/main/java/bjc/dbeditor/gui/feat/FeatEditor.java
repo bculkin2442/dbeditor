@@ -1,4 +1,4 @@
-package bjc.dbeditor.gui;
+package bjc.dbeditor.gui.feat;
 
 import java.awt.BorderLayout;
 import java.awt.event.FocusAdapter;
@@ -25,8 +25,8 @@ import bjc.utils.gui.layout.HLayout;
 import bjc.utils.gui.panels.DropdownListPanel;
 import bjc.utils.gui.panels.SimpleListPanel;
 
-import bjc.dbeditor.data.Feat;
-import bjc.dbeditor.data.FeatBuilder;
+import bjc.dbeditor.data.feat.Feat;
+import bjc.dbeditor.data.feat.FeatBuilder;
 import bjc.dbeditor.db.FeatDB;
 import bjc.dbeditor.db.FeatTagDB;
 

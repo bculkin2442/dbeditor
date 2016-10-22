@@ -8,6 +8,11 @@ import javax.swing.JMenuItem;
 
 import bjc.utils.gui.layout.AutosizeLayout;
 
+import bjc.dbeditor.gui.feat.FeatBrowser;
+import bjc.dbeditor.gui.feat.FeatEditor;
+import bjc.dbeditor.gui.feat.FeatTagBrowser;
+import bjc.dbeditor.gui.feat.FeatTagEditor;
+
 public class DBEditorGUI {
 	public static JFrame createGUI() {
 		JFrame mainGUIFrame = new JFrame("D&D DB Utility");

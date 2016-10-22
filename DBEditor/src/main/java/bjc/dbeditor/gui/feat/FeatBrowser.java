@@ -1,4 +1,4 @@
-package bjc.dbeditor.gui;
+package bjc.dbeditor.gui.feat;
 
 import java.awt.BorderLayout;
 import java.sql.SQLException;
@@ -19,7 +19,7 @@ import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.SimpleTitledBorder;
 import bjc.utils.gui.layout.AutosizeLayout;
 
-import bjc.dbeditor.data.Feat;
+import bjc.dbeditor.data.feat.Feat;
 import bjc.dbeditor.db.FeatDB;
 
 public class FeatBrowser extends SimpleInternalFrame {

@@ -1,4 +1,6 @@
-package bjc.dbeditor.data.creatures;
+package bjc.dbeditor.data.creatures.builders;
+
+import bjc.dbeditor.data.creatures.CreatureFlavor;
 
 public class CreatureFlavorBuilder {
 	private String	enviroment;

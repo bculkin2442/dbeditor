@@ -1,5 +1,11 @@
-package bjc.dbeditor.data;
+package bjc.dbeditor.data.feat;
 
+/**
+ * A type tag for a feat
+ * 
+ * @author ben
+ *
+ */
 public class FeatTag {
 	private String	name;
 	private String	description;
@@ -53,6 +59,14 @@ public class FeatTag {
 		return true;
 	}
 
+	/**
+	 * Create a new feat type tag
+	 * 
+	 * @param name
+	 *            The name of the tag
+	 * @param description
+	 *            The description of the tag
+	 */
 	public FeatTag(String name, String description) {
 		this.name = name;
 		this.description = description;
@@ -63,6 +77,11 @@ public class FeatTag {
 		return name;
 	}
 
+	/**
+	 * Get the full details of this tag
+	 * 
+	 * @return The full details of this tag
+	 */
 	public String toFullString() {
 		return name + " Feats\n\tSpecial Rules: " + description;
 	}

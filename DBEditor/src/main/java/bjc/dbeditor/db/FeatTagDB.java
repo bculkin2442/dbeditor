@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import bjc.utils.funcdata.FunctionalList;
 import bjc.utils.funcdata.IList;
 
-import bjc.dbeditor.data.FeatTag;
+import bjc.dbeditor.data.feat.FeatTag;
 
 public class FeatTagDB {
 	private static Connection			dbConn;

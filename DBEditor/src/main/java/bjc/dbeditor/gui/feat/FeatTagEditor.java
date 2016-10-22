@@ -1,4 +1,4 @@
-package bjc.dbeditor.gui;
+package bjc.dbeditor.gui.feat;
 
 import java.awt.BorderLayout;
 import java.awt.event.FocusAdapter;
@@ -16,7 +16,7 @@ import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.layout.HLayout;
 
-import bjc.dbeditor.data.FeatTag;
+import bjc.dbeditor.data.feat.FeatTag;
 import bjc.dbeditor.db.FeatTagDB;
 
 public class FeatTagEditor extends SimpleInternalFrame {

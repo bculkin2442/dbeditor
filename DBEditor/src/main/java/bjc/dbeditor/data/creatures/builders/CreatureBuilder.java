@@ -1,8 +1,19 @@
-package bjc.dbeditor.data.creatures;
+package bjc.dbeditor.data.creatures.builders;
 
 import java.math.BigDecimal;
 
 import bjc.utils.funcdata.FunctionalList;
+
+import bjc.dbeditor.data.creatures.Creature;
+import bjc.dbeditor.data.creatures.CreatureAbilityScores;
+import bjc.dbeditor.data.creatures.CreatureDefenses;
+import bjc.dbeditor.data.creatures.CreatureFlavor;
+import bjc.dbeditor.data.creatures.CreatureHitdieRecord;
+import bjc.dbeditor.data.creatures.CreatureMisc;
+import bjc.dbeditor.data.creatures.CreatureOffenses;
+import bjc.dbeditor.data.creatures.CreatureSize;
+import bjc.dbeditor.data.creatures.CreatureSpeed;
+import bjc.dbeditor.data.creatures.CreatureType;
 
 public class CreatureBuilder {
 	private String									name;

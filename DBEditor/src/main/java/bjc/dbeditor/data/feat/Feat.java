@@ -1,8 +1,14 @@
-package bjc.dbeditor.data;
+package bjc.dbeditor.data.feat;
 
 import bjc.utils.funcdata.FunctionalList;
 import bjc.utils.funcdata.IList;
 
+/**
+ * Represents a feat that can be taken
+ * 
+ * @author ben
+ *
+ */
 public class Feat {
 	private String					name;
 
@@ -16,6 +22,24 @@ public class Feat {
 
 	private String					source;
 
+	/**
+	 * Create a new feat
+	 * 
+	 * @param name
+	 *            The name of the feat
+	 * @param tags
+	 *            The type tags of the feat
+	 * @param featPrereqs
+	 *            The required feat prerequisites
+	 * @param nonFeatPrereqs
+	 *            The required non-feat prerequisites
+	 * @param description
+	 *            The description of the feat
+	 * @param flavor
+	 *            The associated flavor text of the feat
+	 * @param source
+	 *            The source of the feat
+	 */
 	public Feat(String name, FunctionalList<String> tags,
 			FunctionalList<String> featPrereqs,
 			FunctionalList<String> nonFeatPrereqs, String description,
@@ -85,6 +109,14 @@ public class Feat {
 		return tags.clone();
 	}
 
+	/**
+	 * Check if a feat has a given feat as a prerequisite
+	 * 
+	 * @param featName
+	 *            The feat to check if it is a prerequiste
+	 * @return Whether or not the specified feat is a prerequisite for this
+	 *         one
+	 */
 	public boolean hasFeatPrereq(String featName) {
 		return featPrereqs.contains(featName);
 	}
@@ -102,6 +134,13 @@ public class Feat {
 		return result;
 	}
 
+	/**
+	 * Check if a feat has a given type tag
+	 * 
+	 * @param tagName
+	 *            The tag to check for
+	 * @return Whether or not the feat has the specified tag
+	 */
 	public boolean hasTag(String tagName) {
 		return tags.contains(tagName);
 	}
@@ -118,6 +157,11 @@ public class Feat {
 		return featText.toString();
 	}
 
+	/**
+	 * Get the full text of a feat
+	 * 
+	 * @return The full text of a feat
+	 */
 	public String toFullString() {
 		StringBuilder featText = new StringBuilder(name);
 		featText.append(" ");

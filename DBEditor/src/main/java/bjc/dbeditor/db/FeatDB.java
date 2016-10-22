@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import bjc.utils.funcdata.FunctionalList;
 import bjc.utils.funcdata.IList;
 
-import bjc.dbeditor.data.Feat;
-import bjc.dbeditor.data.FeatBuilder;
+import bjc.dbeditor.data.feat.Feat;
+import bjc.dbeditor.data.feat.FeatBuilder;
 
 public class FeatDB {
 	private static Connection			dbConnection;
