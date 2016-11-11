@@ -6,40 +6,54 @@ import bjc.dbeditor.data.creatures.CreatureAbility;
 import bjc.dbeditor.data.creatures.CreatureAttack;
 import bjc.dbeditor.data.creatures.CreatureOffenses;
 
+/**
+ * A builder of creature offenses
+ */
 public class CreatureOffensesBuilder {
-	private CreatureAttack					attackStats;
-	private String							attack;
-	private String							fullAttack;
-	private FunctionalList<CreatureAbility>	specialAttacks;
-	private FunctionalList<CreatureAbility>	specialQualities;
+		private CreatureAttack					attackStats;
+		private String							attack;
+		private String							fullAttack;
+		private FunctionalList<CreatureAbility>	specialAttacks;
+		private FunctionalList<CreatureAbility>	specialQualities;
 
-	public CreatureOffensesBuilder() {
-		specialAttacks = new FunctionalList<>();
-		specialQualities = new FunctionalList<>();
-	}
+		/**
+		 * Create a blank builder
+		 */
+		public CreatureOffensesBuilder() {
+				// Initialize lists
+				specialAttacks = new FunctionalList<>();
+				specialQualities = new FunctionalList<>();
+		}
 
-	public void setAttackStats(CreatureAttack attackStats) {
-		this.attackStats = attackStats;
-	}
+		/*
+		 * Bunch of setters
+		 */
 
-	public void setAttack(String attack) {
-		this.attack = attack;
-	}
+		public void setAttackStats(CreatureAttack attackStats) {
+				this.attackStats = attackStats;
+		}
 
-	public void setFullAttack(String fullAttack) {
-		this.fullAttack = fullAttack;
-	}
+		public void setAttack(String attack) {
+				this.attack = attack;
+		}
 
-	public void addSpecialAttack(CreatureAbility specialAttack) {
-		specialAttacks.add(specialAttack);
-	}
+		public void setFullAttack(String fullAttack) {
+				this.fullAttack = fullAttack;
+		}
 
-	public void addSpecialQuality(CreatureAbility specialQuality) {
-		specialQualities.add(specialQuality);
-	}
+		public void addSpecialAttack(CreatureAbility specialAttack) {
+				specialAttacks.add(specialAttack);
+		}
 
-	public CreatureOffenses buildOffenses() {
-		return new CreatureOffenses(attackStats, attack, fullAttack,
-				specialAttacks, specialQualities);
-	}
+		public void addSpecialQuality(CreatureAbility specialQuality) {
+				specialQualities.add(specialQuality);
+		}
+
+		/**
+		 * Build the offenses this class represents
+		 */
+		public CreatureOffenses buildOffenses() {
+				return new CreatureOffenses(attackStats, attack, fullAttack,
+								specialAttacks, specialQualities);
+		}
 }

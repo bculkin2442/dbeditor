@@ -3,29 +3,42 @@ package bjc.dbeditor.data.creatures.builders;
 import bjc.dbeditor.data.creatures.CreatureDefenses;
 import bjc.dbeditor.data.creatures.CreatureSaves;
 
+/**
+ * Builder of Creature Defenses
+ */
 public class CreatureDefensesBuilder {
-	private int				naturalArmor;
-	private int				spellResistance;
+		private int				naturalArmor;
+		private int				spellResistance;
 
-	private CreatureSaves	saves;
+		private CreatureSaves	saves;
 
-	public CreatureDefensesBuilder() {
+		/**
+		 * Create a new defense builder
+		 */
+		public CreatureDefensesBuilder() {
 
-	}
+		}
 
-	public void setNaturalArmor(int naturalArmor) {
-		this.naturalArmor = naturalArmor;
-	}
+		/*
+		 * A bunch of setters
+		 */
 
-	public void setSpellResistance(int spellResistance) {
-		this.spellResistance = spellResistance;
-	}
+		public void setNaturalArmor(int naturalArmor) {
+				this.naturalArmor = naturalArmor;
+		}
 
-	public void setSaves(CreatureSaves saves) {
-		this.saves = saves;
-	}
+		public void setSpellResistance(int spellResistance) {
+				this.spellResistance = spellResistance;
+		}
 
-	public CreatureDefenses buildDefenses() {
-		return new CreatureDefenses(naturalArmor, spellResistance, saves);
-	}
+		public void setSaves(CreatureSaves saves) {
+				this.saves = saves;
+		}
+
+		/**
+		 * Create a defense set from this builder
+		 */
+		public CreatureDefenses buildDefenses() {
+				return new CreatureDefenses(naturalArmor, spellResistance, saves);
+		}
 }

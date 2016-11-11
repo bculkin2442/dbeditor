@@ -1,0 +1,534 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ABERRATION	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+ANIMAL	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+AbilityEditor	src/main/java/bjc/dbeditor/gui/components/AbilityEditor.java	/^	public AbilityEditor() {$/;"	m	class:AbilityEditor
+AbilityEditor	src/main/java/bjc/dbeditor/gui/components/AbilityEditor.java	/^	public AbilityEditor(IList<CreatureAbility> baseAbilities) {$/;"	m	class:AbilityEditor
+AbilityEditor	src/main/java/bjc/dbeditor/gui/components/AbilityEditor.java	/^public class AbilityEditor extends JPanel {$/;"	c
+COLOSSAL	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^	FINE, DIMINUTIVE, TINY, SMALL, MEDIUM, LARGE, HUGE, GARGANTUAN, COLOSSAL;$/;"	e	enum:CreatureSize	file:
+CONSTRUCT	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+Creature	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public Creature(String name, CreatureSize size, CreatureType type,$/;"	m	class:Creature
+Creature	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^public class Creature {$/;"	c
+CreatureAbility	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	public CreatureAbility(String name, String description,$/;"	m	class:CreatureAbility
+CreatureAbility	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^public class CreatureAbility {$/;"	c
+CreatureAbilityScores	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	public CreatureAbilityScores(int strength, int dexterity,$/;"	m	class:CreatureAbilityScores
+CreatureAbilityScores	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^public class CreatureAbilityScores {$/;"	c
+CreatureAbilityType	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityType.java	/^public enum CreatureAbilityType {$/;"	g
+CreatureAttack	src/main/java/bjc/dbeditor/data/creatures/CreatureAttack.java	/^	public CreatureAttack(int baseAttackBonus, int grappleMod) {$/;"	m	class:CreatureAttack
+CreatureAttack	src/main/java/bjc/dbeditor/data/creatures/CreatureAttack.java	/^public class CreatureAttack {$/;"	c
+CreatureBuilder	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public CreatureBuilder() {$/;"	m	class:CreatureBuilder
+CreatureBuilder	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^public class CreatureBuilder {$/;"	c
+CreatureDB	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^public class CreatureDB {$/;"	c
+CreatureDefenses	src/main/java/bjc/dbeditor/data/creatures/CreatureDefenses.java	/^	public CreatureDefenses(int naturalArmor, int spellResistance,$/;"	m	class:CreatureDefenses
+CreatureDefenses	src/main/java/bjc/dbeditor/data/creatures/CreatureDefenses.java	/^public class CreatureDefenses {$/;"	c
+CreatureDefensesBuilder	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureDefensesBuilder.java	/^	public CreatureDefensesBuilder() {$/;"	m	class:CreatureDefensesBuilder
+CreatureDefensesBuilder	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureDefensesBuilder.java	/^public class CreatureDefensesBuilder {$/;"	c
+CreatureEditor	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	public CreatureEditor() {$/;"	m	class:CreatureEditor
+CreatureEditor	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	public CreatureEditor(Creature base) {$/;"	m	class:CreatureEditor
+CreatureEditor	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^public class CreatureEditor extends SimpleInternalFrame {$/;"	c
+CreatureFlavor	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^	public CreatureFlavor(String enviroment, String organization,$/;"	m	class:CreatureFlavor
+CreatureFlavor	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^public class CreatureFlavor {$/;"	c
+CreatureFlavorBuilder	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^	public CreatureFlavorBuilder() {$/;"	m	class:CreatureFlavorBuilder
+CreatureFlavorBuilder	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^public class CreatureFlavorBuilder {$/;"	c
+CreatureHitdieRecord	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	public CreatureHitdieRecord(int count, int size, String type) {$/;"	m	class:CreatureHitdieRecord
+CreatureHitdieRecord	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^public class CreatureHitdieRecord {$/;"	c
+CreatureMisc	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^	public CreatureMisc(FunctionalList<CreatureSkill> skills,$/;"	m	class:CreatureMisc
+CreatureMisc	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^public class CreatureMisc {$/;"	c
+CreatureMiscBuilder	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^	public CreatureMiscBuilder() {$/;"	m	class:CreatureMiscBuilder
+CreatureMiscBuilder	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^public class CreatureMiscBuilder {$/;"	c
+CreatureOffenses	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	public CreatureOffenses(CreatureAttack attackStats, String attack,$/;"	m	class:CreatureOffenses
+CreatureOffenses	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^public class CreatureOffenses {$/;"	c
+CreatureOffensesBuilder	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	public CreatureOffensesBuilder() {$/;"	m	class:CreatureOffensesBuilder
+CreatureOffensesBuilder	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^public class CreatureOffensesBuilder {$/;"	c
+CreatureSaves	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^	public CreatureSaves(int fortitude, int reflex, int will) {$/;"	m	class:CreatureSaves
+CreatureSaves	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^public class CreatureSaves {$/;"	c
+CreatureSize	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^public enum CreatureSize {$/;"	g
+CreatureSkill	src/main/java/bjc/dbeditor/data/creatures/CreatureSkill.java	/^	public CreatureSkill(String skillName, int skillBonus) {$/;"	m	class:CreatureSkill
+CreatureSkill	src/main/java/bjc/dbeditor/data/creatures/CreatureSkill.java	/^public class CreatureSkill {$/;"	c
+CreatureSpeed	src/main/java/bjc/dbeditor/data/creatures/CreatureSpeed.java	/^	public CreatureSpeed(String type, int rate) {$/;"	m	class:CreatureSpeed
+CreatureSpeed	src/main/java/bjc/dbeditor/data/creatures/CreatureSpeed.java	/^public class CreatureSpeed {$/;"	c
+CreatureType	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^public enum CreatureType {$/;"	g
+DBEditorGUI	src/main/java/bjc/dbeditor/gui/DBEditorGUI.java	/^public class DBEditorGUI {$/;"	c
+DBMain	src/main/java/bjc/dbeditor/DBMain.java	/^public class DBMain {$/;"	c
+DEATHLESS	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+DIMINUTIVE	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^	FINE, DIMINUTIVE, TINY, SMALL, MEDIUM, LARGE, HUGE, GARGANTUAN, COLOSSAL;$/;"	e	enum:CreatureSize	file:
+DRAGON	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+ELEMENTAL	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+EXTRAORDINARY	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityType.java	/^	EXTRAORDINARY, INHERENT, PSILIKE, SPELLLIKE, SUPERNATURAL;$/;"	e	enum:CreatureAbilityType	file:
+FEY	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+FINE	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^	FINE, DIMINUTIVE, TINY, SMALL, MEDIUM, LARGE, HUGE, GARGANTUAN, COLOSSAL;$/;"	e	enum:CreatureSize	file:
+Feat	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public Feat(String name, FunctionalList<String> tags,$/;"	m	class:Feat
+Feat	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^public class Feat {$/;"	c
+FeatBrowser	src/main/java/bjc/dbeditor/gui/feat/FeatBrowser.java	/^	public FeatBrowser() {$/;"	m	class:FeatBrowser
+FeatBrowser	src/main/java/bjc/dbeditor/gui/feat/FeatBrowser.java	/^	public FeatBrowser(IList<String> featList) {$/;"	m	class:FeatBrowser
+FeatBrowser	src/main/java/bjc/dbeditor/gui/feat/FeatBrowser.java	/^public class FeatBrowser extends SimpleInternalFrame {$/;"	c
+FeatBuilder	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	public FeatBuilder() {$/;"	m	class:FeatBuilder
+FeatBuilder	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^public class FeatBuilder {$/;"	c
+FeatDB	src/main/java/bjc/dbeditor/db/FeatDB.java	/^public class FeatDB {$/;"	c
+FeatEditor	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	public FeatEditor() {$/;"	m	class:FeatEditor
+FeatEditor	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	public FeatEditor(Feat base) {$/;"	m	class:FeatEditor
+FeatEditor	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^public class FeatEditor extends SimpleInternalFrame {$/;"	c
+FeatTag	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^	public FeatTag(String name, String description) {$/;"	m	class:FeatTag
+FeatTag	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^public class FeatTag {$/;"	c
+FeatTagBrowser	src/main/java/bjc/dbeditor/gui/feat/FeatTagBrowser.java	/^	public FeatTagBrowser() {$/;"	m	class:FeatTagBrowser
+FeatTagBrowser	src/main/java/bjc/dbeditor/gui/feat/FeatTagBrowser.java	/^	public FeatTagBrowser(IList<String> tagList) {$/;"	m	class:FeatTagBrowser
+FeatTagBrowser	src/main/java/bjc/dbeditor/gui/feat/FeatTagBrowser.java	/^public class FeatTagBrowser extends SimpleInternalFrame {$/;"	c
+FeatTagDB	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^public class FeatTagDB {$/;"	c
+FeatTagEditor	src/main/java/bjc/dbeditor/gui/feat/FeatTagEditor.java	/^	public FeatTagEditor() {$/;"	m	class:FeatTagEditor
+FeatTagEditor	src/main/java/bjc/dbeditor/gui/feat/FeatTagEditor.java	/^	public FeatTagEditor(FeatTag base) {$/;"	m	class:FeatTagEditor
+FeatTagEditor	src/main/java/bjc/dbeditor/gui/feat/FeatTagEditor.java	/^public class FeatTagEditor extends SimpleInternalFrame {$/;"	c
+GARGANTUAN	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^	FINE, DIMINUTIVE, TINY, SMALL, MEDIUM, LARGE, HUGE, GARGANTUAN, COLOSSAL;$/;"	e	enum:CreatureSize	file:
+GIANT	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+HUGE	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^	FINE, DIMINUTIVE, TINY, SMALL, MEDIUM, LARGE, HUGE, GARGANTUAN, COLOSSAL;$/;"	e	enum:CreatureSize	file:
+HUMANOID	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+HitdieEditor	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^	public HitdieEditor() {$/;"	m	class:HitdieEditor
+HitdieEditor	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^	public HitdieEditor(IList<CreatureHitdieRecord> baseHitdie) {$/;"	m	class:HitdieEditor
+HitdieEditor	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^public class HitdieEditor extends JPanel {$/;"	c
+HitdieRenderer	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^		public HitdieRenderer() {$/;"	m	class:HitdieEditor.HitdieRenderer
+HitdieRenderer	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^	private final class HitdieRenderer extends JLabel$/;"	c	class:HitdieEditor
+INHERENT	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityType.java	/^	EXTRAORDINARY, INHERENT, PSILIKE, SPELLLIKE, SUPERNATURAL;$/;"	e	enum:CreatureAbilityType	file:
+LARGE	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^	FINE, DIMINUTIVE, TINY, SMALL, MEDIUM, LARGE, HUGE, GARGANTUAN, COLOSSAL;$/;"	e	enum:CreatureSize	file:
+MAGICALBEAST	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+MEDIUM	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^	FINE, DIMINUTIVE, TINY, SMALL, MEDIUM, LARGE, HUGE, GARGANTUAN, COLOSSAL;$/;"	e	enum:CreatureSize	file:
+MONSTROUSHUMANOID	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+OOZE	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+OUTSIDER	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+PLANT	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+PSILIKE	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityType.java	/^	EXTRAORDINARY, INHERENT, PSILIKE, SPELLLIKE, SUPERNATURAL;$/;"	e	enum:CreatureAbilityType	file:
+ResourceDisposalListener	src/main/java/bjc/dbeditor/DBMain.java	/^	private static final class ResourceDisposalListener$/;"	c	class:DBMain
+SMALL	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^	FINE, DIMINUTIVE, TINY, SMALL, MEDIUM, LARGE, HUGE, GARGANTUAN, COLOSSAL;$/;"	e	enum:CreatureSize	file:
+SPELLLIKE	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityType.java	/^	EXTRAORDINARY, INHERENT, PSILIKE, SPELLLIKE, SUPERNATURAL;$/;"	e	enum:CreatureAbilityType	file:
+SUPERNATURAL	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityType.java	/^	EXTRAORDINARY, INHERENT, PSILIKE, SPELLLIKE, SUPERNATURAL;$/;"	e	enum:CreatureAbilityType	file:
+TINY	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^	FINE, DIMINUTIVE, TINY, SMALL, MEDIUM, LARGE, HUGE, GARGANTUAN, COLOSSAL;$/;"	e	enum:CreatureSize	file:
+UNDEAD	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+VERMIN	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	ABERRATION, ANIMAL, CONSTRUCT, DEATHLESS, DRAGON, ELEMENTAL, FEY, GIANT, HUMANOID, MAGICALBEAST, MONSTROUSHUMANOID, OOZE, OUTSIDER, PLANT, UNDEAD, VERMIN;$/;"	e	enum:CreatureType	file:
+abilityModel	src/main/java/bjc/dbeditor/gui/components/AbilityEditor.java	/^	public final DefaultListModel<CreatureAbility>	abilityModel;$/;"	f	class:AbilityEditor
+abilityScores	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private CreatureAbilityScores					abilityScores;$/;"	f	class:Creature	file:
+abilityScores	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private CreatureAbilityScores					abilityScores;$/;"	f	class:CreatureBuilder	file:
+addCreature	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	public static boolean addCreature(Creature add) throws SQLException {$/;"	m	class:CreatureDB
+addCreature	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private void addCreature() {$/;"	m	class:CreatureEditor	file:
+addCreatureStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	addCreatureStatement;$/;"	f	class:CreatureDB	file:
+addDependantAbilitiesStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	addDependantAbilitiesStatement;$/;"	f	class:CreatureDB	file:
+addDependantFeatStatement	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static PreparedStatement	addDependantFeatStatement;$/;"	f	class:FeatDB	file:
+addDependantFeatsStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	addDependantFeatsStatement;$/;"	f	class:CreatureDB	file:
+addDependantHitdiceStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	addDependantHitdiceStatement;$/;"	f	class:CreatureDB	file:
+addDependantSkillsStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	addDependantSkillsStatement;$/;"	f	class:CreatureDB	file:
+addDependantSpeedsStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	addDependantSpeedsStatement;$/;"	f	class:CreatureDB	file:
+addDependantTagStatement	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static PreparedStatement	addDependantTagStatement;$/;"	f	class:FeatDB	file:
+addFeat	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void addFeat(String feat) {$/;"	m	class:CreatureBuilder
+addFeat	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	public static boolean addFeat(Feat featToAdd) throws SQLException {$/;"	m	class:FeatDB
+addFeatPrereq	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	public void addFeatPrereq(String feat) {$/;"	m	class:FeatBuilder
+addFeatTag	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	public static boolean addFeatTag(FeatTag tagToAdd)$/;"	m	class:FeatTagDB
+addHitdie	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void addHitdie(CreatureHitdieRecord hitdie) {$/;"	m	class:CreatureBuilder
+addHitdie	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void addHitdie(int count, int siz, String typ) {$/;"	m	class:CreatureBuilder
+addHitdie	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^	private void addHitdie(JSpinner hitdieCountSpinner,$/;"	m	class:HitdieEditor	file:
+addNonFeatPrereq	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	public void addNonFeatPrereq(String prereq) {$/;"	m	class:FeatBuilder
+addSkill	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^	public void addSkill(CreatureSkill skill) {$/;"	m	class:CreatureMiscBuilder
+addSpecialAttack	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	public void addSpecialAttack(CreatureAbility specialAttack) {$/;"	m	class:CreatureOffensesBuilder
+addSpecialQuality	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	public void addSpecialQuality(CreatureAbility specialQuality) {$/;"	m	class:CreatureOffensesBuilder
+addSpeed	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void addSpeed(CreatureSpeed speed) {$/;"	m	class:CreatureBuilder
+addSpeed	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void addSpeed(String typ, int rate) {$/;"	m	class:CreatureBuilder
+addSubtype	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void addSubtype(String subtype) {$/;"	m	class:CreatureBuilder
+addTag	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	public void addTag(String tag) {$/;"	m	class:FeatBuilder
+advancement	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private String									advancement;$/;"	f	class:Creature	file:
+advancement	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private String									advancement;$/;"	f	class:CreatureBuilder	file:
+advancementPanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextArea								advancementPanel;$/;"	f	class:CreatureEditor	file:
+alignment	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^	private String							alignment;$/;"	f	class:CreatureMisc	file:
+alignment	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^	private String							alignment;$/;"	f	class:CreatureMiscBuilder	file:
+alignment	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextField								alignment;$/;"	f	class:CreatureEditor	file:
+attack	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	private String							attack;$/;"	f	class:CreatureOffenses	file:
+attack	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	private String							attack;$/;"	f	class:CreatureOffensesBuilder	file:
+attackStats	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	private CreatureAttack					attackStats;$/;"	f	class:CreatureOffenses	file:
+attackStats	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	private CreatureAttack					attackStats;$/;"	f	class:CreatureOffensesBuilder	file:
+baseAttackBonus	src/main/java/bjc/dbeditor/data/creatures/CreatureAttack.java	/^	private int	baseAttackBonus;$/;"	f	class:CreatureAttack	file:
+baseAttackField	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								baseAttackField;$/;"	f	class:CreatureEditor	file:
+baseCreature	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private Creature								baseCreature;$/;"	f	class:CreatureEditor	file:
+baseFeat	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private Feat						baseFeat;$/;"	f	class:FeatEditor	file:
+baseFeatList	src/main/java/bjc/dbeditor/gui/feat/FeatBrowser.java	/^	private IList<String>		baseFeatList;$/;"	f	class:FeatBrowser	file:
+baseTag	src/main/java/bjc/dbeditor/gui/feat/FeatTagEditor.java	/^	private FeatTag				baseTag;$/;"	f	class:FeatTagEditor	file:
+baseTagList	src/main/java/bjc/dbeditor/gui/feat/FeatTagBrowser.java	/^	private IList<String>		baseTagList;$/;"	f	class:FeatTagBrowser	file:
+bjc.dbeditor	src/main/java/bjc/dbeditor/DBMain.java	/^package bjc.dbeditor;$/;"	p
+bjc.dbeditor	src/main/java/bjc/dbeditor/package-info.java	/^package bjc.dbeditor;/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityType.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureAttack.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureDefenses.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureSkill.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureSpeed.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^package bjc.dbeditor.data.creatures;$/;"	p
+bjc.dbeditor.data.creatures	src/main/java/bjc/dbeditor/data/creatures/package-info.java	/^package bjc.dbeditor.data.creatures;/;"	p
+bjc.dbeditor.data.creatures.builders	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^package bjc.dbeditor.data.creatures.builders;$/;"	p
+bjc.dbeditor.data.creatures.builders	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureDefensesBuilder.java	/^package bjc.dbeditor.data.creatures.builders;$/;"	p
+bjc.dbeditor.data.creatures.builders	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^package bjc.dbeditor.data.creatures.builders;$/;"	p
+bjc.dbeditor.data.creatures.builders	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^package bjc.dbeditor.data.creatures.builders;$/;"	p
+bjc.dbeditor.data.creatures.builders	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^package bjc.dbeditor.data.creatures.builders;$/;"	p
+bjc.dbeditor.data.feat	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^package bjc.dbeditor.data.feat;$/;"	p
+bjc.dbeditor.data.feat	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^package bjc.dbeditor.data.feat;$/;"	p
+bjc.dbeditor.data.feat	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^package bjc.dbeditor.data.feat;$/;"	p
+bjc.dbeditor.data.feat	src/main/java/bjc/dbeditor/data/feat/package-info.java	/^package bjc.dbeditor.data.feat;/;"	p
+bjc.dbeditor.db	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^package bjc.dbeditor.db;$/;"	p
+bjc.dbeditor.db	src/main/java/bjc/dbeditor/db/FeatDB.java	/^package bjc.dbeditor.db;$/;"	p
+bjc.dbeditor.db	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^package bjc.dbeditor.db;$/;"	p
+bjc.dbeditor.db	src/main/java/bjc/dbeditor/db/package-info.java	/^package bjc.dbeditor.db;/;"	p
+bjc.dbeditor.gui	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^package bjc.dbeditor.gui;$/;"	p
+bjc.dbeditor.gui	src/main/java/bjc/dbeditor/gui/DBEditorGUI.java	/^package bjc.dbeditor.gui;$/;"	p
+bjc.dbeditor.gui	src/main/java/bjc/dbeditor/gui/package-info.java	/^package bjc.dbeditor.gui;/;"	p
+bjc.dbeditor.gui.components	src/main/java/bjc/dbeditor/gui/components/AbilityEditor.java	/^package bjc.dbeditor.gui.components;$/;"	p
+bjc.dbeditor.gui.components	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^package bjc.dbeditor.gui.components;$/;"	p
+bjc.dbeditor.gui.components	src/main/java/bjc/dbeditor/gui/components/package-info.java	/^package bjc.dbeditor.gui.components;/;"	p
+bjc.dbeditor.gui.feat	src/main/java/bjc/dbeditor/gui/feat/FeatBrowser.java	/^package bjc.dbeditor.gui.feat;$/;"	p
+bjc.dbeditor.gui.feat	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^package bjc.dbeditor.gui.feat;$/;"	p
+bjc.dbeditor.gui.feat	src/main/java/bjc/dbeditor/gui/feat/FeatTagBrowser.java	/^package bjc.dbeditor.gui.feat;$/;"	p
+bjc.dbeditor.gui.feat	src/main/java/bjc/dbeditor/gui/feat/FeatTagEditor.java	/^package bjc.dbeditor.gui.feat;$/;"	p
+buildCreature	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public Creature buildCreature() {$/;"	m	class:CreatureBuilder
+buildDefenses	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureDefensesBuilder.java	/^	public CreatureDefenses buildDefenses() {$/;"	m	class:CreatureDefensesBuilder
+buildFeat	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	public Feat buildFeat() {$/;"	m	class:FeatBuilder
+buildFeat	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private void buildFeat() {$/;"	m	class:FeatEditor	file:
+buildFlavor	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^	public CreatureFlavor buildFlavor() {$/;"	m	class:CreatureFlavorBuilder
+buildMisc	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^	public CreatureMisc buildMisc() {$/;"	m	class:CreatureMiscBuilder
+buildOffenses	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	public CreatureOffenses buildOffenses() {$/;"	m	class:CreatureOffensesBuilder
+challengeRating	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private BigDecimal								challengeRating;$/;"	f	class:Creature	file:
+challengeRating	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private BigDecimal								challengeRating;$/;"	f	class:CreatureBuilder	file:
+charisma	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	private int	charisma;$/;"	f	class:CreatureAbilityScores	file:
+charisma	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								charisma;$/;"	f	class:CreatureEditor	file:
+conn	src/main/java/bjc/dbeditor/DBMain.java	/^	private static Connection conn;$/;"	f	class:DBMain	file:
+constitution	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	private int	constitution;$/;"	f	class:CreatureAbilityScores	file:
+constitution	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								constitution;$/;"	f	class:CreatureEditor	file:
+count	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	private int		count;$/;"	f	class:CreatureHitdieRecord	file:
+cr	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								cr;$/;"	f	class:CreatureEditor	file:
+createFeatFromSet	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static Feat createFeatFromSet(ResultSet featResultSet)$/;"	m	class:FeatDB	file:
+createFeatStatement	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static PreparedStatement	createFeatStatement;$/;"	f	class:FeatDB	file:
+createGUI	src/main/java/bjc/dbeditor/gui/DBEditorGUI.java	/^	public static JFrame createGUI() {$/;"	m	class:DBEditorGUI
+createNamePanel	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private JPanel createNamePanel() {$/;"	m	class:FeatEditor	file:
+createTagStatement	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	private static PreparedStatement	createTagStatement;$/;"	f	class:FeatTagDB	file:
+dbConn	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static Connection			dbConn;$/;"	f	class:CreatureDB	file:
+dbConn	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	private static Connection			dbConn;$/;"	f	class:FeatTagDB	file:
+dbConnection	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static Connection			dbConnection;$/;"	f	class:FeatDB	file:
+defenses	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private CreatureDefenses						defenses;$/;"	f	class:Creature	file:
+defenses	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private CreatureDefenses						defenses;$/;"	f	class:CreatureBuilder	file:
+description	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	private String				description;$/;"	f	class:CreatureAbility	file:
+description	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^	private String	description;$/;"	f	class:CreatureFlavor	file:
+description	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^	private String	description;$/;"	f	class:CreatureFlavorBuilder	file:
+description	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	private String					description;$/;"	f	class:Feat	file:
+description	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	private String					description;$/;"	f	class:FeatBuilder	file:
+description	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^	private String	description;$/;"	f	class:FeatTag	file:
+description	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextArea								description;$/;"	f	class:CreatureEditor	file:
+descriptionInputArea	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private JTextArea					descriptionInputArea;$/;"	f	class:FeatEditor	file:
+dexterity	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	private int	dexterity;$/;"	f	class:CreatureAbilityScores	file:
+dexterity	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								dexterity;$/;"	f	class:CreatureEditor	file:
+disposeConnection	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	public static void disposeConnection() throws SQLException {$/;"	m	class:CreatureDB
+disposeConnection	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	public static void disposeConnection() throws SQLException {$/;"	m	class:FeatDB
+disposeConnection	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	public static void disposeConnection() throws SQLException {$/;"	m	class:FeatTagDB
+doesFeatExist	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	public static boolean doesFeatExist(String featName)$/;"	m	class:FeatDB
+doesTagExist	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	public static boolean doesTagExist(String tagName)$/;"	m	class:FeatTagDB
+ensureConnection	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static void ensureConnection() {$/;"	m	class:FeatDB	file:
+enviroment	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^	private String	enviroment;$/;"	f	class:CreatureFlavor	file:
+enviroment	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^	private String	enviroment;$/;"	f	class:CreatureFlavorBuilder	file:
+enviroment	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextArea								enviroment;$/;"	f	class:CreatureEditor	file:
+equals	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public boolean equals(Object obj) {$/;"	m	class:Creature
+equals	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	public boolean equals(Object obj) {$/;"	m	class:CreatureAbility
+equals	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	public boolean equals(Object obj) {$/;"	m	class:CreatureAbilityScores
+equals	src/main/java/bjc/dbeditor/data/creatures/CreatureAttack.java	/^	public boolean equals(Object obj) {$/;"	m	class:CreatureAttack
+equals	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	public boolean equals(Object obj) {$/;"	m	class:CreatureHitdieRecord
+equals	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^	public boolean equals(Object obj) {$/;"	m	class:CreatureSaves
+equals	src/main/java/bjc/dbeditor/data/creatures/CreatureSkill.java	/^	public boolean equals(Object obj) {$/;"	m	class:CreatureSkill
+equals	src/main/java/bjc/dbeditor/data/creatures/CreatureSpeed.java	/^	public boolean equals(Object obj) {$/;"	m	class:CreatureSpeed
+equals	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public boolean equals(Object obj) {$/;"	m	class:Feat
+equals	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^	public boolean equals(Object obj) {$/;"	m	class:FeatTag
+featModel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private DefaultListModel<String>				featModel;$/;"	f	class:CreatureEditor	file:
+featPrereqListModel	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private DefaultListModel<String>	featPrereqListModel		= new DefaultListModel<>();$/;"	f	class:FeatEditor	file:
+featPrereqs	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	private FunctionalList<String>	featPrereqs;$/;"	f	class:Feat	file:
+featPrereqs	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	private FunctionalList<String>	featPrereqs;$/;"	f	class:FeatBuilder	file:
+feats	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private FunctionalList<String>					feats;$/;"	f	class:Creature	file:
+feats	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private FunctionalList<String>					feats;$/;"	f	class:CreatureBuilder	file:
+flavor	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private CreatureFlavor							flavor;$/;"	f	class:Creature	file:
+flavor	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private CreatureFlavor							flavor;$/;"	f	class:CreatureBuilder	file:
+flavor	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	private String					flavor;$/;"	f	class:Feat	file:
+flavor	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	private String					flavor;$/;"	f	class:FeatBuilder	file:
+flavorInputArea	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private JTextArea					flavorInputArea;$/;"	f	class:FeatEditor	file:
+fortSaveSpinner	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								fortSaveSpinner;$/;"	f	class:CreatureEditor	file:
+fortitude	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^	private int	fortitude;$/;"	f	class:CreatureSaves	file:
+fullAttack	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	private String							fullAttack;$/;"	f	class:CreatureOffenses	file:
+fullAttack	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	private String							fullAttack;$/;"	f	class:CreatureOffensesBuilder	file:
+fullAttack	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextArea								fullAttack;$/;"	f	class:CreatureEditor	file:
+getAbilityScores	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public CreatureAbilityScores getAbilityScores() {$/;"	m	class:Creature
+getAdvancement	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public String getAdvancement() {$/;"	m	class:Creature
+getAlignment	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^	public String getAlignment() {$/;"	m	class:CreatureMisc
+getAttack	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	public String getAttack() {$/;"	m	class:CreatureOffenses
+getAttackStats	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	public CreatureAttack getAttackStats() {$/;"	m	class:CreatureOffenses
+getBaseAttackBonus	src/main/java/bjc/dbeditor/data/creatures/CreatureAttack.java	/^	public int getBaseAttackBonus() {$/;"	m	class:CreatureAttack
+getChallengeRating	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public BigDecimal getChallengeRating() {$/;"	m	class:Creature
+getCharisma	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	public int getCharisma() {$/;"	m	class:CreatureAbilityScores
+getConstitution	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	public int getConstitution() {$/;"	m	class:CreatureAbilityScores
+getCount	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	public int getCount() {$/;"	m	class:CreatureHitdieRecord
+getDefenses	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public CreatureDefenses getDefenses() {$/;"	m	class:Creature
+getDescription	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	public String getDescription() {$/;"	m	class:CreatureAbility
+getDescription	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^	public String getDescription() {$/;"	m	class:CreatureFlavor
+getDescription	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public String getDescription() {$/;"	m	class:Feat
+getDescription	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^	public String getDescription() {$/;"	m	class:FeatTag
+getDexterity	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	public int getDexterity() {$/;"	m	class:CreatureAbilityScores
+getEnviroment	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^	public String getEnviroment() {$/;"	m	class:CreatureFlavor
+getFeatPrereqs	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public IList<String> getFeatPrereqs() {$/;"	m	class:Feat
+getFeats	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public IList<String> getFeats() {$/;"	m	class:Creature
+getFlavor	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public CreatureFlavor getFlavor() {$/;"	m	class:Creature
+getFlavor	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public String getFlavor() {$/;"	m	class:Feat
+getFortitude	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^	public int getFortitude() {$/;"	m	class:CreatureSaves
+getFullAttack	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	public String getFullAttack() {$/;"	m	class:CreatureOffenses
+getGrappleMod	src/main/java/bjc/dbeditor/data/creatures/CreatureAttack.java	/^	public int getGrappleMod() {$/;"	m	class:CreatureAttack
+getHitdice	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public IList<CreatureHitdieRecord> getHitdice() {$/;"	m	class:Creature
+getIntelligence	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	public int getIntelligence() {$/;"	m	class:CreatureAbilityScores
+getLevelAdjustment	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public String getLevelAdjustment() {$/;"	m	class:Creature
+getListCellRendererComponent	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^		public Component getListCellRendererComponent($/;"	m	class:HitdieEditor.HitdieRenderer
+getMiscData	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public CreatureMisc getMiscData() {$/;"	m	class:Creature
+getName	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public String getName() {$/;"	m	class:Creature
+getName	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	public String getName() {$/;"	m	class:CreatureAbility
+getName	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public String getName() {$/;"	m	class:Feat
+getName	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^	public String getName() {$/;"	m	class:FeatTag
+getNaturalArmor	src/main/java/bjc/dbeditor/data/creatures/CreatureDefenses.java	/^	public int getNaturalArmor() {$/;"	m	class:CreatureDefenses
+getNonFeatPrereqs	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public IList<String> getNonFeatPrereqs() {$/;"	m	class:Feat
+getNotes	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^	public String getNotes() {$/;"	m	class:CreatureFlavor
+getOffenses	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public CreatureOffenses getOffenses() {$/;"	m	class:Creature
+getOrganization	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^	public String getOrganization() {$/;"	m	class:CreatureFlavor
+getRate	src/main/java/bjc/dbeditor/data/creatures/CreatureSpeed.java	/^	public int getRate() {$/;"	m	class:CreatureSpeed
+getReflex	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^	public int getReflex() {$/;"	m	class:CreatureSaves
+getSaves	src/main/java/bjc/dbeditor/data/creatures/CreatureDefenses.java	/^	public CreatureSaves getSaves() {$/;"	m	class:CreatureDefenses
+getSize	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public CreatureSize getSize() {$/;"	m	class:Creature
+getSize	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	public int getSize() {$/;"	m	class:CreatureHitdieRecord
+getSkillBonus	src/main/java/bjc/dbeditor/data/creatures/CreatureSkill.java	/^	public int getSkillBonus() {$/;"	m	class:CreatureSkill
+getSkillName	src/main/java/bjc/dbeditor/data/creatures/CreatureSkill.java	/^	public String getSkillName() {$/;"	m	class:CreatureSkill
+getSkills	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^	public IList<CreatureSkill> getSkills() {$/;"	m	class:CreatureMisc
+getSource	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^	public String getSource() {$/;"	m	class:CreatureMisc
+getSource	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public String getSource() {$/;"	m	class:Feat
+getSpecialAttacks	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	public IList<CreatureAbility> getSpecialAttacks() {$/;"	m	class:CreatureOffenses
+getSpecialQualities	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	public IList<CreatureAbility> getSpecialQualities() {$/;"	m	class:CreatureOffenses
+getSpeeds	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public IList<CreatureSpeed> getSpeeds() {$/;"	m	class:Creature
+getSpellResistance	src/main/java/bjc/dbeditor/data/creatures/CreatureDefenses.java	/^	public int getSpellResistance() {$/;"	m	class:CreatureDefenses
+getStrength	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	public int getStrength() {$/;"	m	class:CreatureAbilityScores
+getSubtypes	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public IList<String> getSubtypes() {$/;"	m	class:Creature
+getTags	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public IList<String> getTags() {$/;"	m	class:Feat
+getTreasure	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^	public String getTreasure() {$/;"	m	class:CreatureMisc
+getType	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public CreatureType getType() {$/;"	m	class:Creature
+getType	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	public CreatureAbilityType getType() {$/;"	m	class:CreatureAbility
+getType	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	public String getType() {$/;"	m	class:CreatureHitdieRecord
+getType	src/main/java/bjc/dbeditor/data/creatures/CreatureSpeed.java	/^	public String getType() {$/;"	m	class:CreatureSpeed
+getWill	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^	public int getWill() {$/;"	m	class:CreatureSaves
+getWisdom	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	public int getWisdom() {$/;"	m	class:CreatureAbilityScores
+grappleField	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								grappleField;$/;"	f	class:CreatureEditor	file:
+grappleMod	src/main/java/bjc/dbeditor/data/creatures/CreatureAttack.java	/^	private int	grappleMod;$/;"	f	class:CreatureAttack	file:
+hasFeatPrereq	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public boolean hasFeatPrereq(String featName) {$/;"	m	class:Feat
+hasTag	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public boolean hasTag(String tagName) {$/;"	m	class:Feat
+hashCode	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public int hashCode() {$/;"	m	class:Creature
+hashCode	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	public int hashCode() {$/;"	m	class:CreatureAbility
+hashCode	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	public int hashCode() {$/;"	m	class:CreatureAbilityScores
+hashCode	src/main/java/bjc/dbeditor/data/creatures/CreatureAttack.java	/^	public int hashCode() {$/;"	m	class:CreatureAttack
+hashCode	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	public int hashCode() {$/;"	m	class:CreatureHitdieRecord
+hashCode	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^	public int hashCode() {$/;"	m	class:CreatureSaves
+hashCode	src/main/java/bjc/dbeditor/data/creatures/CreatureSkill.java	/^	public int hashCode() {$/;"	m	class:CreatureSkill
+hashCode	src/main/java/bjc/dbeditor/data/creatures/CreatureSpeed.java	/^	public int hashCode() {$/;"	m	class:CreatureSpeed
+hashCode	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public int hashCode() {$/;"	m	class:Feat
+hashCode	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^	public int hashCode() {$/;"	m	class:FeatTag
+hitdice	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private FunctionalList<CreatureHitdieRecord>	hitdice;$/;"	f	class:Creature	file:
+hitdice	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private FunctionalList<CreatureHitdieRecord>	hitdice;$/;"	f	class:CreatureBuilder	file:
+hitdiceModel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private DefaultListModel<CreatureHitdieRecord>	hitdiceModel;$/;"	f	class:CreatureEditor	file:
+hitdiceModel	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^	public final DefaultListModel<CreatureHitdieRecord>	hitdiceModel;$/;"	f	class:HitdieEditor
+initConnection	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	public static void initConnection(Connection conn)$/;"	m	class:CreatureDB
+initConnection	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	public static void initConnection(Connection conn)$/;"	m	class:FeatDB
+initConnection	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	public static void initConnection(Connection conn)$/;"	m	class:FeatTagDB
+initStatements	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static void initStatements() throws SQLException {$/;"	m	class:CreatureDB	file:
+initStatements	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static void initStatements() throws SQLException {$/;"	m	class:FeatDB	file:
+initStatements	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	private static void initStatements() throws SQLException {$/;"	m	class:FeatTagDB	file:
+intelligence	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	private int	intelligence;$/;"	f	class:CreatureAbilityScores	file:
+intelligence	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								intelligence;$/;"	f	class:CreatureEditor	file:
+la	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextField								la;$/;"	f	class:CreatureEditor	file:
+levelAdjustment	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private String									levelAdjustment;$/;"	f	class:Creature	file:
+levelAdjustment	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private String									levelAdjustment;$/;"	f	class:CreatureBuilder	file:
+listCreatureNames	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	public static IList<String> listCreatureNames() throws SQLException {$/;"	m	class:CreatureDB
+listCreatureNamesStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	listCreatureNamesStatement;$/;"	f	class:CreatureDB	file:
+listFeatNames	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	public static IList<String> listFeatNames() throws SQLException {$/;"	m	class:FeatDB
+listFeatNamesStatement	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static PreparedStatement	listFeatNamesStatement;$/;"	f	class:FeatDB	file:
+listFeatStatement	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static PreparedStatement	listFeatStatement;$/;"	f	class:FeatDB	file:
+listFeats	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	public static IList<Feat> listFeats() throws SQLException {$/;"	m	class:FeatDB
+listTagNames	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	public static IList<String> listTagNames() throws SQLException {$/;"	m	class:FeatTagDB
+listTagNamesStatement	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	private static PreparedStatement	listTagNamesStatement;$/;"	f	class:FeatTagDB	file:
+listTagStatement	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	private static PreparedStatement	listTagStatement;$/;"	f	class:FeatTagDB	file:
+listTags	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	public static IList<FeatTag> listTags() throws SQLException {$/;"	m	class:FeatTagDB
+lookupCreatureByName	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	public static Creature lookupCreatureByName(String name)$/;"	m	class:CreatureDB
+lookupCreatureStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	lookupCreatureStatement;$/;"	f	class:CreatureDB	file:
+lookupDependantAbilitiesStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	lookupDependantAbilitiesStatement;$/;"	f	class:CreatureDB	file:
+lookupDependantFeatsStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	lookupDependantFeatsStatement;$/;"	f	class:CreatureDB	file:
+lookupDependantFeatsStatement	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static PreparedStatement	lookupDependantFeatsStatement;$/;"	f	class:FeatDB	file:
+lookupDependantHitdiceStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	lookupDependantHitdiceStatement;$/;"	f	class:CreatureDB	file:
+lookupDependantSkillsStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	lookupDependantSkillsStatement;$/;"	f	class:CreatureDB	file:
+lookupDependantSpeedsStatement	src/main/java/bjc/dbeditor/db/CreatureDB.java	/^	private static PreparedStatement	lookupDependantSpeedsStatement;$/;"	f	class:CreatureDB	file:
+lookupDependantTagsStatement	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static PreparedStatement	lookupDependantTagsStatement;$/;"	f	class:FeatDB	file:
+lookupFeat	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	public static Feat lookupFeat(String featName) throws SQLException {$/;"	m	class:FeatDB
+lookupFeatNameStatement	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static PreparedStatement	lookupFeatNameStatement;$/;"	f	class:FeatDB	file:
+lookupFeatStatement	src/main/java/bjc/dbeditor/db/FeatDB.java	/^	private static PreparedStatement	lookupFeatStatement;$/;"	f	class:FeatDB	file:
+lookupTag	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	public static FeatTag lookupTag(String tagName) throws SQLException {$/;"	m	class:FeatTagDB
+lookupTagStatement	src/main/java/bjc/dbeditor/db/FeatTagDB.java	/^	private static PreparedStatement	lookupTagStatement;$/;"	f	class:FeatTagDB	file:
+main	src/main/java/bjc/dbeditor/DBMain.java	/^	public static void main(String[] args) {$/;"	m	class:DBMain
+miscData	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private CreatureMisc							miscData;$/;"	f	class:Creature	file:
+miscData	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private CreatureMisc							miscData;$/;"	f	class:CreatureBuilder	file:
+name	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private String									name;$/;"	f	class:Creature	file:
+name	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	private String				name;$/;"	f	class:CreatureAbility	file:
+name	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private String									name;$/;"	f	class:CreatureBuilder	file:
+name	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	private String					name;$/;"	f	class:Feat	file:
+name	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	private String					name;$/;"	f	class:FeatBuilder	file:
+name	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^	private String	name;$/;"	f	class:FeatTag	file:
+nameField	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextField								nameField;$/;"	f	class:CreatureEditor	file:
+nameInputField	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private JTextField					nameInputField;$/;"	f	class:FeatEditor	file:
+natArmorSpinner	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								natArmorSpinner;$/;"	f	class:CreatureEditor	file:
+naturalArmor	src/main/java/bjc/dbeditor/data/creatures/CreatureDefenses.java	/^	private int				naturalArmor;$/;"	f	class:CreatureDefenses	file:
+naturalArmor	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureDefensesBuilder.java	/^	private int				naturalArmor;$/;"	f	class:CreatureDefensesBuilder	file:
+nonFeatPrereqListModel	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private DefaultListModel<String>	nonFeatPrereqListModel	= new DefaultListModel<>();$/;"	f	class:FeatEditor	file:
+nonFeatPrereqs	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	private FunctionalList<String>	nonFeatPrereqs;$/;"	f	class:Feat	file:
+nonFeatPrereqs	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	private FunctionalList<String>	nonFeatPrereqs;$/;"	f	class:FeatBuilder	file:
+normalAttack	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextArea								normalAttack;$/;"	f	class:CreatureEditor	file:
+notes	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^	private String	notes;$/;"	f	class:CreatureFlavor	file:
+notes	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^	private String	notes;$/;"	f	class:CreatureFlavorBuilder	file:
+notes	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextArea								notes;$/;"	f	class:CreatureEditor	file:
+offenses	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private CreatureOffenses						offenses;$/;"	f	class:Creature	file:
+offenses	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private CreatureOffenses						offenses;$/;"	f	class:CreatureBuilder	file:
+organization	src/main/java/bjc/dbeditor/data/creatures/CreatureFlavor.java	/^	private String	organization;$/;"	f	class:CreatureFlavor	file:
+organization	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^	private String	organization;$/;"	f	class:CreatureFlavorBuilder	file:
+organization	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextArea								organization;$/;"	f	class:CreatureEditor	file:
+parentFrame	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private JInternalFrame				parentFrame;$/;"	f	class:FeatEditor	file:
+rate	src/main/java/bjc/dbeditor/data/creatures/CreatureSpeed.java	/^	private int		rate;$/;"	f	class:CreatureSpeed	file:
+refFrame	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private SimpleInternalFrame						refFrame;$/;"	f	class:CreatureEditor	file:
+reflex	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^	private int	reflex;$/;"	f	class:CreatureSaves	file:
+reflexSaveSpinner	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								reflexSaveSpinner;$/;"	f	class:CreatureEditor	file:
+saves	src/main/java/bjc/dbeditor/data/creatures/CreatureDefenses.java	/^	private CreatureSaves	saves;$/;"	f	class:CreatureDefenses	file:
+saves	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureDefensesBuilder.java	/^	private CreatureSaves	saves;$/;"	f	class:CreatureDefensesBuilder	file:
+serialVersionUID	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private static final long						serialVersionUID	= -889902229115548570L;$/;"	f	class:CreatureEditor	file:
+serialVersionUID	src/main/java/bjc/dbeditor/gui/components/AbilityEditor.java	/^	private static final long						serialVersionUID	= 2155181373077752917L;$/;"	f	class:AbilityEditor	file:
+serialVersionUID	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^		private static final long serialVersionUID = -6874538320973247325L;$/;"	f	class:HitdieEditor.HitdieRenderer	file:
+serialVersionUID	src/main/java/bjc/dbeditor/gui/components/HitdieEditor.java	/^	private static final long							serialVersionUID	= -8817598625503039790L;$/;"	f	class:HitdieEditor	file:
+serialVersionUID	src/main/java/bjc/dbeditor/gui/feat/FeatBrowser.java	/^	private static final long	serialVersionUID	= -2529817913539767911L;$/;"	f	class:FeatBrowser	file:
+serialVersionUID	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private static final long			serialVersionUID		= -4016698246942706462L;$/;"	f	class:FeatEditor	file:
+serialVersionUID	src/main/java/bjc/dbeditor/gui/feat/FeatTagBrowser.java	/^	private static final long	serialVersionUID	= -2529817913539767911L;$/;"	f	class:FeatTagBrowser	file:
+serialVersionUID	src/main/java/bjc/dbeditor/gui/feat/FeatTagEditor.java	/^	private static final long	serialVersionUID	= -1072275991676239181L;$/;"	f	class:FeatTagEditor	file:
+setAbilityScores	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setAbilityScores(CreatureAbilityScores scores) {$/;"	m	class:CreatureBuilder
+setAdvancement	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setAdvancement(String advancement) {$/;"	m	class:CreatureBuilder
+setAlignment	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^	public void setAlignment(String alignment) {$/;"	m	class:CreatureMiscBuilder
+setAttack	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	public void setAttack(String attack) {$/;"	m	class:CreatureOffensesBuilder
+setAttackStats	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	public void setAttackStats(CreatureAttack attackStats) {$/;"	m	class:CreatureOffensesBuilder
+setChallengeRating	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setChallengeRating(BigDecimal challengeRating) {$/;"	m	class:CreatureBuilder
+setDefenses	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setDefenses(CreatureDefenses defenses) {$/;"	m	class:CreatureBuilder
+setDescription	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^	public void setDescription(String description) {$/;"	m	class:CreatureFlavorBuilder
+setDescription	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	public void setDescription(String description) {$/;"	m	class:FeatBuilder
+setEnviroment	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^	public void setEnviroment(String enviroment) {$/;"	m	class:CreatureFlavorBuilder
+setFlavor	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setFlavor(CreatureFlavor flavor) {$/;"	m	class:CreatureBuilder
+setFlavor	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	public void setFlavor(String flavor) {$/;"	m	class:FeatBuilder
+setFullAttack	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	public void setFullAttack(String fullAttack) {$/;"	m	class:CreatureOffensesBuilder
+setLevelAdjustment	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setLevelAdjustment(String levelAdjustment) {$/;"	m	class:CreatureBuilder
+setMiscData	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setMiscData(CreatureMisc miscData) {$/;"	m	class:CreatureBuilder
+setName	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setName(String name) {$/;"	m	class:CreatureBuilder
+setName	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	public void setName(String name) {$/;"	m	class:FeatBuilder
+setNaturalArmor	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureDefensesBuilder.java	/^	public void setNaturalArmor(int naturalArmor) {$/;"	m	class:CreatureDefensesBuilder
+setNotes	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^	public void setNotes(String notes) {$/;"	m	class:CreatureFlavorBuilder
+setOffenses	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setOffenses(CreatureOffenses offenses) {$/;"	m	class:CreatureBuilder
+setOrganization	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureFlavorBuilder.java	/^	public void setOrganization(String organization) {$/;"	m	class:CreatureFlavorBuilder
+setSaves	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureDefensesBuilder.java	/^	public void setSaves(CreatureSaves saves) {$/;"	m	class:CreatureDefensesBuilder
+setSize	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setSize(CreatureSize size) {$/;"	m	class:CreatureBuilder
+setSource	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^	public void setSource(String source) {$/;"	m	class:CreatureMiscBuilder
+setSource	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	public void setSource(String source) {$/;"	m	class:FeatBuilder
+setSpellResistance	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureDefensesBuilder.java	/^	public void setSpellResistance(int spellResistance) {$/;"	m	class:CreatureDefensesBuilder
+setTreasure	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^	public void setTreasure(String treasure) {$/;"	m	class:CreatureMiscBuilder
+setType	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	public void setType(CreatureType type) {$/;"	m	class:CreatureBuilder
+setupAbilityScorePanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupAbilityScorePanel() {$/;"	m	class:CreatureEditor	file:
+setupCRLAAdvancementPanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupCRLAAdvancementPanel() {$/;"	m	class:CreatureEditor	file:
+setupDefensePanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupDefensePanel() {$/;"	m	class:CreatureEditor	file:
+setupDetailPanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupDetailPanel() {$/;"	m	class:CreatureEditor	file:
+setupFeatPanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupFeatPanel() {$/;"	m	class:CreatureEditor	file:
+setupFlavorPanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupFlavorPanel() {$/;"	m	class:CreatureEditor	file:
+setupGUI	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private void setupGUI() {$/;"	m	class:CreatureEditor	file:
+setupGUI	src/main/java/bjc/dbeditor/gui/feat/FeatBrowser.java	/^	private void setupGUI() {$/;"	m	class:FeatBrowser	file:
+setupGUI	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private void setupGUI() {$/;"	m	class:FeatEditor	file:
+setupGUI	src/main/java/bjc/dbeditor/gui/feat/FeatTagBrowser.java	/^	private void setupGUI() {$/;"	m	class:FeatTagBrowser	file:
+setupGUI	src/main/java/bjc/dbeditor/gui/feat/FeatTagEditor.java	/^	private void setupGUI() {$/;"	m	class:FeatTagEditor	file:
+setupHitdiePanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupHitdiePanel() {$/;"	m	class:CreatureEditor	file:
+setupNamePanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupNamePanel() {$/;"	m	class:CreatureEditor	file:
+setupOffensePanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupOffensePanel() {$/;"	m	class:CreatureEditor	file:
+setupSizeTypePanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupSizeTypePanel() {$/;"	m	class:CreatureEditor	file:
+setupSkillPanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupSkillPanel() {$/;"	m	class:CreatureEditor	file:
+setupSpeedPanel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JPanel setupSpeedPanel() {$/;"	m	class:CreatureEditor	file:
+size	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private CreatureSize							size;$/;"	f	class:Creature	file:
+size	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	private int		size;$/;"	f	class:CreatureHitdieRecord	file:
+size	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private CreatureSize							size;$/;"	f	class:CreatureBuilder	file:
+sizePicker	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JComboBox<CreatureSize>					sizePicker;$/;"	f	class:CreatureEditor	file:
+skillBonus	src/main/java/bjc/dbeditor/data/creatures/CreatureSkill.java	/^	private int		skillBonus;$/;"	f	class:CreatureSkill	file:
+skillModel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private DefaultListModel<CreatureSkill>			skillModel;$/;"	f	class:CreatureEditor	file:
+skillName	src/main/java/bjc/dbeditor/data/creatures/CreatureSkill.java	/^	private String	skillName;$/;"	f	class:CreatureSkill	file:
+skills	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^	private FunctionalList<CreatureSkill>	skills;$/;"	f	class:CreatureMisc	file:
+skills	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^	private FunctionalList<CreatureSkill>	skills;$/;"	f	class:CreatureMiscBuilder	file:
+source	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^	private String							source;$/;"	f	class:CreatureMisc	file:
+source	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^	private String							source;$/;"	f	class:CreatureMiscBuilder	file:
+source	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	private String					source;$/;"	f	class:Feat	file:
+source	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	private String					source;$/;"	f	class:FeatBuilder	file:
+source	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextArea								source;$/;"	f	class:CreatureEditor	file:
+sourceInputArea	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private JTextArea					sourceInputArea;$/;"	f	class:FeatEditor	file:
+specialAttacks	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	private FunctionalList<CreatureAbility>	specialAttacks;$/;"	f	class:CreatureOffenses	file:
+specialAttacks	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	private FunctionalList<CreatureAbility>	specialAttacks;$/;"	f	class:CreatureOffensesBuilder	file:
+specialAttacks	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private DefaultListModel<CreatureAbility>		specialAttacks;$/;"	f	class:CreatureEditor	file:
+specialQualities	src/main/java/bjc/dbeditor/data/creatures/CreatureOffenses.java	/^	private FunctionalList<CreatureAbility>	specialQualities;$/;"	f	class:CreatureOffenses	file:
+specialQualities	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureOffensesBuilder.java	/^	private FunctionalList<CreatureAbility>	specialQualities;$/;"	f	class:CreatureOffensesBuilder	file:
+specialQualities	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private DefaultListModel<CreatureAbility>		specialQualities;$/;"	f	class:CreatureEditor	file:
+speeds	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private FunctionalList<CreatureSpeed>			speeds;$/;"	f	class:Creature	file:
+speeds	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private FunctionalList<CreatureSpeed>			speeds;$/;"	f	class:CreatureBuilder	file:
+speeds	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private DefaultListModel<CreatureSpeed>			speeds;$/;"	f	class:CreatureEditor	file:
+spellResSpinner	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								spellResSpinner;$/;"	f	class:CreatureEditor	file:
+spellResistance	src/main/java/bjc/dbeditor/data/creatures/CreatureDefenses.java	/^	private int				spellResistance;$/;"	f	class:CreatureDefenses	file:
+spellResistance	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureDefensesBuilder.java	/^	private int				spellResistance;$/;"	f	class:CreatureDefensesBuilder	file:
+strength	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	private int	strength;$/;"	f	class:CreatureAbilityScores	file:
+strength	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								strength;$/;"	f	class:CreatureEditor	file:
+stringifyScore	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	private static String stringifyScore(int score) {$/;"	m	class:CreatureAbilityScores	file:
+subtypeModel	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private DefaultListModel<String>				subtypeModel;$/;"	f	class:CreatureEditor	file:
+subtypes	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private FunctionalList<String>					subtypes;$/;"	f	class:Creature	file:
+subtypes	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private FunctionalList<String>					subtypes;$/;"	f	class:CreatureBuilder	file:
+tagListModel	src/main/java/bjc/dbeditor/gui/feat/FeatEditor.java	/^	private DefaultListModel<String>	tagListModel			= new DefaultListModel<>();$/;"	f	class:FeatEditor	file:
+tags	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	private FunctionalList<String>	tags;$/;"	f	class:Feat	file:
+tags	src/main/java/bjc/dbeditor/data/feat/FeatBuilder.java	/^	private FunctionalList<String>	tags;$/;"	f	class:FeatBuilder	file:
+toFullString	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public String toFullString() {$/;"	m	class:Creature
+toFullString	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	public String toFullString() {$/;"	m	class:CreatureAbility
+toFullString	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	public String toFullString() {$/;"	m	class:CreatureHitdieRecord
+toFullString	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public String toFullString() {$/;"	m	class:Feat
+toFullString	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^	public String toFullString() {$/;"	m	class:FeatTag
+toShortString	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityType.java	/^	public String toShortString() {$/;"	m	class:CreatureAbilityType
+toString	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	public String toString() {$/;"	m	class:Creature
+toString	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	public String toString() {$/;"	m	class:CreatureAbility
+toString	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	public String toString() {$/;"	m	class:CreatureAbilityScores
+toString	src/main/java/bjc/dbeditor/data/creatures/CreatureAttack.java	/^	public String toString() {$/;"	m	class:CreatureAttack
+toString	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	public String toString() {$/;"	m	class:CreatureHitdieRecord
+toString	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^	public String toString() {$/;"	m	class:CreatureSaves
+toString	src/main/java/bjc/dbeditor/data/creatures/CreatureSize.java	/^	public String toString() {$/;"	m	class:CreatureSize
+toString	src/main/java/bjc/dbeditor/data/creatures/CreatureSkill.java	/^	public String toString() {$/;"	m	class:CreatureSkill
+toString	src/main/java/bjc/dbeditor/data/creatures/CreatureSpeed.java	/^	public String toString() {$/;"	m	class:CreatureSpeed
+toString	src/main/java/bjc/dbeditor/data/creatures/CreatureType.java	/^	public String toString() {$/;"	m	class:CreatureType
+toString	src/main/java/bjc/dbeditor/data/feat/Feat.java	/^	public String toString() {$/;"	m	class:Feat
+toString	src/main/java/bjc/dbeditor/data/feat/FeatTag.java	/^	public String toString() {$/;"	m	class:FeatTag
+treasure	src/main/java/bjc/dbeditor/data/creatures/CreatureMisc.java	/^	private String							treasure;$/;"	f	class:CreatureMisc	file:
+treasure	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureMiscBuilder.java	/^	private String							treasure;$/;"	f	class:CreatureMiscBuilder	file:
+treasure	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JTextArea								treasure;$/;"	f	class:CreatureEditor	file:
+type	src/main/java/bjc/dbeditor/data/creatures/Creature.java	/^	private CreatureType							type;$/;"	f	class:Creature	file:
+type	src/main/java/bjc/dbeditor/data/creatures/CreatureAbility.java	/^	private CreatureAbilityType	type;$/;"	f	class:CreatureAbility	file:
+type	src/main/java/bjc/dbeditor/data/creatures/CreatureHitdieRecord.java	/^	private String	type;$/;"	f	class:CreatureHitdieRecord	file:
+type	src/main/java/bjc/dbeditor/data/creatures/CreatureSpeed.java	/^	private String	type;$/;"	f	class:CreatureSpeed	file:
+type	src/main/java/bjc/dbeditor/data/creatures/builders/CreatureBuilder.java	/^	private CreatureType							type;$/;"	f	class:CreatureBuilder	file:
+typePicker	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JComboBox<CreatureType>					typePicker;$/;"	f	class:CreatureEditor	file:
+will	src/main/java/bjc/dbeditor/data/creatures/CreatureSaves.java	/^	private int	will;$/;"	f	class:CreatureSaves	file:
+willSaveSpinner	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								willSaveSpinner;$/;"	f	class:CreatureEditor	file:
+windowClosing	src/main/java/bjc/dbeditor/DBMain.java	/^		public void windowClosing(WindowEvent e) {$/;"	m	class:DBMain.ResourceDisposalListener
+wisdom	src/main/java/bjc/dbeditor/data/creatures/CreatureAbilityScores.java	/^	private int	wisdom;$/;"	f	class:CreatureAbilityScores	file:
+wisdom	src/main/java/bjc/dbeditor/gui/CreatureEditor.java	/^	private JSpinner								wisdom;$/;"	f	class:CreatureEditor	file:
