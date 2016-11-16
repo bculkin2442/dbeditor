@@ -20,7 +20,11 @@ import bjc.utils.gui.panels.SimpleSpinnerPanel;
 
 import bjc.dbeditor.data.creatures.CreatureHitdieRecord;
 
+/**
+ * An GUI component for editing hitdie records
+ */
 public class HitdieEditor extends JPanel {
+		// List renderer for hitdie
 		private final class HitdieRenderer extends JLabel
 						implements ListCellRenderer<CreatureHitdieRecord> {
 						private static final long serialVersionUID = -6874538320973247325L;
@@ -34,8 +38,10 @@ public class HitdieEditor extends JPanel {
 										JList<? extends CreatureHitdieRecord> list,
 										CreatureHitdieRecord value, int index, boolean isSelected,
 										boolean cellHasFocus) {
+								// Call the right toString method
 								setText(value.toFullString());
 
+								// Properly format background
 								if (isSelected) {
 										setBackground(list.getSelectionBackground());
 										setForeground(list.getSelectionForeground());
@@ -49,6 +55,7 @@ public class HitdieEditor extends JPanel {
 		}
 
 		private static final long							serialVersionUID	= -8817598625503039790L;
+		// The model for holding hitdie
 		public final DefaultListModel<CreatureHitdieRecord>	hitdiceModel;
 
 		public HitdieEditor(IList<CreatureHitdieRecord> baseHitdie) {
