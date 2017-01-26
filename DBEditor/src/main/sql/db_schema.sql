@@ -122,7 +122,7 @@ create table Monster_feats (
 );
 
 create table Monster_hitdice (
-	monsterid varchar(255),
+	monsterid int,
 	source varchar(255),
 	count int,
 	amount int,
