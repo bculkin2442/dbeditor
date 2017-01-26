@@ -28,8 +28,7 @@ public class FeatDB {
 
 	private static PreparedStatement	lookupFeatStatement;
 
-	public static void initConnection(Connection conn)
-			throws SQLException {
+	public static void initConnection(Connection conn) throws SQLException {
 		dbConnection = conn;
 
 		initStatements();
@@ -50,8 +49,7 @@ public class FeatDB {
 
 		for (int i : addDependantTagStatement.executeBatch()) {
 			if (i < 1) {
-				throw new IllegalStateException(
-						"Error: Tags not added succesfully.");
+				throw new IllegalStateException("Error: Tags not added succesfully.");
 			}
 		}
 
@@ -64,8 +62,7 @@ public class FeatDB {
 
 		for (int i : addDependantFeatStatement.executeBatch()) {
 			if (i < 1) {
-				throw new IllegalStateException(
-						"Error: Prerequisite feats not added succesfully.");
+				throw new IllegalStateException("Error: Prerequisite feats not added succesfully.");
 			}
 		}
 
@@ -105,14 +102,12 @@ public class FeatDB {
 
 	}
 
-	public static boolean doesFeatExist(String featName)
-			throws SQLException {
+	public static boolean doesFeatExist(String featName) throws SQLException {
 		ensureConnection();
 
 		lookupFeatNameStatement.setString(1, featName);
 
 		try (ResultSet featSet = lookupFeatNameStatement.executeQuery()) {
-
 			if (featSet.next() == true) {
 				return featName.equals(featSet.getString("name"));
 			}
@@ -122,12 +117,12 @@ public class FeatDB {
 	}
 
 	private static void initStatements() throws SQLException {
-		createFeatStatement = dbConnection
-				.prepareStatement("INSERT INTO feats "
+		createFeatStatement = dbConnection.prepareStatement(
+				"INSERT INTO feats "
 						+ "(name, prereq_nonfeats, description, flavor, source)"
 						+ " VALUES (?, ?, ?, ?, ?)");
-		lookupFeatNameStatement = dbConnection
-				.prepareStatement("SELECT name FROM feats WHERE name = ?");
+		lookupFeatNameStatement = dbConnection.prepareStatement(
+				"SELECT name FROM feats WHERE name = ?");
 		listFeatStatement = dbConnection.prepareStatement(
 				"SELECT name, prereq_nonfeats, description, flavor, source"
 						+ " FROM feats ");

@@ -12,14 +12,14 @@ import bjc.dbeditor.data.feat.FeatTag;
 
 public class FeatTagDB {
 	private static Connection			dbConn;
+
 	private static PreparedStatement	listTagStatement;
 	private static PreparedStatement	lookupTagStatement;
 	private static PreparedStatement	createTagStatement;
 
 	private static PreparedStatement	listTagNamesStatement;
 
-	public static boolean addFeatTag(FeatTag tagToAdd)
-			throws SQLException {
+	public static boolean addFeatTag(FeatTag tagToAdd) throws SQLException {
 		createTagStatement.setString(1, tagToAdd.getName());
 		createTagStatement.setString(2, tagToAdd.getDescription());
 
@@ -34,20 +34,18 @@ public class FeatTagDB {
 		return updateSucceded;
 	}
 
-	public static void initConnection(Connection conn)
-			throws SQLException {
+	public static void initConnection(Connection conn) throws SQLException {
 		dbConn = conn;
 
 		initStatements();
 	}
 
 	public static void disposeConnection() throws SQLException {
-
 		listTagNamesStatement.close();
+
 		createTagStatement.close();
 		lookupTagStatement.close();
 		listTagStatement.close();
-
 	}
 
 	private static void initStatements() throws SQLException {
@@ -57,6 +55,7 @@ public class FeatTagDB {
 				"SELECT name, description FROM feattags WHERE name = ?");
 		createTagStatement = dbConn.prepareStatement(
 				"INSERT INTO feattags (name, description) VALUES (?, ?)");
+
 		listTagNamesStatement = dbConn.prepareStatement(
 				"SELECT name FROM feattags ORDER BY name");
 	}
@@ -67,8 +66,7 @@ public class FeatTagDB {
 		ResultSet tagSet = listTagStatement.executeQuery();
 
 		while (tagSet.next() == true) {
-			tagList.add(new FeatTag(tagSet.getString("name"),
-					tagSet.getString("description")));
+			tagList.add(new FeatTag(tagSet.getString("name"), tagSet.getString("description")));
 		}
 
 		tagSet.close();
@@ -90,8 +88,7 @@ public class FeatTagDB {
 		return tagNames;
 	}
 
-	public static boolean doesTagExist(String tagName)
-			throws SQLException {
+	public static boolean doesTagExist(String tagName) throws SQLException {
 		lookupTagStatement.setString(1, tagName);
 
 		try (ResultSet query = lookupTagStatement.executeQuery()) {
@@ -108,8 +105,7 @@ public class FeatTagDB {
 
 		try (ResultSet tagSet = lookupTagStatement.executeQuery()) {
 			if (tagSet.next()) {
-				return new FeatTag(tagSet.getString("name"),
-						tagSet.getString("description"));
+				return new FeatTag(tagSet.getString("name"), tagSet.getString("description"));
 			}
 
 			return null;
