@@ -46,12 +46,12 @@ create type racetype as enum (
 	'outsider', 'plant', 'undead', 'vermin'
 );
 
-create type speed (
+create type speed as (
 	rate varchar(255),
 	rate int
 );
 
-create type skill (
+create type skill as (
 	name varchar(255),
 	bonus int
 );
@@ -125,7 +125,7 @@ create table Monster_hitdice (
 	monsterid varchar(255),
 	source varchar(255),
 	count int,
-	dicesize int,
+	amount int,
 	primary key(monsterid),
 	foreign key(monsterid) references Monsters(id)
 );
