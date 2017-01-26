@@ -47,7 +47,7 @@ create type racetype as enum (
 );
 
 create type speed (
-	'type' varchar(255),
+	rate varchar(255),
 	rate int
 );
 
@@ -56,7 +56,7 @@ create type skill (
 	bonus int
 );
 
-create type 'size' as enum (
+create type objectsize as enum (
 	'fine', 'diminutive', 'tiny', 'small', 'medium',
 	'large','huge', 'gargantuan', 'colossal'
 );
@@ -64,19 +64,19 @@ create type 'size' as enum (
 create table Abilities (
 	id serial,
 	name varchar(255),
-	'type' abilitytype,
+	class abilitytype,
 	description text,
 	primary key(id)
 );
 
 create index Abilities_name on Abilities(name);
-create index Abilities_typedname on Abilities(name, 'type');
+create index Abilities_typedname on Abilities(name, class);
 
 create table Monsters (
 	id serial,
 	name varchar(255),
-	'size' 'size',
-	'type' racetype,
+	sze objectsize,
+	class racetype,
 	subtypes varchar(255) array,
 	natarmor int,
 	sr int,
@@ -125,7 +125,7 @@ create table Monster_hitdice (
 	monsterid varchar(255),
 	source varchar(255),
 	count int,
-	'size' int,
+	dicesize int,
 	primary key(monsterid),
 	foreign key(monsterid) references Monsters(id)
 );
