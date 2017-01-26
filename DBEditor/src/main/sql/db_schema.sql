@@ -19,7 +19,7 @@ create table Feats (
 create index Feats_name on Feats(name);
 
 create table Feat_tags (
-	featid varchar(255),
+	featid int,
 	tagname varchar(255),
 	primary key(featid, tagname),
 	foreign key(featid) references Feats(id),
@@ -27,8 +27,8 @@ create table Feat_tags (
 );
 
 create table Feat_prereqs (
-	featid varchar(255),
-	prereqid varchar(255),
+	featid int,
+	prereqid int,
 	primary key(featid, prereqid),
 	foreign key(featid) references Feats(id),
 	foreign key(prereqid) references Feats(id)
@@ -47,7 +47,7 @@ create type racetype as enum (
 );
 
 create type speed as (
-	rate varchar(255),
+	method varchar(255),
 	rate int
 );
 
