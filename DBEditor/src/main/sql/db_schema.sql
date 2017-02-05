@@ -213,4 +213,52 @@ create view Templates_saveadj as
  * select t.id, t.name, t.la from Templates as t where ? = any (t.origin) and ? = t.destinationtype order by la
  */
  
+create table Races (
+	id serial,
+	name varchar(255),
+	sze objectsize
+	class racetype,
+	subtypes varchar(255) array,
+	speeds speed,
+	autolanguages varchar(255) array,
+	bonuslanguages varchar(255) array,
+	abilityscores int array,
+	la int,
+	primary key(id)
+);
 
+create index Races_name on Races(name);
+create index Races_class on Races(class);
+create index Races_la on Races(la);
+
+create view Races_abilityadj as
+	select r.id, r.name,
+	r.abilityscores[1] as strength, r.abilityscores[2] as dexterity, r.abilityscores[3] as constitution,
+	r.abilityscores[4] as intelligence, r.abilityscores[5] as wisdom, r.abilityscores[6] as charisma
+	from Races as r;
+
+create table Race_abilities (
+	raceid int,
+	abilityid int,
+	primary key(raceid, abilityid),
+	foreign key(raceid) references Races(id),
+	foreign key(abilityid) references Abilities(id)
+);
+
+create table Race_hitdice (
+	raceid int,
+	source varchar(255),
+	count int,
+	amount int,
+	primary key(raceid),
+	foreign key(raceid) references Races(id)
+);
+
+create view Races_totalhd as
+	select r.id, r.name, sum(hd.count) as totalhd 
+	from Races as r join Race_hitdice as hd on r.id = hd.raceid
+	group by r.id, hd.raceid;
+
+create view Races_playerdetails as
+	select r.id, r.name, r.la, r.class, hd.totalhd, (r.la + hd.totalhd) as effectivela
+	from Races as r join Races_totalhd as hd on r.id = hd.id;
