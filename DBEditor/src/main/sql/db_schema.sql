@@ -1,27 +1,31 @@
 create table FeatTags (
-	name varchar(255),
-	description text not null,
+	name        varchar(255),
+	description text          not null,
+
 	primary key(name)
 );
 
 create index FeatTags_name on FeatTags(name);
 
 create table Feats (
-	id serial,
-	name varchar(255),
-	flavor text,
-	description text not null,
-	source text,
+	id              serial,
+	name            varchar(255),
+	flavor          text,
+	description     text                not null,
+	source          text,
 	nonfeat_prereqs varchar(255) array,
+
 	primary key(id)
 );
 
 create index Feats_name on Feats(name);
 
 create table Feat_tags (
-	featid int,
+	featid  int,
 	tagname varchar(255),
+
 	primary key(featid, tagname),
+
 	foreign key(featid) references Feats(id),
 	foreign key(tagname) references FeatTags(name)
 );
@@ -40,10 +44,10 @@ create type abilitytype as enum (
 );
 
 create type racetype as enum (
-	'aberration', 'animal', 'construct', 'deathless',
-	'dragon','elemental', 'fey', 'giant',
-	'humanoid', 'magicalbeast', 'monstroushumanoid', 'ooze',
-	'outsider', 'plant', 'undead', 'vermin'
+	'aberration', 'animal',       'construct',         'deathless',
+	'dragon',     'elemental',    'fey',               'giant',
+	'humanoid',   'magicalbeast', 'monstroushumanoid', 'ooze',
+	'outsider',   'plant',        'undead',            'vermin'
 );
 
 create type speed as (
@@ -57,8 +61,9 @@ create type skill as (
 );
 
 create type objectsize as enum (
-	'fine', 'diminutive', 'tiny', 'small', 'medium',
-	'large','huge', 'gargantuan', 'colossal'
+	'fine',  'diminutive', 'tiny',
+	'small', 'medium',     'large',
+	'huge',  'gargantuan', 'colossal'
 );
 
 create table Abilities (
@@ -262,3 +267,5 @@ create view Races_totalhd as
 create view Races_playerdetails as
 	select r.id, r.name, r.la, r.class, hd.totalhd, (r.la + hd.totalhd) as effectivela
 	from Races as r join Races_totalhd as hd on r.id = hd.id;
+	group by m.id, hd.monsterid
+);
