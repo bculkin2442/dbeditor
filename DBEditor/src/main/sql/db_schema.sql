@@ -1,27 +1,71 @@
-create table FeatTags (
+-- ====
+-- Types
+-- ====
+create type abilitytype as enum (
+	'extraordinary', 'inherent', 'psilike',
+	'spelllike', 'supernatural'
+);
+
+create type racetype as enum (
+	'aberration', 'animal',       'construct',         'deathless',
+	'dragon',     'elemental',    'fey',               'giant',
+	'humanoid',   'magicalbeast', 'monstroushumanoid', 'ooze',
+	'outsider',   'plant',        'undead',            'vermin'
+);
+
+create type objectsize as enum (
+	'fine',  'diminutive', 'tiny',
+	'small', 'medium',     'large',
+	'huge',  'gargantuan', 'colossal'
+);
+
+create type bloodlinestrength as enum (
+	'minor', 'intermediate', 'major'
+);
+
+create type speed as (
+	method varchar(255),
+	rate int
+);
+
+create type skill as (
 	name varchar(255),
-	description text not null,
+	bonus int
+);
+-- ====
+-- Feat Tags
+-- ====
+create table FeatTags (
+	name        varchar(255),
+	description text          not null,
+
 	primary key(name)
 );
 
 create index FeatTags_name on FeatTags(name);
 
+-- ====
+-- Feats
+-- ====
 create table Feats (
-	id serial,
-	name varchar(255),
-	flavor text,
-	description text not null,
-	source text,
+	id              serial,
+	name            varchar(255),
+	flavor          text,
+	description     text                not null,
+	source          text,
 	nonfeat_prereqs varchar(255) array,
+
 	primary key(id)
 );
 
 create index Feats_name on Feats(name);
 
 create table Feat_tags (
-	featid int,
+	featid  int,
 	tagname varchar(255),
+
 	primary key(featid, tagname),
+
 	foreign key(featid) references Feats(id),
 	foreign key(tagname) references FeatTags(name)
 );
@@ -34,33 +78,9 @@ create table Feat_prereqs (
 	foreign key(prereqid) references Feats(id)
 );
 
-create type abilitytype as enum (
-	'extraordinary', 'inherent', 'psilike',
-	'spelllike', 'supernatural'
-);
-
-create type racetype as enum (
-	'aberration', 'animal', 'construct', 'deathless',
-	'dragon','elemental', 'fey', 'giant',
-	'humanoid', 'magicalbeast', 'monstroushumanoid', 'ooze',
-	'outsider', 'plant', 'undead', 'vermin'
-);
-
-create type speed as (
-	method varchar(255),
-	rate int
-);
-
-create type skill as (
-	name varchar(255),
-	bonus int
-);
-
-create type objectsize as enum (
-	'fine', 'diminutive', 'tiny', 'small', 'medium',
-	'large','huge', 'gargantuan', 'colossal'
-);
-
+-- ====
+-- Abilities
+-- ====
 create table Abilities (
 	id serial,
 	name varchar(255),
@@ -72,6 +92,9 @@ create table Abilities (
 create index Abilities_name on Abilities(name);
 create index Abilities_typedname on Abilities(name, class);
 
+-- ====
+-- Monsters
+-- ====
 create table Monsters (
 	id serial,
 	name varchar(255),
@@ -104,17 +127,6 @@ create index Monsters_name on Monsters(name);
 create index Monsters_cr on Monsters(cr);
 create index Monsters_la on Monsters(la);
 
-create view Monsters_saves as 
-	select m.id, m.name, 
-	m.saves[1] as fortsave, m.saves[2] as refsave, m.saves[3] as willsave
-	from Monsters as m;
-
-create view Monsters_abilities as
-	select m.id, m.name,
-	m.abilityscores[1] as strength, m.abilityscores[2] as dexterity, m.abilityscores[3] as constitution,
-	m.abilityscores[4] as intelligence, m.abilityscores[5] as wisdom, m.abilityscores[6] as charisma
-	from Monsters as m;
-
 create table Monster_abilities (
 	monsterid int,
 	abilityid int,
@@ -141,6 +153,17 @@ create table Monster_hitdice (
 	foreign key(monsterid) references Monsters(id)
 );
 
+create view Monsters_saves as 
+	select m.id, m.name, 
+	m.saves[1] as fortsave, m.saves[2] as refsave, m.saves[3] as willsave
+	from Monsters as m;
+
+create view Monsters_abilities as
+	select m.id, m.name,
+	m.abilityscores[1] as strength, m.abilityscores[2] as dexterity, m.abilityscores[3] as constitution,
+	m.abilityscores[4] as intelligence, m.abilityscores[5] as wisdom, m.abilityscores[6] as charisma
+	from Monsters as m;
+
 create view Monsters_totalhd as
 	select m.id, m.name, sum(hd.count) as totalhd 
 	from Monsters as m join Monster_hitdice as hd on m.id = hd.monsterid
@@ -150,6 +173,9 @@ create view Monsters_playerdetails as
 	select m.id, m.name, m.la, m.class, hd.totalhd, (m.la + hd.totalhd) as effectivela
 	from Monsters as m join Monsters_totalhd as hd on m.id = hd.id;
 
+-- ====
+-- Templates
+-- ====
 create table Templates (
 	id serial,
 	name varchar(255),
@@ -213,6 +239,9 @@ create view Templates_saveadj as
  * select t.id, t.name, t.la from Templates as t where ? = any (t.origin) and ? = t.destinationtype order by la
  */
  
+-- ====
+-- Races
+-- ====
 create table Races (
 	id serial,
 	name varchar(255),
@@ -231,12 +260,6 @@ create index Races_name on Races(name);
 create index Races_class on Races(class);
 create index Races_la on Races(la);
 
-create view Races_abilityadj as
-	select r.id, r.name,
-	r.abilityscores[1] as strength, r.abilityscores[2] as dexterity, r.abilityscores[3] as constitution,
-	r.abilityscores[4] as intelligence, r.abilityscores[5] as wisdom, r.abilityscores[6] as charisma
-	from Races as r;
-
 create table Race_abilities (
 	raceid int,
 	abilityid int,
@@ -254,6 +277,12 @@ create table Race_hitdice (
 	foreign key(raceid) references Races(id)
 );
 
+create view Races_abilityadj as
+	select r.id, r.name,
+	r.abilityscores[1] as strength, r.abilityscores[2] as dexterity, r.abilityscores[3] as constitution,
+	r.abilityscores[4] as intelligence, r.abilityscores[5] as wisdom, r.abilityscores[6] as charisma
+	from Races as r;
+
 create view Races_totalhd as
 	select r.id, r.name, sum(hd.count) as totalhd 
 	from Races as r join Race_hitdice as hd on r.id = hd.raceid
@@ -262,3 +291,26 @@ create view Races_totalhd as
 create view Races_playerdetails as
 	select r.id, r.name, r.la, r.class, hd.totalhd, (r.la + hd.totalhd) as effectivela
 	from Races as r join Races_totalhd as hd on r.id = hd.id;
+	group by m.id, hd.monsterid
+);
+
+-- ====
+-- Bloodlines
+-- ====
+create table Bloodlines (
+	id serial,
+	name varchar(255) NOT NULL,
+	description text,
+	strength bloodlinestrength NOT NULL,
+
+	primary key(bloodlineid)
+);
+
+create table Bloodline_Abilities (
+	bloodlineid int,
+	level int,
+	name varchar(255),
+	description varchar(255),
+
+	primary key(bloodlineid, level)
+)
