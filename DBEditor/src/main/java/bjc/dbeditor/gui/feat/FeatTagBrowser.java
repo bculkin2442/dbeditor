@@ -12,6 +12,8 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
 
+import bjc.utils.data.IHolder;
+import bjc.utils.data.Identity;
 import bjc.utils.funcdata.FunctionalMap;
 import bjc.utils.funcdata.IList;
 import bjc.utils.gui.SimpleInternalDialogs;
@@ -23,9 +25,11 @@ import bjc.dbeditor.data.feat.FeatTag;
 import bjc.dbeditor.db.FeatTagDB;
 
 public class FeatTagBrowser extends SimpleInternalFrame {
-	private static final long	serialVersionUID	= -2529817913539767911L;
+	private static final long serialVersionUID = -2529817913539767911L;
 
-	private IList<String>		baseTagList;
+	private IList<String> baseTagList;
+
+	private IHolder<FeatTag> displayedTag;
 
 	public FeatTagBrowser(IList<String> tagList) {
 		super("Feat Tag Browser");
@@ -69,8 +73,7 @@ public class FeatTagBrowser extends SimpleInternalFrame {
 		featTagList.setLayoutOrientation(JList.VERTICAL);
 
 		JPanel featTagDisplayPanel = new JPanel();
-		featTagDisplayPanel
-				.setBorder(new SimpleTitledBorder("Feat Tag Details"));
+		featTagDisplayPanel.setBorder(new SimpleTitledBorder("Feat Tag Details"));
 		featTagDisplayPanel.setLayout(new AutosizeLayout());
 
 		JTextArea featTagDisplayArea = new JTextArea();
@@ -78,8 +81,7 @@ public class FeatTagBrowser extends SimpleInternalFrame {
 		featTagDisplayArea.setLineWrap(true);
 		featTagDisplayArea.setWrapStyleWord(true);
 
-		JScrollPane featTagDisplayScroller = new JScrollPane(
-				featTagDisplayArea);
+		JScrollPane featTagDisplayScroller = new JScrollPane(featTagDisplayArea);
 		featTagDisplayPanel.add(featTagDisplayScroller);
 
 		FunctionalMap<String, FeatTag> featTagCache = new FunctionalMap<>();
@@ -92,35 +94,30 @@ public class FeatTagBrowser extends SimpleInternalFrame {
 					return;
 				}
 
-				String displayedFeatTagName = featTagListModel
-						.get(selectedIndex);
+				String displayedFeatTagName = featTagListModel.get(selectedIndex);
 
 				FeatTag displayedFeatTag;
 
 				if (featTagCache.containsKey(displayedFeatTagName)) {
-					displayedFeatTag = featTagCache
-							.get(displayedFeatTagName);
+					displayedFeatTag = featTagCache.get(displayedFeatTagName);
 				} else {
 					try {
-						displayedFeatTag = FeatTagDB
-								.lookupTag(displayedFeatTagName);
+						displayedFeatTag = FeatTagDB.lookupTag(displayedFeatTagName);
 
-						featTagCache.put(displayedFeatTagName,
-								displayedFeatTag);
+						featTagCache.put(displayedFeatTagName, displayedFeatTag);
 					} catch (SQLException sqlex) {
 						SimpleInternalDialogs.showError(refFrame, "Error",
-								"Could not load feat tag "
-										+ displayedFeatTagName);
+								"Could not load feat tag " + displayedFeatTagName);
 						sqlex.printStackTrace();
 						return;
 					}
 				}
 
-				featTagDisplayArea
-						.setText(displayedFeatTag.toFullString());
+				displayedTag = new Identity<>(displayedFeatTag);
 
-				refFrame.setTitle("Feat Tag Browser - "
-						+ displayedFeatTag.getName());
+				featTagDisplayArea.setText(displayedFeatTag.toFullString());
+
+				refFrame.setTitle("Feat Tag Browser - " + displayedFeatTag.getName());
 			}
 		});
 
@@ -140,8 +137,12 @@ public class FeatTagBrowser extends SimpleInternalFrame {
 		listPanel.add(listScroller, BorderLayout.CENTER);
 		listPanel.add(refreshButton, BorderLayout.PAGE_END);
 
-		JSplitPane mainPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
-				listPanel, featTagDisplayPanel);
+		JPanel detailPanel = new JPanel();
+		detailPanel.setLayout(new BorderLayout());
+
+		detailPanel.add(featTagDisplayPanel, BorderLayout.CENTER);
+
+		JSplitPane mainPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, listPanel, detailPanel);
 
 		add(mainPane);
 	}

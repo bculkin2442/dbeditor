@@ -58,8 +58,13 @@ public class DBMain {
 								.println("Error: Could not load DB driver: " + cnfex);
 						System.exit(1);
 				}
+				
+				/* Get DB username */
+				String username = JOptionPane.showInputDialog(null,
+						"Enter the password for the database", "Enter password",
+						JOptionPane.QUESTION_MESSAGE);
 
-				// Get DB pass
+				/* Get DB pass */
 				String pass = JOptionPane.showInputDialog(null,
 								"Enter the password for the database", "Enter password",
 								JOptionPane.QUESTION_MESSAGE);
@@ -72,7 +77,7 @@ public class DBMain {
 				try {
 						// Establish general DB connections
 						conn = DriverManager.getConnection(
-										"jdbc:postgresql:dand_records", "dand_info", pass);
+										"jdbc:postgresql:rpgdb", username, pass);
 						conn.setAutoCommit(false);
 
 						// Establish individual DB connections

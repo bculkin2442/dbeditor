@@ -114,6 +114,7 @@ public class FeatTagEditor extends SimpleInternalFrame {
 		cancelTagButton.addActionListener((ev) -> {
 			refFrame.dispose();
 		});
+		
 		buttonPanel.add(addTagButton);
 		buttonPanel.add(resetTagButton);
 		buttonPanel.add(cancelTagButton);

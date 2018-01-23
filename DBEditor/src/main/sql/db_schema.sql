@@ -216,7 +216,7 @@ create view Templates_saveadj as
 create table Races (
 	id serial,
 	name varchar(255),
-	sze objectsize
+	sze objectsize,
 	class racetype,
 	subtypes varchar(255) array,
 	speeds speed,
