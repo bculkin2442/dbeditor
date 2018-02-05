@@ -1,0 +1,29 @@
+@TODO 1/18/2018 Ben Culkin :Creatures
+	Update the creature setup to the new database schema
+
+@TODO 1/18/2018 Ben Culkin :BrowserEdit
+	Provide the capability to edit/delete feats and feat tags from their respective browsers
+
+@TODO 1/18/2018 Ben Culkin :Incarnum
+	Add the ability to store data about soulmelds
+	
+	NOTE 1/22/18
+	They are now able to be stored in the database, but the application does nothing with them yet.
+
+@TODO 1/18/2018 Ben Culkin :Bloodlines
+	Add the ability to store data about bloodlines
+	
+	NOTE 1/22/18
+	They are now able to be stored in the database, but the application does nothing with them yet.
+
+@TODO 1/22/18 Ben Culkin :Templates
+	The entries for templates are in the database, allow you to access them with the application
+
+@TODO 1/22/18 Ben Culkin :Races
+	The entries for races are in the database, allow you to access them with the application
+
+@TODO 1/22/18 Ben Culkin :MenuReorg
+	Reorganize the menus to be based around the action, not the system being used.
+		
+@TODO 1/18/2018 Ben Culkin :Maneuvers
+	Add the ability to store data about disciplines

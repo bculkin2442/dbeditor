@@ -6,11 +6,14 @@ create type abilitytype as enum (
 	'spelllike', 'supernatural'
 );
 
-create type racetype as enum (
-	'aberration', 'animal',       'construct',         'deathless',
-	'dragon',     'elemental',    'fey',               'giant',
-	'humanoid',   'magicalbeast', 'monstroushumanoid', 'ooze',
-	'outsider',   'plant',        'undead',            'vermin'
+create type bloodlinestrength as enum (
+	'minor', 'intermediate', 'major'
+);
+
+create type magicitemloc as enum (
+	'arms', 'body', 'face', 'feet',
+	'hands', 'head', 'ring', 'shoulders',
+	'throat', 'torso', 'waist'
 );
 
 create type objectsize as enum (
@@ -19,8 +22,11 @@ create type objectsize as enum (
 	'huge',  'gargantuan', 'colossal'
 );
 
-create type bloodlinestrength as enum (
-	'minor', 'intermediate', 'major'
+create type racetype as enum (
+	'aberration', 'animal',       'construct',         'deathless',
+	'dragon',     'elemental',    'fey',               'giant',
+	'humanoid',   'magicalbeast', 'monstroushumanoid', 'ooze',
+	'outsider',   'plant',        'undead',            'vermin'
 );
 
 create type speed as (
@@ -31,6 +37,13 @@ create type speed as (
 create type skill as (
 	name varchar(255),
 	bonus int
+);
+
+create type soulbindloc as (
+	'crown', 'feet', 'hands',
+	'arm', 'brow', 'shoulders',
+	'throat', 'waist',
+	'heart', 'soul'
 );
 -- ====
 -- Feat Tags
