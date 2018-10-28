@@ -2,8 +2,6 @@ package bjc.dbeditor.data.creatures.builders;
 
 import java.math.BigDecimal;
 
-import bjc.utils.funcdata.FunctionalList;
-
 import bjc.dbeditor.data.creatures.Creature;
 import bjc.dbeditor.data.creatures.CreatureAbilityScores;
 import bjc.dbeditor.data.creatures.CreatureDefenses;
@@ -14,6 +12,7 @@ import bjc.dbeditor.data.creatures.CreatureOffenses;
 import bjc.dbeditor.data.creatures.CreatureSize;
 import bjc.dbeditor.data.creatures.CreatureSpeed;
 import bjc.dbeditor.data.creatures.CreatureType;
+import bjc.utils.funcdata.FunctionalList;
 
 /**
  * Class for building instances of creatures

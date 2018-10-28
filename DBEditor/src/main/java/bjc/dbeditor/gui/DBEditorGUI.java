@@ -6,12 +6,11 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-import bjc.utils.gui.layout.AutosizeLayout;
-
 import bjc.dbeditor.gui.feat.FeatBrowser;
 import bjc.dbeditor.gui.feat.FeatEditor;
 import bjc.dbeditor.gui.feat.FeatTagBrowser;
 import bjc.dbeditor.gui.feat.FeatTagEditor;
+import bjc.utils.gui.layout.AutosizeLayout;
 
 /**
  * Main GUI class

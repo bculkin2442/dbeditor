@@ -25,19 +25,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 
-import bjc.utils.funcdata.FunctionalList;
-import bjc.utils.funcdata.IList;
-import bjc.utils.gui.SimpleInternalDialogs;
-import bjc.utils.gui.SimpleInternalFrame;
-import bjc.utils.gui.SimpleTitledBorder;
-import bjc.utils.gui.layout.AutosizeLayout;
-import bjc.utils.gui.layout.HLayout;
-import bjc.utils.gui.layout.VLayout;
-import bjc.utils.gui.panels.DropdownListPanel;
-import bjc.utils.gui.panels.SimpleInputPanel;
-import bjc.utils.gui.panels.SimpleListPanel;
-import bjc.utils.gui.panels.SimpleSpinnerPanel;
-
 import bjc.dbeditor.data.creatures.Creature;
 import bjc.dbeditor.data.creatures.CreatureAbility;
 import bjc.dbeditor.data.creatures.CreatureAbilityScores;
@@ -58,6 +45,18 @@ import bjc.dbeditor.db.CreatureDB;
 import bjc.dbeditor.db.FeatDB;
 import bjc.dbeditor.gui.components.AbilityEditor;
 import bjc.dbeditor.gui.components.HitdieEditor;
+import bjc.utils.funcdata.FunctionalList;
+import bjc.utils.funcdata.IList;
+import bjc.utils.gui.SimpleInternalDialogs;
+import bjc.utils.gui.SimpleInternalFrame;
+import bjc.utils.gui.SimpleTitledBorder;
+import bjc.utils.gui.layout.AutosizeLayout;
+import bjc.utils.gui.layout.HLayout;
+import bjc.utils.gui.layout.VLayout;
+import bjc.utils.gui.panels.DropdownListPanel;
+import bjc.utils.gui.panels.SimpleInputPanel;
+import bjc.utils.gui.panels.SimpleListPanel;
+import bjc.utils.gui.panels.SimpleSpinnerPanel;
 
 public class CreatureEditor extends SimpleInternalFrame {
 	private static final long serialVersionUID = -889902229115548570L;

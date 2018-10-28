@@ -5,10 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import bjc.dbeditor.data.feat.FeatTag;
 import bjc.utils.funcdata.FunctionalList;
 import bjc.utils.funcdata.IList;
-
-import bjc.dbeditor.data.feat.FeatTag;
 
 /**
  * Database for storing feat tags.

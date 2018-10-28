@@ -5,11 +5,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import bjc.utils.funcdata.FunctionalList;
-import bjc.utils.funcdata.IList;
 
 import bjc.dbeditor.data.feat.Feat;
 import bjc.dbeditor.data.feat.FeatBuilder;
+import bjc.utils.funcdata.FunctionalList;
+import bjc.utils.funcdata.IList;
 
 /**
  * Database for storing feats.

@@ -12,12 +12,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import bjc.dbeditor.data.feat.FeatTag;
+import bjc.dbeditor.db.FeatTagDB;
 import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.layout.HLayout;
-
-import bjc.dbeditor.data.feat.FeatTag;
-import bjc.dbeditor.db.FeatTagDB;
 
 public class FeatTagEditor extends SimpleInternalFrame {
 	private static final long serialVersionUID = -1072275991676239181L;

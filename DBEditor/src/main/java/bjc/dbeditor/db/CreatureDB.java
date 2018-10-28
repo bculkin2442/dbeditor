@@ -6,9 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import bjc.utils.funcdata.FunctionalList;
-import bjc.utils.funcdata.IList;
-
 import bjc.dbeditor.data.creatures.Creature;
 import bjc.dbeditor.data.creatures.CreatureAbility;
 import bjc.dbeditor.data.creatures.CreatureAbilityScores;
@@ -29,6 +26,8 @@ import bjc.dbeditor.data.creatures.builders.CreatureDefensesBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureFlavorBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureMiscBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureOffensesBuilder;
+import bjc.utils.funcdata.FunctionalList;
+import bjc.utils.funcdata.IList;
 
 /**
  * Database for storing creatures.

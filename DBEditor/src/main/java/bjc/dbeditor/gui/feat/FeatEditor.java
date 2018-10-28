@@ -16,6 +16,10 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import bjc.dbeditor.data.feat.Feat;
+import bjc.dbeditor.data.feat.FeatBuilder;
+import bjc.dbeditor.db.FeatDB;
+import bjc.dbeditor.db.FeatTagDB;
 import bjc.utils.funcdata.FunctionalList;
 import bjc.utils.funcdata.IList;
 import bjc.utils.gui.SimpleInternalDialogs;
@@ -24,11 +28,6 @@ import bjc.utils.gui.layout.AutosizeLayout;
 import bjc.utils.gui.layout.HLayout;
 import bjc.utils.gui.panels.DropdownListPanel;
 import bjc.utils.gui.panels.SimpleListPanel;
-
-import bjc.dbeditor.data.feat.Feat;
-import bjc.dbeditor.data.feat.FeatBuilder;
-import bjc.dbeditor.db.FeatDB;
-import bjc.dbeditor.db.FeatTagDB;
 
 public class FeatEditor extends SimpleInternalFrame {
 	private static final long serialVersionUID = -4016698246942706462L;

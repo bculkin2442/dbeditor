@@ -1,9 +1,8 @@
 package bjc.dbeditor.data.creatures.builders;
 
-import bjc.utils.funcdata.FunctionalList;
-
 import bjc.dbeditor.data.creatures.CreatureMisc;
 import bjc.dbeditor.data.creatures.CreatureSkill;
+import bjc.utils.funcdata.FunctionalList;
 
 /**
  * Builder of misc. creature info

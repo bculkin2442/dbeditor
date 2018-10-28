@@ -12,15 +12,14 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
 
+import bjc.dbeditor.data.feat.Feat;
+import bjc.dbeditor.db.FeatDB;
 import bjc.utils.funcdata.FunctionalMap;
 import bjc.utils.funcdata.IList;
 import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.SimpleTitledBorder;
 import bjc.utils.gui.layout.AutosizeLayout;
-
-import bjc.dbeditor.data.feat.Feat;
-import bjc.dbeditor.db.FeatDB;
 
 public class FeatBrowser extends SimpleInternalFrame {
 	private static final long serialVersionUID = -2529817913539767911L;
