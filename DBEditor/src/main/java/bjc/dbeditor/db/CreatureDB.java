@@ -30,12 +30,18 @@ import bjc.dbeditor.data.creatures.builders.CreatureFlavorBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureMiscBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureOffensesBuilder;
 
+/**
+ * Database for storing creatures.
+ * 
+ * @author bjculkin
+ *
+ */
 public class CreatureDB {
-	private static Connection			dbConn;
+	private static Connection dbConn;
 
-	private static PreparedStatement	listCreatureNamesStatement;
+	private static PreparedStatement listCreatureNamesStatement;
 
-	private static PreparedStatement	lookupCreatureStatement;
+	private static PreparedStatement lookupCreatureStatement;
 
 	private static PreparedStatement	lookupDependantAbilitiesStatement;
 	private static PreparedStatement	lookupDependantFeatsStatement;
@@ -43,7 +49,7 @@ public class CreatureDB {
 	private static PreparedStatement	lookupDependantSkillsStatement;
 	private static PreparedStatement	lookupDependantSpeedsStatement;
 
-	private static PreparedStatement	addCreatureStatement;
+	private static PreparedStatement addCreatureStatement;
 
 	private static PreparedStatement	addDependantAbilitiesStatement;
 	private static PreparedStatement	addDependantFeatsStatement;
@@ -51,16 +57,14 @@ public class CreatureDB {
 	private static PreparedStatement	addDependantSkillsStatement;
 	private static PreparedStatement	addDependantSpeedsStatement;
 
-	public static void initConnection(Connection conn)
-			throws SQLException {
+	public static void initConnection(Connection conn) throws SQLException {
 		dbConn = conn;
 
 		initStatements();
 	}
 
 	private static void initStatements() throws SQLException {
-		listCreatureNamesStatement = dbConn
-				.prepareStatement("SELECT name FROM creatures");
+		listCreatureNamesStatement = dbConn.prepareStatement("SELECT name FROM creatures");
 
 		lookupCreatureStatement = dbConn.prepareStatement(
 				"SELECT name, size, type, subtypes, nat_armor, sr, attack, full_attack"
@@ -68,28 +72,28 @@ public class CreatureDB {
 						+ " advancement, description, notes, source, saves,"
 						+ " attack_stat, ability_scores FROM creatures WHERE name = ?");
 
-		lookupDependantAbilitiesStatement = dbConn.prepareStatement(
-				"SELECT is_quality, ability_name, description, type"
+		lookupDependantAbilitiesStatement = dbConn
+				.prepareStatement("SELECT is_quality, ability_name, description, type"
 						+ " FROM creature_ability WHERE creature_name = ?");
-		lookupDependantFeatsStatement = dbConn.prepareStatement(
-				"SELECT feat_name FROM creature_feats WHERE creature_name = ?");
+		lookupDependantFeatsStatement = dbConn
+				.prepareStatement("SELECT feat_name FROM creature_feats WHERE creature_name = ?");
 		lookupDependantHitdiceStatement = dbConn.prepareStatement(
 				"SELECT count, size, class FROM creature_hitdice WHERE creature_name = ?");
 		lookupDependantSkillsStatement = dbConn.prepareStatement(
 				"SELECT skill_name, bonus FROM creature_skills WHERE creature_name = ?");
-		lookupDependantSpeedsStatement = dbConn.prepareStatement(
-				"SELECT type, rate FROM creature_speeds WHERE creature_name = ?");
+		lookupDependantSpeedsStatement = dbConn
+				.prepareStatement("SELECT type, rate FROM creature_speeds WHERE creature_name = ?");
 
-		addCreatureStatement = dbConn.prepareStatement(
-				"INSERT INTO creatures (name, size, type, subtypes, nat_armor,"
+		addCreatureStatement = dbConn
+				.prepareStatement("INSERT INTO creatures (name, size, type, subtypes, nat_armor,"
 						+ " sr, attack, full_attack, enviroment, organization, cr,"
 						+ " la, treasure, alignment, advancement, description, notes,"
 						+ " source, saves, attack_stat, ability_scores) "
 						+ "VALUES (?, CAST (? as creature_size), CAST (? as creature_type),"
 						+ " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-		addDependantAbilitiesStatement = dbConn.prepareStatement(
-				"INSERT INTO creature_ability (creature_name, is_quality,"
+		addDependantAbilitiesStatement = dbConn
+				.prepareStatement("INSERT INTO creature_ability (creature_name, is_quality,"
 						+ " ability_name, description, type) VALUES (?, ?, ?, ?, "
 						+ "CAST (? as creature_ability_type))");
 		addDependantFeatsStatement = dbConn.prepareStatement(
@@ -125,8 +129,7 @@ public class CreatureDB {
 	public static IList<String> listCreatureNames() throws SQLException {
 		FunctionalList<String> names = new FunctionalList<>();
 
-		try (ResultSet nameSet = listCreatureNamesStatement
-				.executeQuery()) {
+		try (ResultSet nameSet = listCreatureNamesStatement.executeQuery()) {
 			while (nameSet.next() == true) {
 				names.add(nameSet.getString("name"));
 			}
@@ -135,25 +138,20 @@ public class CreatureDB {
 		return names;
 	}
 
-	public static Creature lookupCreatureByName(String name)
-			throws SQLException {
+	public static Creature lookupCreatureByName(String name) throws SQLException {
 		CreatureBuilder creatureBuilder = new CreatureBuilder();
 		creatureBuilder.setName(name);
 
 		lookupCreatureStatement.setString(1, name);
 
-		try (ResultSet creatureSet = lookupCreatureStatement
-				.executeQuery()) {
+		try (ResultSet creatureSet = lookupCreatureStatement.executeQuery()) {
 			creatureSet.next();
 
-			creatureBuilder.setSize(CreatureSize
-					.valueOf(creatureSet.getString("size").toUpperCase()));
+			creatureBuilder.setSize(CreatureSize.valueOf(creatureSet.getString("size").toUpperCase()));
 
-			creatureBuilder.setType(CreatureType
-					.valueOf(creatureSet.getString("type").toUpperCase()));
+			creatureBuilder.setType(CreatureType.valueOf(creatureSet.getString("type").toUpperCase()));
 
-			try (ResultSet subtypeSet = creatureSet.getArray("subtypes")
-					.getResultSet()) {
+			try (ResultSet subtypeSet = creatureSet.getArray("subtypes").getResultSet()) {
 				while (subtypeSet.next() == true) {
 					creatureBuilder.addSubtype(subtypeSet.getString(2));
 				}
@@ -161,39 +159,32 @@ public class CreatureDB {
 
 			CreatureDefensesBuilder defenseBuilder = new CreatureDefensesBuilder();
 
-			defenseBuilder
-					.setNaturalArmor(creatureSet.getInt("nat_armor"));
+			defenseBuilder.setNaturalArmor(creatureSet.getInt("nat_armor"));
 			defenseBuilder.setSpellResistance(creatureSet.getInt("sr"));
 
-			Integer[] saveArray = (Integer[]) creatureSet.getArray("saves")
-					.getArray();
+			Integer[] saveArray = (Integer[]) creatureSet.getArray("saves").getArray();
 
-			defenseBuilder.setSaves(new CreatureSaves(saveArray[0],
-					saveArray[1], saveArray[2]));
+			defenseBuilder.setSaves(new CreatureSaves(saveArray[0], saveArray[1], saveArray[2]));
 
 			creatureBuilder.setDefenses(defenseBuilder.buildDefenses());
 
 			CreatureOffensesBuilder offenseBuilder = new CreatureOffensesBuilder();
 
-			Integer[] attackArray = (Integer[]) creatureSet
-					.getArray("attack_stat").getArray();
+			Integer[] attackArray = (Integer[]) creatureSet.getArray("attack_stat").getArray();
 
-			offenseBuilder.setAttackStats(
-					new CreatureAttack(attackArray[0], attackArray[1]));
+			offenseBuilder.setAttackStats(new CreatureAttack(attackArray[0], attackArray[1]));
 			offenseBuilder.setAttack(creatureSet.getString("attack"));
-			offenseBuilder
-					.setFullAttack(creatureSet.getString("full_attack"));
+			offenseBuilder.setFullAttack(creatureSet.getString("full_attack"));
 
 			lookupDependantAbilitiesStatement.setString(1, name);
 
-			try (ResultSet abilitySet = lookupDependantAbilitiesStatement
-					.executeQuery()) {
+			try (ResultSet abilitySet = lookupDependantAbilitiesStatement.executeQuery()) {
 				while (abilitySet.next()) {
 					CreatureAbility ability = new CreatureAbility(
 							abilitySet.getString("ability_name"),
 							abilitySet.getString("description"),
-							CreatureAbilityType.valueOf(abilitySet
-									.getString("type").toUpperCase()));
+							CreatureAbilityType.valueOf(
+									abilitySet.getString("type").toUpperCase()));
 
 					if (abilitySet.getBoolean("is_quality")) {
 						offenseBuilder.addSpecialQuality(ability);
@@ -209,62 +200,48 @@ public class CreatureDB {
 			CreatureFlavorBuilder flavorBuilder = new CreatureFlavorBuilder();
 
 			lookupDependantFeatsStatement.setString(1, name);
-			try (ResultSet featSet = lookupDependantFeatsStatement
-					.executeQuery()) {
+			try (ResultSet featSet = lookupDependantFeatsStatement.executeQuery()) {
 				while (featSet.next() == true) {
-					creatureBuilder
-							.addFeat(featSet.getString("feat_name"));
+					creatureBuilder.addFeat(featSet.getString("feat_name"));
 				}
 			}
 
 			lookupDependantHitdiceStatement.setString(1, name);
-			try (ResultSet hitdiceSet = lookupDependantHitdiceStatement
-					.executeQuery()) {
+			try (ResultSet hitdiceSet = lookupDependantHitdiceStatement.executeQuery()) {
 				while (hitdiceSet.next() == true) {
-					creatureBuilder.addHitdie(hitdiceSet.getInt("count"),
-							hitdiceSet.getInt("size"),
+					creatureBuilder.addHitdie(hitdiceSet.getInt("count"), hitdiceSet.getInt("size"),
 							hitdiceSet.getString("class"));
 				}
 			}
 
 			lookupDependantSkillsStatement.setString(1, name);
-			try (ResultSet skillSet = lookupDependantSkillsStatement
-					.executeQuery()) {
+			try (ResultSet skillSet = lookupDependantSkillsStatement.executeQuery()) {
 				while (skillSet.next() == true) {
-					miscBuilder.addSkill(new CreatureSkill(
-							skillSet.getString("skill_name"),
+					miscBuilder.addSkill(new CreatureSkill(skillSet.getString("skill_name"),
 							skillSet.getInt("bonus")));
 				}
 			}
 
 			lookupDependantSpeedsStatement.setString(1, name);
-			try (ResultSet speedSet = lookupDependantSpeedsStatement
-					.executeQuery()) {
+			try (ResultSet speedSet = lookupDependantSpeedsStatement.executeQuery()) {
 				while (speedSet.next() == true) {
-					creatureBuilder.addSpeed(speedSet.getString("type"),
-							speedSet.getInt("rate"));
+					creatureBuilder.addSpeed(speedSet.getString("type"), speedSet.getInt("rate"));
 				}
 			}
 
-			flavorBuilder
-					.setEnviroment(creatureSet.getString("enviroment"));
-			flavorBuilder.setOrganization(
-					creatureSet.getString("organization"));
+			flavorBuilder.setEnviroment(creatureSet.getString("enviroment"));
+			flavorBuilder.setOrganization(creatureSet.getString("organization"));
 
-			creatureBuilder
-					.setChallengeRating(creatureSet.getBigDecimal("cr"));
-			creatureBuilder
-					.setLevelAdjustment(creatureSet.getString("la"));
+			creatureBuilder.setChallengeRating(creatureSet.getBigDecimal("cr"));
+			creatureBuilder.setLevelAdjustment(creatureSet.getString("la"));
 
 			miscBuilder.setTreasure(creatureSet.getString("treasure"));
 
 			miscBuilder.setAlignment(creatureSet.getString("alignment"));
 
-			creatureBuilder
-					.setAdvancement(creatureSet.getString("advancement"));
+			creatureBuilder.setAdvancement(creatureSet.getString("advancement"));
 
-			flavorBuilder
-					.setDescription(creatureSet.getString("description"));
+			flavorBuilder.setDescription(creatureSet.getString("description"));
 			flavorBuilder.setNotes(creatureSet.getString("notes"));
 
 			miscBuilder.setSource(creatureSet.getString("source"));
@@ -278,36 +255,28 @@ public class CreatureDB {
 	public static boolean addCreature(Creature add) throws SQLException {
 		String name = add.getName();
 
-		for (CreatureAbility specialAttack : add.getOffenses()
-				.getSpecialAttacks().toIterable()) {
+		for (CreatureAbility specialAttack : add.getOffenses().getSpecialAttacks().toIterable()) {
 			addDependantAbilitiesStatement.setString(1, name);
 
 			// This is true for special qualities only
 			addDependantAbilitiesStatement.setBoolean(2, false);
 
-			addDependantAbilitiesStatement.setString(3,
-					specialAttack.getName());
-			addDependantAbilitiesStatement.setString(4,
-					specialAttack.getDescription());
-			addDependantAbilitiesStatement.setString(5,
-					specialAttack.getType().toString().toLowerCase());
+			addDependantAbilitiesStatement.setString(3, specialAttack.name);
+			addDependantAbilitiesStatement.setString(4, specialAttack.description);
+			addDependantAbilitiesStatement.setString(5, specialAttack.type.toString().toLowerCase());
 
 			addDependantAbilitiesStatement.addBatch();
 		}
 
-		for (CreatureAbility specialQuality : add.getOffenses()
-				.getSpecialQualities().toIterable()) {
+		for (CreatureAbility specialQuality : add.getOffenses().getSpecialQualities().toIterable()) {
 			addDependantAbilitiesStatement.setString(1, name);
 
 			// This is true for special qualities only
 			addDependantAbilitiesStatement.setBoolean(2, true);
 
-			addDependantAbilitiesStatement.setString(3,
-					specialQuality.getName());
-			addDependantAbilitiesStatement.setString(4,
-					specialQuality.getDescription());
-			addDependantAbilitiesStatement.setString(5,
-					specialQuality.getType().toString().toLowerCase());
+			addDependantAbilitiesStatement.setString(3, specialQuality.name);
+			addDependantAbilitiesStatement.setString(4, specialQuality.description);
+			addDependantAbilitiesStatement.setString(5, specialQuality.type.toString().toLowerCase());
 
 			addDependantAbilitiesStatement.addBatch();
 		}
@@ -315,8 +284,7 @@ public class CreatureDB {
 		try {
 			for (int res : addDependantAbilitiesStatement.executeBatch()) {
 				if (res < 1) {
-					System.out.println(
-							"Error: could not save ability to database");
+					System.out.println("Error: could not save ability to database");
 
 					dbConn.rollback();
 					return false;
@@ -338,8 +306,7 @@ public class CreatureDB {
 
 			for (int res : addDependantFeatsStatement.executeBatch()) {
 				if (res < 1) {
-					System.out.println(
-							"Error: could not save feat to database");
+					System.out.println("Error: could not save feat to database");
 
 					dbConn.rollback();
 					return false;
@@ -360,8 +327,7 @@ public class CreatureDB {
 		try {
 			for (int res : addDependantHitdiceStatement.executeBatch()) {
 				if (res < 1) {
-					System.out.println(
-							"Error: could not save hitdie to database");
+					System.out.println("Error: could not save hitdie to database");
 
 					dbConn.rollback();
 					return false;
@@ -372,8 +338,7 @@ public class CreatureDB {
 			buex.getNextException().printStackTrace();
 		}
 
-		for (CreatureSkill skill : add.getMiscData().getSkills()
-				.toIterable()) {
+		for (CreatureSkill skill : add.getMiscData().getSkills().toIterable()) {
 			addDependantSkillsStatement.setString(1, name);
 
 			addDependantSkillsStatement.setString(2, skill.getSkillName());
@@ -384,8 +349,7 @@ public class CreatureDB {
 
 		for (int res : addDependantSkillsStatement.executeBatch()) {
 			if (res < 1) {
-				System.out.println(
-						"Error: could not save skill to database");
+				System.out.println("Error: could not save skill to database");
 
 				dbConn.rollback();
 				return false;
@@ -403,8 +367,7 @@ public class CreatureDB {
 
 		for (int res : addDependantSpeedsStatement.executeBatch()) {
 			if (res < 1) {
-				System.out.println(
-						"Error: could not save speed to database");
+				System.out.println("Error: could not save speed to database");
 
 				dbConn.rollback();
 				return false;
@@ -416,8 +379,8 @@ public class CreatureDB {
 		addCreatureStatement.setString(2, add.getSize().toString());
 		addCreatureStatement.setString(3, add.getType().toString());
 
-		addCreatureStatement.setArray(4, dbConn.createArrayOf("varchar",
-				add.getSubtypes().toArray(new String[0])));
+		addCreatureStatement.setArray(4,
+				dbConn.createArrayOf("varchar", add.getSubtypes().toArray(new String[0])));
 
 		CreatureDefenses defenses = add.getDefenses();
 
@@ -450,25 +413,21 @@ public class CreatureDB {
 
 		CreatureSaves saves = defenses.getSaves();
 
-		addCreatureStatement.setArray(19,
-				dbConn.createArrayOf("integer",
-						new Integer[] { saves.getFortitude(),
-								saves.getReflex(), saves.getWill() }));
+		addCreatureStatement.setArray(19, dbConn.createArrayOf("integer",
+				new Integer[] { saves.getFortitude(), saves.getReflex(), saves.getWill() }));
 
 		CreatureAttack attack = offenses.getAttackStats();
 
-		addCreatureStatement.setArray(20,
-				dbConn.createArrayOf("integer",
-						new Integer[] { attack.getBaseAttackBonus(),
-								attack.getGrappleMod() }));
+		addCreatureStatement.setArray(20, dbConn.createArrayOf("integer",
+				new Integer[] { attack.getBaseAttackBonus(), attack.getGrappleMod() }));
 
 		CreatureAbilityScores scores = add.getAbilityScores();
 
 		addCreatureStatement.setArray(21,
-				dbConn.createArrayOf("integer", new Integer[] {
-						scores.getStrength(), scores.getDexterity(),
-						scores.getConstitution(), scores.getIntelligence(),
-						scores.getWisdom(), scores.getCharisma() }));
+				dbConn.createArrayOf("integer",
+						new Integer[] { scores.getStrength(), scores.getDexterity(),
+								scores.getConstitution(), scores.getIntelligence(),
+								scores.getWisdom(), scores.getCharisma() }));
 
 		if (addCreatureStatement.executeUpdate() > 0) {
 			dbConn.commit();

@@ -11,8 +11,14 @@ import bjc.utils.funcdata.IList;
 import bjc.dbeditor.data.feat.Feat;
 import bjc.dbeditor.data.feat.FeatBuilder;
 
+/**
+ * Database for storing feats.
+ * 
+ * @author bjculkin
+ *
+ */
 public class FeatDB {
-	private static Connection			dbConnection;
+	private static Connection dbConnection;
 
 	private static PreparedStatement	lookupFeatNameStatement;
 	private static PreparedStatement	createFeatStatement;
@@ -24,9 +30,9 @@ public class FeatDB {
 	private static PreparedStatement	addDependantTagStatement;
 	private static PreparedStatement	addDependantFeatStatement;
 
-	private static PreparedStatement	listFeatNamesStatement;
+	private static PreparedStatement listFeatNamesStatement;
 
-	private static PreparedStatement	lookupFeatStatement;
+	private static PreparedStatement lookupFeatStatement;
 
 	public static void initConnection(Connection conn) throws SQLException {
 		dbConnection = conn;
@@ -66,8 +72,7 @@ public class FeatDB {
 			}
 		}
 
-		createFeatStatement.setArray(2, dbConnection.createArrayOf(
-				"VARCHAR",
+		createFeatStatement.setArray(2, dbConnection.createArrayOf("VARCHAR",
 				featToAdd.getNonFeatPrereqs().toArray(new String[0])));
 
 		createFeatStatement.setString(3, featToAdd.getDescription());
@@ -117,33 +122,26 @@ public class FeatDB {
 	}
 
 	private static void initStatements() throws SQLException {
-		createFeatStatement = dbConnection.prepareStatement(
-				"INSERT INTO feats "
-						+ "(name, prereq_nonfeats, description, flavor, source)"
-						+ " VALUES (?, ?, ?, ?, ?)");
-		lookupFeatNameStatement = dbConnection.prepareStatement(
-				"SELECT name FROM feats WHERE name = ?");
+		createFeatStatement = dbConnection.prepareStatement("INSERT INTO feats "
+				+ "(name, prereq_nonfeats, description, flavor, source)" + " VALUES (?, ?, ?, ?, ?)");
+		lookupFeatNameStatement = dbConnection.prepareStatement("SELECT name FROM feats WHERE name = ?");
 		listFeatStatement = dbConnection.prepareStatement(
-				"SELECT name, prereq_nonfeats, description, flavor, source"
-						+ " FROM feats ");
+				"SELECT name, prereq_nonfeats, description, flavor, source" + " FROM feats ");
 
-		lookupDependantTagsStatement = dbConnection.prepareStatement(
-				"SELECT tag_name FROM feat_tags WHERE feat_name = ?");
-		lookupDependantFeatsStatement = dbConnection.prepareStatement(
-				"SELECT prereq_name FROM feat_prereqs WHERE feat_name = ?");
+		lookupDependantTagsStatement = dbConnection
+				.prepareStatement("SELECT tag_name FROM feat_tags WHERE feat_name = ?");
+		lookupDependantFeatsStatement = dbConnection
+				.prepareStatement("SELECT prereq_name FROM feat_prereqs WHERE feat_name = ?");
 
 		addDependantTagStatement = dbConnection
-				.prepareStatement("INSERT INTO feat_tags "
-						+ " (feat_name, tag_name) VALUES (?, ?)");
-		addDependantFeatStatement = dbConnection
-				.prepareStatement("INSERT INTO feat_prereqs "
-						+ " (feat_name, prereq_name) VALUES (?, ?)");
+				.prepareStatement("INSERT INTO feat_tags " + " (feat_name, tag_name) VALUES (?, ?)");
+		addDependantFeatStatement = dbConnection.prepareStatement(
+				"INSERT INTO feat_prereqs " + " (feat_name, prereq_name) VALUES (?, ?)");
 
-		listFeatNamesStatement = dbConnection
-				.prepareStatement("SELECT name FROM feats ORDER BY name");
+		listFeatNamesStatement = dbConnection.prepareStatement("SELECT name FROM feats ORDER BY name");
 
-		lookupFeatStatement = dbConnection.prepareStatement(
-				"SELECT name, prereq_nonfeats, description, flavor, source"
+		lookupFeatStatement = dbConnection
+				.prepareStatement("SELECT name, prereq_nonfeats, description, flavor, source"
 						+ " FROM feats WHERE name = ?");
 	}
 
@@ -163,8 +161,7 @@ public class FeatDB {
 		return featList;
 	}
 
-	private static Feat createFeatFromSet(ResultSet featResultSet)
-			throws SQLException {
+	private static Feat createFeatFromSet(ResultSet featResultSet) throws SQLException {
 		FeatBuilder currentFeat = new FeatBuilder();
 
 		String featName = featResultSet.getString("name");
@@ -188,10 +185,8 @@ public class FeatDB {
 
 		featSet.close();
 
-		Array prereqNonFeatsArray = featResultSet
-				.getArray("prereq_nonfeats");
-		String[] prereqNonFeats = (String[]) prereqNonFeatsArray
-				.getArray();
+		Array prereqNonFeatsArray = featResultSet.getArray("prereq_nonfeats");
+		String[] prereqNonFeats = (String[]) prereqNonFeatsArray.getArray();
 
 		for (String prereqNonFeat : prereqNonFeats) {
 			currentFeat.addNonFeatPrereq(prereqNonFeat);
@@ -222,8 +217,7 @@ public class FeatDB {
 
 	private static void ensureConnection() {
 		if (dbConnection == null) {
-			throw new IllegalStateException(
-					"ERROR: No connection available");
+			throw new IllegalStateException("ERROR: No connection available");
 		}
 	}
 

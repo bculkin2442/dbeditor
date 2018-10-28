@@ -9,16 +9,16 @@ import bjc.utils.funcdata.FunctionalList;
  *
  */
 public class FeatBuilder {
-	private String					name;
-	private String					flavor;
+	private String	name;
+	private String	flavor;
 
-	private FunctionalList<String>	tags;
+	private FunctionalList<String> tags;
 
 	private FunctionalList<String>	featPrereqs;
 	private FunctionalList<String>	nonFeatPrereqs;
 
-	private String					description;
-	private String					source;
+	private String	description;
+	private String	source;
 
 	/**
 	 * Create a new blank feat builder
@@ -34,7 +34,7 @@ public class FeatBuilder {
 	 * Add a feat as a prerequisite
 	 * 
 	 * @param feat
-	 *            The feat to add as a prerequisite
+	 *                The feat to add as a prerequisite
 	 */
 	public void addFeatPrereq(String feat) {
 		featPrereqs.add(feat);
@@ -44,7 +44,7 @@ public class FeatBuilder {
 	 * Add a non-feat as a prerequisite
 	 * 
 	 * @param prereq
-	 *            The prerequisite to add
+	 *                The prerequisite to add
 	 */
 	public void addNonFeatPrereq(String prereq) {
 		nonFeatPrereqs.add(prereq);
@@ -54,7 +54,7 @@ public class FeatBuilder {
 	 * Add a type tag
 	 * 
 	 * @param tag
-	 *            The tag to add
+	 *                The tag to add
 	 */
 	public void addTag(String tag) {
 		tags.add(tag);
@@ -66,8 +66,7 @@ public class FeatBuilder {
 	 * @return The feat this builder represents
 	 */
 	public Feat buildFeat() {
-		return new Feat(name, tags, featPrereqs, nonFeatPrereqs,
-				description, flavor, source);
+		return new Feat(name, tags, featPrereqs, nonFeatPrereqs, description, flavor, source);
 	}
 
 	public void setDescription(String description) {

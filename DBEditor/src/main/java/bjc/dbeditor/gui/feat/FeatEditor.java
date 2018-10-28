@@ -31,23 +31,23 @@ import bjc.dbeditor.db.FeatDB;
 import bjc.dbeditor.db.FeatTagDB;
 
 public class FeatEditor extends SimpleInternalFrame {
-	private static final long			serialVersionUID		= -4016698246942706462L;
+	private static final long serialVersionUID = -4016698246942706462L;
 
-	private JTextField					nameInputField;
+	private JTextField nameInputField;
 
-	private JTextArea					descriptionInputArea;
+	private JTextArea descriptionInputArea;
 
-	private DefaultListModel<String>	tagListModel			= new DefaultListModel<>();
-	private DefaultListModel<String>	featPrereqListModel		= new DefaultListModel<>();
+	private DefaultListModel<String>	tagListModel		= new DefaultListModel<>();
+	private DefaultListModel<String>	featPrereqListModel	= new DefaultListModel<>();
 	private DefaultListModel<String>	nonFeatPrereqListModel	= new DefaultListModel<>();
 
-	private JInternalFrame				parentFrame;
+	private JInternalFrame parentFrame;
 
-	private JTextArea					flavorInputArea;
+	private JTextArea flavorInputArea;
 
-	private JTextArea					sourceInputArea;
+	private JTextArea sourceInputArea;
 
-	private Feat						baseFeat;
+	private Feat baseFeat;
 
 	public FeatEditor(Feat base) {
 		super("Feat Editor");
@@ -89,8 +89,7 @@ public class FeatEditor extends SimpleInternalFrame {
 			baseFeat.getTags().forEach(tagListModel::addElement);
 		}
 
-		DropdownListPanel tagPanel = new DropdownListPanel("Tag",
-				tagListModel, featTags);
+		DropdownListPanel tagPanel = new DropdownListPanel("Tag", tagListModel, featTags);
 
 		IList<String> featNames = new FunctionalList<>();
 
@@ -102,20 +101,18 @@ public class FeatEditor extends SimpleInternalFrame {
 		}
 
 		if (baseFeat != null) {
-			baseFeat.getFeatPrereqs()
-					.forEach(featPrereqListModel::addElement);
+			baseFeat.getFeatPrereqs().forEach(featPrereqListModel::addElement);
 		}
 
-		DropdownListPanel prereqFeatPanel = new DropdownListPanel(
-				"Prerequisite Feat", featPrereqListModel, featNames);
+		DropdownListPanel prereqFeatPanel = new DropdownListPanel("Prerequisite Feat", featPrereqListModel,
+				featNames);
 
 		if (baseFeat != null) {
-			baseFeat.getNonFeatPrereqs()
-					.forEach(nonFeatPrereqListModel::addElement);
+			baseFeat.getNonFeatPrereqs().forEach(nonFeatPrereqListModel::addElement);
 		}
 
-		SimpleListPanel nonFeatPrereqPanel = new SimpleListPanel(
-				"Nonfeat Prerequisite", nonFeatPrereqListModel, (tag) -> {
+		SimpleListPanel nonFeatPrereqPanel = new SimpleListPanel("Nonfeat Prerequisite", nonFeatPrereqListModel,
+				(tag) -> {
 					return !nonFeatPrereqListModel.contains(tag);
 				}, (tag) -> {
 					JOptionPane.showInternalMessageDialog(parentFrame,
@@ -134,8 +131,7 @@ public class FeatEditor extends SimpleInternalFrame {
 			descriptionInputArea.setText(baseFeat.getDescription());
 		}
 
-		JScrollPane descriptionScroller = new JScrollPane(
-				descriptionInputArea);
+		JScrollPane descriptionScroller = new JScrollPane(descriptionInputArea);
 
 		descriptionPanel.add(descriptionScroller);
 
@@ -217,10 +213,8 @@ public class FeatEditor extends SimpleInternalFrame {
 	private void buildFeat() {
 		FeatBuilder currentFeat = new FeatBuilder();
 
-		if (nameInputField.getText() == null
-				|| nameInputField.getText().equals("")) {
-			SimpleInternalDialogs.showError(parentFrame, "Error",
-					"The feat must have a name");
+		if (nameInputField.getText() == null || nameInputField.getText().equals("")) {
+			SimpleInternalDialogs.showError(parentFrame, "Error", "The feat must have a name");
 			return;
 		}
 
@@ -244,10 +238,8 @@ public class FeatEditor extends SimpleInternalFrame {
 			}
 		}
 
-		if (descriptionInputArea.getText() == null
-				|| descriptionInputArea.getText().equals("")) {
-			SimpleInternalDialogs.showError(parentFrame, "Error",
-					"The feat must have a description");
+		if (descriptionInputArea.getText() == null || descriptionInputArea.getText().equals("")) {
+			SimpleInternalDialogs.showError(parentFrame, "Error", "The feat must have a description");
 			return;
 		}
 
@@ -255,10 +247,8 @@ public class FeatEditor extends SimpleInternalFrame {
 
 		currentFeat.setFlavor(flavorInputArea.getText());
 
-		if (sourceInputArea.getText() == null
-				|| sourceInputArea.getText().equals("")) {
-			SimpleInternalDialogs.showError(parentFrame, "Error",
-					"The feat must have a source");
+		if (sourceInputArea.getText() == null || sourceInputArea.getText().equals("")) {
+			SimpleInternalDialogs.showError(parentFrame, "Error", "The feat must have a source");
 			return;
 		}
 
@@ -266,12 +256,9 @@ public class FeatEditor extends SimpleInternalFrame {
 
 		Feat featToAdd = currentFeat.buildFeat();
 
-		if (baseFeat != null
-				&& featToAdd.getName().equals(baseFeat.getName())) {
-			boolean updateFeat = SimpleInternalDialogs.getYesNo(
-					parentFrame, "Update Feat?",
-					"The feat " + featToAdd.getName()
-							+ " already exists. Would you like to update it?");
+		if (baseFeat != null && featToAdd.getName().equals(baseFeat.getName())) {
+			boolean updateFeat = SimpleInternalDialogs.getYesNo(parentFrame, "Update Feat?", "The feat "
+					+ featToAdd.getName() + " already exists. Would you like to update it?");
 
 			if (updateFeat) {
 				SimpleInternalDialogs.showMessage(parentFrame, "Info",
@@ -286,11 +273,9 @@ public class FeatEditor extends SimpleInternalFrame {
 		try {
 			FeatDB.addFeat(featToAdd);
 
-			SimpleInternalDialogs.showMessage(parentFrame, "Info",
-					"Succesfully added feat");
+			SimpleInternalDialogs.showMessage(parentFrame, "Info", "Succesfully added feat");
 		} catch (SQLException sqlex) {
-			SimpleInternalDialogs.showError(parentFrame, "Error",
-					"Could not save feat into database");
+			SimpleInternalDialogs.showError(parentFrame, "Error", "Could not save feat into database");
 
 			sqlex.printStackTrace();
 		}
@@ -310,12 +295,10 @@ public class FeatEditor extends SimpleInternalFrame {
 		nameInputField.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				if (nameInputField.getText() == null
-						|| nameInputField.getText().equals("")) {
+				if (nameInputField.getText() == null || nameInputField.getText().equals("")) {
 					parentFrame.setTitle("Feat Editor");
 				} else {
-					parentFrame.setTitle(
-							"Feat Editor - " + nameInputField.getText());
+					parentFrame.setTitle("Feat Editor - " + nameInputField.getText());
 				}
 			}
 		});

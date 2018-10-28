@@ -40,7 +40,7 @@ public class DBEditorGUI {
 		createFeatTagItem.setMnemonic('M');
 		createFeatTagItem.addActionListener((ev) -> {
 			FeatTagEditor editor = new FeatTagEditor();
-			
+
 			mainPane.add(editor);
 			editor.setVisible(true);
 		});
@@ -50,7 +50,7 @@ public class DBEditorGUI {
 		createFeatItem.setMnemonic('F');
 		createFeatItem.addActionListener((ev) -> {
 			FeatEditor editor = new FeatEditor();
-			
+
 			mainPane.add(editor);
 			editor.setVisible(true);
 		});
@@ -59,8 +59,9 @@ public class DBEditorGUI {
 		/*
 		 * JMenuItem createCreatureItem = new JMenuItem("Creature...");
 		 * createCreatureItem.setMnemonic('C');
-		 * createCreatureItem.addActionListener((ev) -> { CreatureEditor editor = new
-		 * CreatureEditor(); mainPane.add(editor); editor.setVisible(true); });
+		 * createCreatureItem.addActionListener((ev) -> { CreatureEditor
+		 * editor = new CreatureEditor(); mainPane.add(editor);
+		 * editor.setVisible(true); });
 		 * 
 		 * createMenu.add(createCreatureItem);
 		 */
@@ -77,7 +78,7 @@ public class DBEditorGUI {
 		listFeatItem.setMnemonic('F');
 		listFeatItem.addActionListener((ev) -> {
 			FeatBrowser browser = new FeatBrowser();
-			
+
 			mainPane.add(browser);
 			browser.setVisible(true);
 		});
@@ -86,7 +87,7 @@ public class DBEditorGUI {
 		listFeatTagsItem.setMnemonic('T');
 		listFeatTagsItem.addActionListener((ev) -> {
 			FeatTagBrowser browser = new FeatTagBrowser();
-			
+
 			mainPane.add(browser);
 			browser.setVisible(true);
 		});

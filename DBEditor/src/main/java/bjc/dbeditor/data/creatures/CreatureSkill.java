@@ -2,7 +2,7 @@ package bjc.dbeditor.data.creatures;
 
 public class CreatureSkill {
 	private String	skillName;
-	private int		skillBonus;
+	private int	skillBonus;
 
 	public CreatureSkill(String skillName, int skillBonus) {
 		this.skillName = skillName;
@@ -59,8 +59,7 @@ public class CreatureSkill {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + skillBonus;
-		result = prime * result
-				+ ((skillName == null) ? 0 : skillName.hashCode());
+		result = prime * result + ((skillName == null) ? 0 : skillName.hashCode());
 		return result;
 	}
 

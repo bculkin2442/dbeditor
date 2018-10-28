@@ -23,9 +23,9 @@ import bjc.dbeditor.data.feat.Feat;
 import bjc.dbeditor.db.FeatDB;
 
 public class FeatBrowser extends SimpleInternalFrame {
-	private static final long	serialVersionUID	= -2529817913539767911L;
+	private static final long serialVersionUID = -2529817913539767911L;
 
-	private IList<String>		baseFeatList;
+	private IList<String> baseFeatList;
 
 	public FeatBrowser(IList<String> featList) {
 		super("Feat Browser");
@@ -90,8 +90,7 @@ public class FeatBrowser extends SimpleInternalFrame {
 					return;
 				}
 
-				String displayedFeatName = featListModel
-						.get(selectionIndex);
+				String displayedFeatName = featListModel.get(selectionIndex);
 
 				try {
 					Feat displayedFeat;
@@ -99,16 +98,14 @@ public class FeatBrowser extends SimpleInternalFrame {
 					if (featCache.containsKey(displayedFeatName)) {
 						displayedFeat = featCache.get(displayedFeatName);
 					} else {
-						displayedFeat = FeatDB
-								.lookupFeat(displayedFeatName);
+						displayedFeat = FeatDB.lookupFeat(displayedFeatName);
 
 						featCache.put(displayedFeatName, displayedFeat);
 					}
 
 					featDisplayArea.setText(displayedFeat.toFullString());
 
-					refFrame.setTitle(
-							"Feat Browser - " + displayedFeat.getName());
+					refFrame.setTitle("Feat Browser - " + displayedFeat.getName());
 				} catch (SQLException sqlex) {
 					SimpleInternalDialogs.showError(refFrame, "Error",
 							"Could not display feat " + displayedFeatName);
@@ -133,8 +130,7 @@ public class FeatBrowser extends SimpleInternalFrame {
 		listPanel.add(listScroller, BorderLayout.CENTER);
 		listPanel.add(refreshButton, BorderLayout.PAGE_END);
 
-		JSplitPane mainPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
-				listPanel, featDisplayPanel);
+		JSplitPane mainPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, listPanel, featDisplayPanel);
 
 		add(mainPane);
 	}

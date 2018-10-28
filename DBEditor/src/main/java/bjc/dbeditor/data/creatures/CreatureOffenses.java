@@ -4,9 +4,9 @@ import bjc.utils.funcdata.FunctionalList;
 import bjc.utils.funcdata.IList;
 
 public class CreatureOffenses {
-	private CreatureAttack					attackStats;
-	private String							attack;
-	private String							fullAttack;
+	private CreatureAttack			attackStats;
+	private String				attack;
+	private String				fullAttack;
 	private FunctionalList<CreatureAbility>	specialAttacks;
 	private FunctionalList<CreatureAbility>	specialQualities;
 
@@ -30,8 +30,7 @@ public class CreatureOffenses {
 		return specialQualities.clone();
 	}
 
-	public CreatureOffenses(CreatureAttack attackStats, String attack,
-			String fullAttack,
+	public CreatureOffenses(CreatureAttack attackStats, String attack, String fullAttack,
 			FunctionalList<CreatureAbility> specialAttacks,
 			FunctionalList<CreatureAbility> specialQualities) {
 		this.attackStats = attackStats;

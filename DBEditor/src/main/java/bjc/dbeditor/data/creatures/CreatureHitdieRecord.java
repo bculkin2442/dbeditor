@@ -1,8 +1,8 @@
 package bjc.dbeditor.data.creatures;
 
 public class CreatureHitdieRecord {
-	private int		count;
-	private int		size;
+	private int	count;
+	private int	size;
 	private String	type;
 
 	public CreatureHitdieRecord(int count, int size, String type) {

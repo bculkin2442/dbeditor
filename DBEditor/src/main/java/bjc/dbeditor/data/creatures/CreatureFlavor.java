@@ -22,8 +22,7 @@ public class CreatureFlavor {
 		return notes;
 	}
 
-	public CreatureFlavor(String enviroment, String organization,
-			String description, String notes) {
+	public CreatureFlavor(String enviroment, String organization, String description, String notes) {
 		this.enviroment = enviroment;
 		this.organization = organization;
 		this.description = description;

@@ -10,14 +10,20 @@ import bjc.utils.funcdata.IList;
 
 import bjc.dbeditor.data.feat.FeatTag;
 
+/**
+ * Database for storing feat tags.
+ * 
+ * @author bjculkin
+ *
+ */
 public class FeatTagDB {
-	private static Connection			dbConn;
+	private static Connection dbConn;
 
 	private static PreparedStatement	listTagStatement;
 	private static PreparedStatement	lookupTagStatement;
 	private static PreparedStatement	createTagStatement;
 
-	private static PreparedStatement	listTagNamesStatement;
+	private static PreparedStatement listTagNamesStatement;
 
 	public static boolean addFeatTag(FeatTag tagToAdd) throws SQLException {
 		createTagStatement.setString(1, tagToAdd.getName());
@@ -49,15 +55,11 @@ public class FeatTagDB {
 	}
 
 	private static void initStatements() throws SQLException {
-		listTagStatement = dbConn.prepareStatement(
-				"SELECT name, description FROM feattags");
-		lookupTagStatement = dbConn.prepareStatement(
-				"SELECT name, description FROM feattags WHERE name = ?");
-		createTagStatement = dbConn.prepareStatement(
-				"INSERT INTO feattags (name, description) VALUES (?, ?)");
+		listTagStatement = dbConn.prepareStatement("SELECT name, description FROM feattags");
+		lookupTagStatement = dbConn.prepareStatement("SELECT name, description FROM feattags WHERE name = ?");
+		createTagStatement = dbConn.prepareStatement("INSERT INTO feattags (name, description) VALUES (?, ?)");
 
-		listTagNamesStatement = dbConn.prepareStatement(
-				"SELECT name FROM feattags ORDER BY name");
+		listTagNamesStatement = dbConn.prepareStatement("SELECT name FROM feattags ORDER BY name");
 	}
 
 	public static IList<FeatTag> listTags() throws SQLException {

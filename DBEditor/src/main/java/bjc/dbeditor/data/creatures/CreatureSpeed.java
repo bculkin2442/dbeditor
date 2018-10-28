@@ -2,7 +2,7 @@ package bjc.dbeditor.data.creatures;
 
 public class CreatureSpeed {
 	private String	type;
-	private int		rate;
+	private int	rate;
 
 	public CreatureSpeed(String type, int rate) {
 		this.type = type;

@@ -10,40 +10,38 @@ import bjc.utils.funcdata.IList;
  *
  */
 public class Feat {
-	private String					name;
+	private String name;
 
-	private FunctionalList<String>	tags;
+	private FunctionalList<String> tags;
 
 	private FunctionalList<String>	featPrereqs;
 	private FunctionalList<String>	nonFeatPrereqs;
 
-	private String					flavor;
-	private String					description;
+	private String	flavor;
+	private String	description;
 
-	private String					source;
+	private String source;
 
 	/**
 	 * Create a new feat
 	 * 
 	 * @param name
-	 *            The name of the feat
+	 *                The name of the feat
 	 * @param tags
-	 *            The type tags of the feat
+	 *                The type tags of the feat
 	 * @param featPrereqs
-	 *            The required feat prerequisites
+	 *                The required feat prerequisites
 	 * @param nonFeatPrereqs
-	 *            The required non-feat prerequisites
+	 *                The required non-feat prerequisites
 	 * @param description
-	 *            The description of the feat
+	 *                The description of the feat
 	 * @param flavor
-	 *            The associated flavor text of the feat
+	 *                The associated flavor text of the feat
 	 * @param source
-	 *            The source of the feat
+	 *                The source of the feat
 	 */
-	public Feat(String name, FunctionalList<String> tags,
-			FunctionalList<String> featPrereqs,
-			FunctionalList<String> nonFeatPrereqs, String description,
-			String flavor, String source) {
+	public Feat(String name, FunctionalList<String> tags, FunctionalList<String> featPrereqs,
+			FunctionalList<String> nonFeatPrereqs, String description, String flavor, String source) {
 		this.name = name;
 		this.tags = tags;
 		this.featPrereqs = featPrereqs;
@@ -113,7 +111,7 @@ public class Feat {
 	 * Check if a feat has a given feat as a prerequisite
 	 * 
 	 * @param featName
-	 *            The feat to check if it is a prerequiste
+	 *                The feat to check if it is a prerequiste
 	 * @return Whether or not the specified feat is a prerequisite for this
 	 *         one
 	 */
@@ -138,7 +136,7 @@ public class Feat {
 	 * Check if a feat has a given type tag
 	 * 
 	 * @param tagName
-	 *            The tag to check for
+	 *                The tag to check for
 	 * @return Whether or not the feat has the specified tag
 	 */
 	public boolean hasTag(String tagName) {

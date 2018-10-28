@@ -20,102 +20,113 @@ import bjc.utils.gui.panels.SimpleInputPanel;
 import bjc.dbeditor.data.creatures.CreatureAbility;
 import bjc.dbeditor.data.creatures.CreatureAbilityType;
 
+/**
+ * Editor for abilities.
+ * 
+ * @author bjculkin
+ *
+ */
 public class AbilityEditor extends JPanel {
-		private static final long						serialVersionUID	= 2155181373077752917L;
+	private static final long serialVersionUID = 2155181373077752917L;
 
-		public final DefaultListModel<CreatureAbility>	abilityModel;
+	/**
+	 * Model of abilities to edit.
+	 */
+	public final DefaultListModel<CreatureAbility> abilityModel;
 
-		public AbilityEditor(IList<CreatureAbility> baseAbilities) {
-				setLayout(new AutosizeLayout());
+	/**
+	 * Create a new ability editor.
+	 * 
+	 * @param baseAbilities
+	 *                The list of abilities to edit.
+	 */
+	public AbilityEditor(IList<CreatureAbility> baseAbilities) {
+		setLayout(new AutosizeLayout());
 
-				JPanel abilityCreator = new JPanel();
-				abilityCreator.setLayout(new BorderLayout());
+		JPanel abilityCreator = new JPanel();
+		abilityCreator.setLayout(new BorderLayout());
 
-				JPanel abilityBasics = new JPanel();
-				abilityBasics.setLayout(new HLayout(2));
+		JPanel abilityBasics = new JPanel();
+		abilityBasics.setLayout(new HLayout(2));
 
-				SimpleInputPanel abilityName = new SimpleInputPanel(
-								"Ability Name: ", 255);
+		SimpleInputPanel abilityName = new SimpleInputPanel("Ability Name: ", 255);
 
-				JPanel abilityTypePanel = new JPanel();
-				abilityTypePanel.setLayout(new BorderLayout());
+		JPanel abilityTypePanel = new JPanel();
+		abilityTypePanel.setLayout(new BorderLayout());
 
-				JLabel abilityTypeLabel = new JLabel("Ability Type: ");
-				JComboBox<CreatureAbilityType> abilityType = new JComboBox<>(
-								CreatureAbilityType.values());
+		JLabel abilityTypeLabel = new JLabel("Ability Type: ");
+		JComboBox<CreatureAbilityType> abilityType = new JComboBox<>(CreatureAbilityType.values());
 
-				abilityTypePanel.add(abilityTypeLabel, BorderLayout.LINE_START);
-				abilityTypePanel.add(abilityType, BorderLayout.CENTER);
+		abilityTypePanel.add(abilityTypeLabel, BorderLayout.LINE_START);
+		abilityTypePanel.add(abilityType, BorderLayout.CENTER);
 
-				abilityBasics.add(abilityName);
-				abilityBasics.add(abilityTypePanel);
+		abilityBasics.add(abilityName);
+		abilityBasics.add(abilityTypePanel);
 
-				JTextArea abilityDescription = new JTextArea();
-				abilityDescription.setLineWrap(true);
-				abilityDescription.setWrapStyleWord(true);
+		JTextArea abilityDescription = new JTextArea();
+		abilityDescription.setLineWrap(true);
+		abilityDescription.setWrapStyleWord(true);
 
-				JScrollPane descriptionScroller = new JScrollPane(
-								abilityDescription);
+		JScrollPane descriptionScroller = new JScrollPane(abilityDescription);
 
-				JButton addAbility = new JButton("Add Ability");
+		JButton addAbility = new JButton("Add Ability");
 
-				abilityCreator.add(abilityBasics, BorderLayout.PAGE_START);
-				abilityCreator.add(descriptionScroller, BorderLayout.CENTER);
-				abilityCreator.add(addAbility, BorderLayout.PAGE_END);
+		abilityCreator.add(abilityBasics, BorderLayout.PAGE_START);
+		abilityCreator.add(descriptionScroller, BorderLayout.CENTER);
+		abilityCreator.add(addAbility, BorderLayout.PAGE_END);
 
-				JPanel abilityLister = new JPanel();
-				abilityLister.setLayout(new AutosizeLayout());
+		JPanel abilityLister = new JPanel();
+		abilityLister.setLayout(new AutosizeLayout());
 
-				abilityModel = new DefaultListModel<>();
+		abilityModel = new DefaultListModel<>();
 
-				if (baseAbilities != null) {
-						baseAbilities.forEach(abilityModel::addElement);
-				}
-
-				addAbility.addActionListener((ev) -> {
-						CreatureAbility ability = new CreatureAbility(
-										abilityName.inputValue.getText(),
-										abilityDescription.getText(),
-										(CreatureAbilityType) abilityType.getSelectedItem());
-
-						abilityModel.addElement(ability);
-				});
-
-				JList<CreatureAbility> abilityList = new JList<>(abilityModel);
-
-				JTextArea abilityBody = new JTextArea();
-				abilityBody.setLineWrap(true);
-				abilityBody.setWrapStyleWord(true);
-
-				abilityList.addListSelectionListener((ev) -> {
-						if (ev.getValueIsAdjusting() == true) {
-								return;
-						}
-
-						int selectedIndex = abilityList.getSelectedIndex();
-
-						if (selectedIndex < 0) {
-								abilityBody.setText("");
-						} else {
-								abilityBody.setText(
-												abilityModel.get(selectedIndex).toFullString());
-						}
-				});
-
-				JScrollPane listScroller = new JScrollPane(abilityList);
-				JScrollPane bodyScroller = new JScrollPane(abilityBody);
-
-				JSplitPane displaySplit = new JSplitPane(
-								JSplitPane.HORIZONTAL_SPLIT, listScroller, bodyScroller);
-
-				JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
-								abilityCreator, displaySplit);
-				splitPane.setResizeWeight(0.5);
-
-				add(splitPane);
+		if (baseAbilities != null) {
+			baseAbilities.forEach(abilityModel::addElement);
 		}
 
-		public AbilityEditor() {
-				this(null);
-		}
+		addAbility.addActionListener((ev) -> {
+			CreatureAbility ability = new CreatureAbility(abilityName.inputValue.getText(),
+					abilityDescription.getText(),
+					(CreatureAbilityType) abilityType.getSelectedItem());
+
+			abilityModel.addElement(ability);
+		});
+
+		JList<CreatureAbility> abilityList = new JList<>(abilityModel);
+
+		JTextArea abilityBody = new JTextArea();
+		abilityBody.setLineWrap(true);
+		abilityBody.setWrapStyleWord(true);
+
+		abilityList.addListSelectionListener((ev) -> {
+			if (ev.getValueIsAdjusting() == true) {
+				return;
+			}
+
+			int selectedIndex = abilityList.getSelectedIndex();
+
+			if (selectedIndex < 0) {
+				abilityBody.setText("");
+			} else {
+				abilityBody.setText(abilityModel.get(selectedIndex).toFullString());
+			}
+		});
+
+		JScrollPane listScroller = new JScrollPane(abilityList);
+		JScrollPane bodyScroller = new JScrollPane(abilityBody);
+
+		JSplitPane displaySplit = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, listScroller, bodyScroller);
+
+		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, abilityCreator, displaySplit);
+		splitPane.setResizeWeight(0.5);
+
+		add(splitPane);
+	}
+
+	/**
+	 * Create a new ability editor.
+	 */
+	public AbilityEditor() {
+		this(null);
+	}
 }

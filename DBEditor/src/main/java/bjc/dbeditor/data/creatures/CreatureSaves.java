@@ -68,7 +68,6 @@ public class CreatureSaves {
 
 	@Override
 	public String toString() {
-		return "Fort: " + fortitude + "\tRef: " + reflex + "\tWill: "
-				+ will;
+		return "Fort: " + fortitude + "\tRef: " + reflex + "\tWill: " + will;
 	}
 }

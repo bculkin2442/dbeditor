@@ -5,9 +5,9 @@ import bjc.utils.funcdata.IList;
 
 public class CreatureMisc {
 	private FunctionalList<CreatureSkill>	skills;
-	private String							treasure;
-	private String							alignment;
-	private String							source;
+	private String				treasure;
+	private String				alignment;
+	private String				source;
 
 	public IList<CreatureSkill> getSkills() {
 		return skills.clone();
@@ -25,8 +25,7 @@ public class CreatureMisc {
 		return source;
 	}
 
-	public CreatureMisc(FunctionalList<CreatureSkill> skills,
-			String treasure, String alignment, String source) {
+	public CreatureMisc(FunctionalList<CreatureSkill> skills, String treasure, String alignment, String source) {
 		this.skills = skills;
 		this.treasure = treasure;
 		this.alignment = alignment;

@@ -1,5 +1,10 @@
 package bjc.dbeditor.data.creatures;
 
+/**
+ * Ability scores of a creature.
+ * @author bjculkin
+ *
+ */
 public class CreatureAbilityScores {
 	private static String stringifyScore(int score) {
 		if (score < 0) {
@@ -19,8 +24,17 @@ public class CreatureAbilityScores {
 	private int	wisdom;
 	private int	charisma;
 
-	public CreatureAbilityScores(int strength, int dexterity,
-			int constitution, int intelligence, int wisdom, int charisma) {
+	/**
+	 * Create a new set of ability scores.
+	 * @param strength The strength of a creature.
+	 * @param dexterity The dexterity of a creature.
+	 * @param constitution The constitution of a creature.
+	 * @param intelligence The intelligence of a creature.
+	 * @param wisdom The wisdom of a creature.
+	 * @param charisma The charisma of a creature.
+	 */
+	public CreatureAbilityScores(int strength, int dexterity, int constitution, int intelligence, int wisdom,
+			int charisma) {
 		this.strength = strength;
 		this.dexterity = dexterity;
 		this.constitution = constitution;
@@ -107,11 +121,8 @@ public class CreatureAbilityScores {
 
 	@Override
 	public String toString() {
-		return "Str: " + stringifyScore(strength) + "\tDex: "
-				+ stringifyScore(dexterity) + "\tCon: "
-				+ stringifyScore(constitution) + "\nInt: "
-				+ stringifyScore(intelligence) + "\tWis: "
-				+ stringifyScore(wisdom) + "\tCha"
-				+ stringifyScore(charisma);
+		return "Str: " + stringifyScore(strength) + "\tDex: " + stringifyScore(dexterity) + "\tCon: "
+				+ stringifyScore(constitution) + "\nInt: " + stringifyScore(intelligence) + "\tWis: "
+				+ stringifyScore(wisdom) + "\tCha" + stringifyScore(charisma);
 	}
 }

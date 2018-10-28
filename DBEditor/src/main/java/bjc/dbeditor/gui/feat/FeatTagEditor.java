@@ -20,9 +20,9 @@ import bjc.dbeditor.data.feat.FeatTag;
 import bjc.dbeditor.db.FeatTagDB;
 
 public class FeatTagEditor extends SimpleInternalFrame {
-	private static final long	serialVersionUID	= -1072275991676239181L;
+	private static final long serialVersionUID = -1072275991676239181L;
 
-	private FeatTag				baseTag;
+	private FeatTag baseTag;
 
 	public FeatTagEditor(FeatTag base) {
 		super("Feat Tag Editor");
@@ -76,8 +76,7 @@ public class FeatTagEditor extends SimpleInternalFrame {
 		tagDescriptionArea.setLineWrap(true);
 		tagDescriptionArea.setWrapStyleWord(true);
 
-		JScrollPane descriptionScroller = new JScrollPane(
-				tagDescriptionArea);
+		JScrollPane descriptionScroller = new JScrollPane(tagDescriptionArea);
 
 		if (baseTag != null) {
 			tagDescriptionArea.setText(baseTag.getDescription());
@@ -92,14 +91,11 @@ public class FeatTagEditor extends SimpleInternalFrame {
 
 		addTagButton.addActionListener((ev) -> {
 			try {
-				FeatTagDB.addFeatTag(new FeatTag(tagNameField.getText(),
-						tagDescriptionArea.getText()));
+				FeatTagDB.addFeatTag(new FeatTag(tagNameField.getText(), tagDescriptionArea.getText()));
 
-				SimpleInternalDialogs.showMessage(refFrame, "Info",
-						"Succesfully added feat tag");
+				SimpleInternalDialogs.showMessage(refFrame, "Info", "Succesfully added feat tag");
 			} catch (SQLException sqlex) {
-				SimpleInternalDialogs.showError(refFrame, "Error",
-						"Could not add feat tag");
+				SimpleInternalDialogs.showError(refFrame, "Error", "Could not add feat tag");
 				sqlex.printStackTrace();
 			}
 		});
@@ -114,7 +110,7 @@ public class FeatTagEditor extends SimpleInternalFrame {
 		cancelTagButton.addActionListener((ev) -> {
 			refFrame.dispose();
 		});
-		
+
 		buttonPanel.add(addTagButton);
 		buttonPanel.add(resetTagButton);
 		buttonPanel.add(cancelTagButton);

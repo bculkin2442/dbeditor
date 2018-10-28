@@ -10,50 +10,49 @@ import bjc.dbeditor.data.creatures.CreatureOffenses;
  * A builder of creature offenses
  */
 public class CreatureOffensesBuilder {
-		private CreatureAttack					attackStats;
-		private String							attack;
-		private String							fullAttack;
-		private FunctionalList<CreatureAbility>	specialAttacks;
-		private FunctionalList<CreatureAbility>	specialQualities;
+	private CreatureAttack			attackStats;
+	private String				attack;
+	private String				fullAttack;
+	private FunctionalList<CreatureAbility>	specialAttacks;
+	private FunctionalList<CreatureAbility>	specialQualities;
 
-		/**
-		 * Create a blank builder
-		 */
-		public CreatureOffensesBuilder() {
-				// Initialize lists
-				specialAttacks = new FunctionalList<>();
-				specialQualities = new FunctionalList<>();
-		}
+	/**
+	 * Create a blank builder
+	 */
+	public CreatureOffensesBuilder() {
+		// Initialize lists
+		specialAttacks = new FunctionalList<>();
+		specialQualities = new FunctionalList<>();
+	}
 
-		/*
-		 * Bunch of setters
-		 */
+	/*
+	 * Bunch of setters
+	 */
 
-		public void setAttackStats(CreatureAttack attackStats) {
-				this.attackStats = attackStats;
-		}
+	public void setAttackStats(CreatureAttack attackStats) {
+		this.attackStats = attackStats;
+	}
 
-		public void setAttack(String attack) {
-				this.attack = attack;
-		}
+	public void setAttack(String attack) {
+		this.attack = attack;
+	}
 
-		public void setFullAttack(String fullAttack) {
-				this.fullAttack = fullAttack;
-		}
+	public void setFullAttack(String fullAttack) {
+		this.fullAttack = fullAttack;
+	}
 
-		public void addSpecialAttack(CreatureAbility specialAttack) {
-				specialAttacks.add(specialAttack);
-		}
+	public void addSpecialAttack(CreatureAbility specialAttack) {
+		specialAttacks.add(specialAttack);
+	}
 
-		public void addSpecialQuality(CreatureAbility specialQuality) {
-				specialQualities.add(specialQuality);
-		}
+	public void addSpecialQuality(CreatureAbility specialQuality) {
+		specialQualities.add(specialQuality);
+	}
 
-		/**
-		 * Build the offenses this class represents
-		 */
-		public CreatureOffenses buildOffenses() {
-				return new CreatureOffenses(attackStats, attack, fullAttack,
-								specialAttacks, specialQualities);
-		}
+	/**
+	 * Build the offenses this class represents
+	 */
+	public CreatureOffenses buildOffenses() {
+		return new CreatureOffenses(attackStats, attack, fullAttack, specialAttacks, specialQualities);
+	}
 }

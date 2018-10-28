@@ -5,43 +5,64 @@ import java.math.BigDecimal;
 import bjc.utils.funcdata.FunctionalList;
 import bjc.utils.funcdata.IList;
 
+/**
+ * A creature.
+ * 
+ * @author bjculkin
+ *
+ */
 public class Creature {
-	private String									name;
+	private String name;
 
-	private CreatureSize							size;
+	private CreatureSize size;
 
-	private CreatureType							type;
-	private FunctionalList<String>					subtypes;
+	private CreatureType		type;
+	private FunctionalList<String>	subtypes;
 
-	private FunctionalList<CreatureHitdieRecord>	hitdice;
+	private FunctionalList<CreatureHitdieRecord> hitdice;
 
-	private FunctionalList<CreatureSpeed>			speeds;
+	private FunctionalList<CreatureSpeed> speeds;
 
-	private CreatureDefenses						defenses;
+	private CreatureDefenses defenses;
 
-	private CreatureOffenses						offenses;
+	private CreatureOffenses offenses;
 
-	private CreatureAbilityScores					abilityScores;
+	private CreatureAbilityScores abilityScores;
 
-	private FunctionalList<String>					feats;
+	private FunctionalList<String> feats;
 
-	private BigDecimal								challengeRating;
-	private String									levelAdjustment;
+	private BigDecimal	challengeRating;
+	private String		levelAdjustment;
 
-	private String									advancement;
+	private String advancement;
 
-	private CreatureMisc							miscData;
+	private CreatureMisc miscData;
 
-	private CreatureFlavor							flavor;
+	private CreatureFlavor flavor;
 
+	/**
+	 * Get the name of the creature.
+	 * 
+	 * @return The name of the creature.
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Get the size of the creature.
+	 * 
+	 * @return The size of the creature.
+	 */
 	public CreatureSize getSize() {
 		return size;
 	}
 
+	/**
+	 * Get the creatures feats.
+	 * 
+	 * @return The feats the creature has.
+	 */
 	public IList<String> getFeats() {
 		if (feats == null) {
 			return null;
@@ -50,10 +71,20 @@ public class Creature {
 		return feats.clone();
 	}
 
+	/**
+	 * Get the type of the creature.
+	 * 
+	 * @return The type of the creature.
+	 */
 	public CreatureType getType() {
 		return type;
 	}
 
+	/**
+	 * Get the subtypes of the creature.
+	 * 
+	 * @return The subtypes of the creature.
+	 */
 	public IList<String> getSubtypes() {
 		if (subtypes == null) {
 			return null;
@@ -62,42 +93,92 @@ public class Creature {
 		return subtypes.clone();
 	}
 
+	/**
+	 * Get the hitdice of the creature.
+	 * 
+	 * @return The hitdice of the creature.
+	 */
 	public IList<CreatureHitdieRecord> getHitdice() {
 		return hitdice.clone();
 	}
 
+	/**
+	 * Get the creatures speeds.
+	 * 
+	 * @return The speeds of the creature.
+	 */
 	public IList<CreatureSpeed> getSpeeds() {
 		return speeds.clone();
 	}
 
+	/**
+	 * Get the creatures defenses.
+	 * 
+	 * @return The defenses of the creature.
+	 */
 	public CreatureDefenses getDefenses() {
 		return defenses;
 	}
 
+	/**
+	 * Get the offenses of the creature.
+	 * 
+	 * @return The offenses of the creature.
+	 */
 	public CreatureOffenses getOffenses() {
 		return offenses;
 	}
 
+	/**
+	 * Get the creatures ability scores.
+	 * 
+	 * @return The ability scores of the creature.
+	 */
 	public CreatureAbilityScores getAbilityScores() {
 		return abilityScores;
 	}
 
+	/**
+	 * Get the creatures challenge rating.
+	 * 
+	 * @return The challenge rating of the creature.
+	 */
 	public BigDecimal getChallengeRating() {
 		return challengeRating;
 	}
 
+	/**
+	 * Get the creatures level adjustment.
+	 * 
+	 * @return The level adjustment of the creature.
+	 */
 	public String getLevelAdjustment() {
 		return levelAdjustment;
 	}
 
+	/**
+	 * Get the advancement details for the creature.
+	 * 
+	 * @return The advancement details for the creature.
+	 */
 	public String getAdvancement() {
 		return advancement;
 	}
 
+	/**
+	 * Get the misc. data for the creature.
+	 * 
+	 * @return The misc. data for the creature.
+	 */
 	public CreatureMisc getMiscData() {
 		return miscData;
 	}
 
+	/**
+	 * Get the flavor for the creature.
+	 * 
+	 * @return The flavor for the creature.
+	 */
 	public CreatureFlavor getFlavor() {
 		return flavor;
 	}
@@ -143,14 +224,43 @@ public class Creature {
 		return true;
 	}
 
-	public Creature(String name, CreatureSize size, CreatureType type,
-			FunctionalList<String> subtypes,
-			FunctionalList<CreatureHitdieRecord> hitdice,
-			FunctionalList<CreatureSpeed> speeds,
-			CreatureDefenses defenses, CreatureOffenses offenses,
-			CreatureAbilityScores scores, BigDecimal challengeRating,
-			String levelAdjustment, String advancement,
-			CreatureMisc miscData, CreatureFlavor flavor) {
+	/**
+	 * Create a new creature.
+	 * 
+	 * @param name
+	 *                The name of the creature.
+	 * @param size
+	 *                The size of the creature.
+	 * @param type
+	 *                The type of the creature.
+	 * @param subtypes
+	 *                The subtypes of the creature.
+	 * @param hitdice
+	 *                The hitdice of the creature.
+	 * @param speeds
+	 *                The speeds of the creature.
+	 * @param defenses
+	 *                The defenses of the creature.
+	 * @param offenses
+	 *                The offenses of the creature.
+	 * @param scores
+	 *                The ability scores of the creature.
+	 * @param challengeRating
+	 *                The challenge rating of the creature.
+	 * @param levelAdjustment
+	 *                The level adjustment of the creature.
+	 * @param advancement
+	 *                The advancement details for the creature.
+	 * @param miscData
+	 *                The misc. data for the creature.
+	 * @param flavor
+	 *                The flavor for the creature.
+	 */
+	public Creature(String name, CreatureSize size, CreatureType type, FunctionalList<String> subtypes,
+			FunctionalList<CreatureHitdieRecord> hitdice, FunctionalList<CreatureSpeed> speeds,
+			CreatureDefenses defenses, CreatureOffenses offenses, CreatureAbilityScores scores,
+			BigDecimal challengeRating, String levelAdjustment, String advancement, CreatureMisc miscData,
+			CreatureFlavor flavor) {
 		this.name = name;
 		this.size = size;
 		this.type = type;
@@ -172,6 +282,10 @@ public class Creature {
 		return name;
 	}
 
+	/**
+	 * Convert the creature into a stat-block string.
+	 * @return The creature as a stat-block.
+	 */
 	public String toFullString() {
 		StringBuilder creatureText = new StringBuilder(name);
 
@@ -207,10 +321,8 @@ public class Creature {
 
 		creatureText.append("\n------------------");
 		creatureText.append("\nDefenses");
-		creatureText
-				.append("\nNatural Armor: " + defenses.getNaturalArmor());
-		creatureText.append(
-				"\nSpell Resistance: " + defenses.getSpellResistance());
+		creatureText.append("\nNatural Armor: " + defenses.getNaturalArmor());
+		creatureText.append("\nSpell Resistance: " + defenses.getSpellResistance());
 		creatureText.append("\nSaving Throws");
 		creatureText.append("\n\t" + defenses.getSaves());
 		creatureText.append("\n------------------");
@@ -219,8 +331,7 @@ public class Creature {
 		creatureText.append("\nAttack: " + offenses.getAttack());
 		creatureText.append("\nFull Attack: " + offenses.getFullAttack());
 		creatureText.append("\nSpecial Attacks:");
-		for (CreatureAbility specialAttack : offenses.getSpecialAttacks()
-				.toIterable()) {
+		for (CreatureAbility specialAttack : offenses.getSpecialAttacks().toIterable()) {
 			creatureText.append(" " + specialAttack + ",");
 		}
 
@@ -228,8 +339,7 @@ public class Creature {
 		creatureText.deleteCharAt(creatureText.length() - 1);
 
 		creatureText.append("\nSpecial Qualities:");
-		for (CreatureAbility specialQuality : offenses
-				.getSpecialQualities().toIterable()) {
+		for (CreatureAbility specialQuality : offenses.getSpecialQualities().toIterable()) {
 			creatureText.append(" " + specialQuality + ",");
 		}
 

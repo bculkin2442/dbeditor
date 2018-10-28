@@ -5,17 +5,17 @@ public enum CreatureAbilityType {
 
 	public String toShortString() {
 		switch (this) {
-			case EXTRAORDINARY:
-				return "(Ex)";
-			case PSILIKE:
-				return "(Psi)";
-			case SPELLLIKE:
-				return "(Sp)";
-			case SUPERNATURAL:
-				return "(Su)";
-			case INHERENT:
-			default:
-				return "";
+		case EXTRAORDINARY:
+			return "(Ex)";
+		case PSILIKE:
+			return "(Psi)";
+		case SPELLLIKE:
+			return "(Sp)";
+		case SUPERNATURAL:
+			return "(Su)";
+		case INHERENT:
+		default:
+			return "";
 		}
 	}
 }

@@ -60,71 +60,71 @@ import bjc.dbeditor.gui.components.AbilityEditor;
 import bjc.dbeditor.gui.components.HitdieEditor;
 
 public class CreatureEditor extends SimpleInternalFrame {
-	private static final long						serialVersionUID	= -889902229115548570L;
+	private static final long serialVersionUID = -889902229115548570L;
 
-	private Creature								baseCreature;
+	private Creature baseCreature;
 
-	private SimpleInternalFrame						refFrame;
+	SimpleInternalFrame refFrame;
 
-	private JTextField								nameField;
+	JTextField nameField;
 
-	private JComboBox<CreatureSize>					sizePicker;
-	private JComboBox<CreatureType>					typePicker;
-	private DefaultListModel<String>				subtypeModel;
+	private JComboBox<CreatureSize>		sizePicker;
+	private JComboBox<CreatureType>		typePicker;
+	private DefaultListModel<String>	subtypeModel;
 
-	private DefaultListModel<CreatureHitdieRecord>	hitdiceModel;
+	private DefaultListModel<CreatureHitdieRecord> hitdiceModel;
 
-	private JSpinner								natArmorSpinner;
-	private JSpinner								spellResSpinner;
+	private JSpinner	natArmorSpinner;
+	private JSpinner	spellResSpinner;
 
-	private JSpinner								fortSaveSpinner;
-	private JSpinner								reflexSaveSpinner;
-	private JSpinner								willSaveSpinner;
+	private JSpinner	fortSaveSpinner;
+	private JSpinner	reflexSaveSpinner;
+	private JSpinner	willSaveSpinner;
 
-	private JSpinner								baseAttackField;
+	private JSpinner baseAttackField;
 
-	private JSpinner								grappleField;
+	private JSpinner grappleField;
 
-	private JTextArea								normalAttack;
+	private JTextArea normalAttack;
 
-	private JTextArea								fullAttack;
+	private JTextArea fullAttack;
 
-	private DefaultListModel<CreatureAbility>		specialAttacks;
+	private DefaultListModel<CreatureAbility> specialAttacks;
 
-	private DefaultListModel<CreatureAbility>		specialQualities;
+	private DefaultListModel<CreatureAbility> specialQualities;
 
-	private DefaultListModel<String>				featModel;
+	private DefaultListModel<String> featModel;
 
-	private JTextArea								advancementPanel;
+	private JTextArea advancementPanel;
 
-	private JSpinner								cr;
+	private JSpinner cr;
 
-	private JTextField								la;
+	private JTextField la;
 
-	private JTextArea								treasure;
+	private JTextArea treasure;
 
-	private JTextArea								enviroment;
+	private JTextArea enviroment;
 
-	private JTextArea								organization;
+	private JTextArea organization;
 
-	private JTextArea								description;
+	private JTextArea description;
 
-	private JTextArea								notes;
+	private JTextArea notes;
 
-	private JTextArea								source;
+	private JTextArea source;
 
-	private DefaultListModel<CreatureSpeed>			speeds;
+	DefaultListModel<CreatureSpeed> speeds;
 
-	private DefaultListModel<CreatureSkill>			skillModel;
+	private DefaultListModel<CreatureSkill> skillModel;
 
-	private JTextField								alignment;
+	private JTextField alignment;
 
-	private JSpinner								strength;
-	private JSpinner								dexterity;
-	private JSpinner								constitution;
-	private JSpinner								intelligence;
-	private JSpinner								charisma;
-	private JSpinner								wisdom;
+	private JSpinner	strength;
+	private JSpinner	dexterity;
+	private JSpinner	constitution;
+	private JSpinner	intelligence;
+	private JSpinner	charisma;
+	private JSpinner	wisdom;
 
 	public CreatureEditor() {
 		this(null);
@@ -169,16 +169,12 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 		CreatureDefensesBuilder defenseBuilder = new CreatureDefensesBuilder();
 
-		defenseBuilder
-				.setNaturalArmor((Integer) natArmorSpinner.getValue());
+		defenseBuilder.setNaturalArmor((Integer) natArmorSpinner.getValue());
 
-		defenseBuilder
-				.setSpellResistance((Integer) spellResSpinner.getValue());
+		defenseBuilder.setSpellResistance((Integer) spellResSpinner.getValue());
 
-		CreatureSaves creatureSaves = new CreatureSaves(
-				(Integer) fortSaveSpinner.getValue(),
-				(Integer) reflexSaveSpinner.getValue(),
-				(Integer) willSaveSpinner.getValue());
+		CreatureSaves creatureSaves = new CreatureSaves((Integer) fortSaveSpinner.getValue(),
+				(Integer) reflexSaveSpinner.getValue(), (Integer) willSaveSpinner.getValue());
 
 		defenseBuilder.setSaves(creatureSaves);
 
@@ -186,8 +182,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 		CreatureOffensesBuilder offenseBuilder = new CreatureOffensesBuilder();
 
-		CreatureAttack creatureAttack = new CreatureAttack(
-				(Integer) baseAttackField.getValue(),
+		CreatureAttack creatureAttack = new CreatureAttack((Integer) baseAttackField.getValue(),
 				(Integer) grappleField.getValue());
 
 		offenseBuilder.setAttackStats(creatureAttack);
@@ -196,23 +191,18 @@ public class CreatureEditor extends SimpleInternalFrame {
 		offenseBuilder.setFullAttack(fullAttack.getText());
 
 		for (Object specialAttack : specialAttacks.toArray()) {
-			offenseBuilder
-					.addSpecialAttack((CreatureAbility) specialAttack);
+			offenseBuilder.addSpecialAttack((CreatureAbility) specialAttack);
 		}
 
 		for (Object specialQuality : specialQualities.toArray()) {
-			offenseBuilder
-					.addSpecialQuality((CreatureAbility) specialQuality);
+			offenseBuilder.addSpecialQuality((CreatureAbility) specialQuality);
 		}
 
 		builder.setOffenses(offenseBuilder.buildOffenses());
 
-		CreatureAbilityScores scores = new CreatureAbilityScores(
-				(Integer) strength.getValue(),
-				(Integer) dexterity.getValue(),
-				(Integer) constitution.getValue(),
-				(Integer) intelligence.getValue(),
-				(Integer) wisdom.getValue(),
+		CreatureAbilityScores scores = new CreatureAbilityScores((Integer) strength.getValue(),
+				(Integer) dexterity.getValue(), (Integer) constitution.getValue(),
+				(Integer) intelligence.getValue(), (Integer) wisdom.getValue(),
 				(Integer) charisma.getValue());
 
 		builder.setAbilityScores(scores);
@@ -246,11 +236,9 @@ public class CreatureEditor extends SimpleInternalFrame {
 		try {
 			CreatureDB.addCreature(builder.buildCreature());
 
-			SimpleInternalDialogs.showMessage(refFrame, "Info",
-					"Succesfully added creature");
+			SimpleInternalDialogs.showMessage(refFrame, "Info", "Succesfully added creature");
 		} catch (SQLException sqlex) {
-			SimpleInternalDialogs.showError(refFrame, "Error",
-					"Could not save creature to database.");
+			SimpleInternalDialogs.showError(refFrame, "Error", "Could not save creature to database.");
 
 			sqlex.printStackTrace();
 		}
@@ -260,23 +248,19 @@ public class CreatureEditor extends SimpleInternalFrame {
 		JPanel abilityScorePanel = new JPanel();
 		abilityScorePanel.setLayout(new GridLayout(2, 3));
 
-		SimpleSpinnerPanel strengthPanel = new SimpleSpinnerPanel(
-				"Strength: ",
+		SimpleSpinnerPanel strengthPanel = new SimpleSpinnerPanel("Strength: ",
 				new SpinnerNumberModel(0, -1, Integer.MAX_VALUE, 1));
 		strength = strengthPanel.inputValue;
 
-		SimpleSpinnerPanel dexterityPanel = new SimpleSpinnerPanel(
-				"Dexterity: ",
+		SimpleSpinnerPanel dexterityPanel = new SimpleSpinnerPanel("Dexterity: ",
 				new SpinnerNumberModel(0, -1, Integer.MAX_VALUE, 1));
 		dexterity = dexterityPanel.inputValue;
 
-		SimpleSpinnerPanel constitutionPanel = new SimpleSpinnerPanel(
-				"Constitution: ",
+		SimpleSpinnerPanel constitutionPanel = new SimpleSpinnerPanel("Constitution: ",
 				new SpinnerNumberModel(0, -1, Integer.MAX_VALUE, 1));
 		constitution = constitutionPanel.inputValue;
 
-		SimpleSpinnerPanel intelligencePanel = new SimpleSpinnerPanel(
-				"Intelligence: ",
+		SimpleSpinnerPanel intelligencePanel = new SimpleSpinnerPanel("Intelligence: ",
 				new SpinnerNumberModel(0, -1, Integer.MAX_VALUE, 1));
 		intelligence = intelligencePanel.inputValue;
 
@@ -284,8 +268,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 				new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1));
 		wisdom = wisdomPanel.inputValue;
 
-		SimpleSpinnerPanel charismaPanel = new SimpleSpinnerPanel(
-				"Charisma: ",
+		SimpleSpinnerPanel charismaPanel = new SimpleSpinnerPanel("Charisma: ",
 				new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1));
 		charisma = charismaPanel.inputValue;
 
@@ -306,14 +289,11 @@ public class CreatureEditor extends SimpleInternalFrame {
 		JPanel laCRPanel = new JPanel();
 		laCRPanel.setLayout(new VLayout(2));
 
-		SimpleSpinnerPanel crPanel = new SimpleSpinnerPanel(
-				"Challenge Rating: ",
-				new SpinnerNumberModel(BigDecimal.ONE, BigDecimal.ZERO,
-						BigDecimal.valueOf(1000), BigDecimal.valueOf(.5)));
+		SimpleSpinnerPanel crPanel = new SimpleSpinnerPanel("Challenge Rating: ", new SpinnerNumberModel(
+				BigDecimal.ONE, BigDecimal.ZERO, BigDecimal.valueOf(1000), BigDecimal.valueOf(.5)));
 		cr = crPanel.inputValue;
 
-		SimpleInputPanel laPanel = new SimpleInputPanel(
-				"Level Adjustment: ", 255);
+		SimpleInputPanel laPanel = new SimpleInputPanel("Level Adjustment: ", 255);
 
 		la = laPanel.inputValue;
 
@@ -335,43 +315,36 @@ public class CreatureEditor extends SimpleInternalFrame {
 		JPanel defensePanel = new JPanel();
 		defensePanel.setLayout(new VLayout(3));
 
-		SimpleSpinnerPanel natArmor = new SimpleSpinnerPanel(
-				"Natural Armor: ", new SpinnerNumberModel(0,
-						Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
+		SimpleSpinnerPanel natArmor = new SimpleSpinnerPanel("Natural Armor: ",
+				new SpinnerNumberModel(0, Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
 		natArmorSpinner = natArmor.inputValue;
 
 		if (baseCreature != null) {
-			natArmorSpinner.setValue(
-					baseCreature.getDefenses().getNaturalArmor());
+			natArmorSpinner.setValue(baseCreature.getDefenses().getNaturalArmor());
 		}
 
-		SimpleSpinnerPanel spellRes = new SimpleSpinnerPanel(
-				"Spell Resistance: ",
+		SimpleSpinnerPanel spellRes = new SimpleSpinnerPanel("Spell Resistance: ",
 				new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1));
 
 		spellResSpinner = spellRes.inputValue;
 
 		if (baseCreature != null) {
-			spellResSpinner.setValue(
-					baseCreature.getDefenses().getSpellResistance());
+			spellResSpinner.setValue(baseCreature.getDefenses().getSpellResistance());
 		}
 
 		JPanel savesPanel = new JPanel();
 		savesPanel.setLayout(new HLayout(3));
 
-		SimpleSpinnerPanel fortSave = new SimpleSpinnerPanel(
-				"Fortitude Save: ", new SpinnerNumberModel(0,
-						Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
+		SimpleSpinnerPanel fortSave = new SimpleSpinnerPanel("Fortitude Save: ",
+				new SpinnerNumberModel(0, Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
 		fortSaveSpinner = fortSave.inputValue;
 
-		SimpleSpinnerPanel reflexSave = new SimpleSpinnerPanel(
-				"Reflex Save: ", new SpinnerNumberModel(0,
-						Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
+		SimpleSpinnerPanel reflexSave = new SimpleSpinnerPanel("Reflex Save: ",
+				new SpinnerNumberModel(0, Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
 		reflexSaveSpinner = reflexSave.inputValue;
 
 		SimpleSpinnerPanel willSave = new SimpleSpinnerPanel("Will Save: ",
-				new SpinnerNumberModel(0, Integer.MIN_VALUE,
-						Integer.MAX_VALUE, 1));
+				new SpinnerNumberModel(0, Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
 		willSaveSpinner = willSave.inputValue;
 
 		savesPanel.add(fortSave);
@@ -409,8 +382,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 		detailEditorPanel.add(blankPanel, "Blank");
 
-		detailEditorPanel.add(setupSizeTypePanel(),
-				"Size & Type/Subtypes");
+		detailEditorPanel.add(setupSizeTypePanel(), "Size & Type/Subtypes");
 		detailModel.addElement("Size & Type/Subtypes");
 
 		detailEditorPanel.add(setupHitdiePanel(), "Hitdice");
@@ -434,8 +406,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 		detailEditorPanel.add(setupSkillPanel(), "Skills");
 		detailModel.addElement("Skills");
 
-		detailEditorPanel.add(setupCRLAAdvancementPanel(),
-				"CR, LA & Advancement");
+		detailEditorPanel.add(setupCRLAAdvancementPanel(), "CR, LA & Advancement");
 		detailModel.addElement("CR, LA & Advancement");
 
 		detailEditorPanel.add(setupFlavorPanel(), "Flavor");
@@ -457,9 +428,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 			detailLayout.show(detailEditorPanel, selectedValue);
 		});
 
-		JSplitPane detailSplitter = new JSplitPane(
-				JSplitPane.HORIZONTAL_SPLIT, detailList,
-				detailEditorPanel);
+		JSplitPane detailSplitter = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, detailList, detailEditorPanel);
 
 		detailsPanel.add(detailSplitter);
 		return detailsPanel;
@@ -481,8 +450,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 			baseCreature.getFeats().forEach(featModel::addElement);
 		}
 
-		DropdownListPanel featPanel = new DropdownListPanel("Feat",
-				featModel, featNames);
+		DropdownListPanel featPanel = new DropdownListPanel("Feat", featModel, featNames);
 
 		return featPanel;
 	}
@@ -529,8 +497,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 		flavorChoice.addTab("Source", source);
 
-		SimpleInputPanel alignmentPanel = new SimpleInputPanel(
-				"Alignment: ", 255);
+		SimpleInputPanel alignmentPanel = new SimpleInputPanel("Alignment: ", 255);
 		alignment = alignmentPanel.inputValue;
 
 		flavorPanel.add(alignmentPanel, BorderLayout.PAGE_START);
@@ -593,12 +560,10 @@ public class CreatureEditor extends SimpleInternalFrame {
 		nameField.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				if (nameField.getText() == null
-						| nameField.getText().equals("")) {
+				if (nameField.getText() == null || nameField.getText().equals("")) {
 					refFrame.setTitle("Creature Editor");
 				} else {
-					refFrame.setTitle(
-							"Creature Editor - " + nameField.getText());
+					refFrame.setTitle("Creature Editor - " + nameField.getText());
 				}
 			}
 		});
@@ -620,14 +585,12 @@ public class CreatureEditor extends SimpleInternalFrame {
 		JPanel attackStatPanel = new JPanel();
 		attackStatPanel.setLayout(new HLayout(2));
 
-		SimpleSpinnerPanel baseAttack = new SimpleSpinnerPanel(
-				"Base Attack Bonus: ", new SpinnerNumberModel(0,
-						Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
+		SimpleSpinnerPanel baseAttack = new SimpleSpinnerPanel("Base Attack Bonus: ",
+				new SpinnerNumberModel(0, Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
 		baseAttackField = baseAttack.inputValue;
 
-		SimpleSpinnerPanel grapple = new SimpleSpinnerPanel(
-				"Grapple Modifier: ", new SpinnerNumberModel(0,
-						Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
+		SimpleSpinnerPanel grapple = new SimpleSpinnerPanel("Grapple Modifier: ",
+				new SpinnerNumberModel(0, Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
 
 		grappleField = grapple.inputValue;
 
@@ -661,18 +624,14 @@ public class CreatureEditor extends SimpleInternalFrame {
 		if (baseCreature != null) {
 			CreatureOffenses offenses = baseCreature.getOffenses();
 
-			baseAttackField.setValue(
-					offenses.getAttackStats().getBaseAttackBonus());
-			grappleField
-					.setValue(offenses.getAttackStats().getGrappleMod());
+			baseAttackField.setValue(offenses.getAttackStats().getBaseAttackBonus());
+			grappleField.setValue(offenses.getAttackStats().getGrappleMod());
 
 			normalAttack.setText(offenses.getAttack());
 			fullAttack.setText(offenses.getFullAttack());
 
-			offenses.getSpecialAttacks()
-					.forEach(specialAttacks::addElement);
-			offenses.getSpecialQualities()
-					.forEach(specialQualities::addElement);
+			offenses.getSpecialAttacks().forEach(specialAttacks::addElement);
+			offenses.getSpecialQualities().forEach(specialQualities::addElement);
 		}
 
 		offensePanel.add(attackStatPanel, BorderLayout.PAGE_START);
@@ -683,8 +642,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 	private JPanel setupSizeTypePanel() {
 		JPanel sizeTypePanel = new JPanel();
-		sizeTypePanel.setLayout(
-				new BoxLayout(sizeTypePanel, BoxLayout.PAGE_AXIS));
+		sizeTypePanel.setLayout(new BoxLayout(sizeTypePanel, BoxLayout.PAGE_AXIS));
 
 		JPanel sizePanel = new JPanel();
 		sizePanel.setLayout(new HLayout(2));
@@ -718,9 +676,8 @@ public class CreatureEditor extends SimpleInternalFrame {
 			baseCreature.getSubtypes().forEach(subtypeModel::addElement);
 		}
 
-		SimpleListPanel subtypePanel = new SimpleListPanel("Subtype",
-				subtypeModel, (string) -> !string.equals(""),
-				(subtype) -> {
+		SimpleListPanel subtypePanel = new SimpleListPanel("Subtype", subtypeModel,
+				(string) -> !string.equals(""), (subtype) -> {
 					SimpleInternalDialogs.showError(refFrame, "Error",
 							"Error: Invalid subtype " + subtype);
 				});
@@ -748,12 +705,10 @@ public class CreatureEditor extends SimpleInternalFrame {
 		JPanel skillInput = new JPanel();
 		skillInput.setLayout(new HLayout(2));
 
-		SimpleInputPanel skillName = new SimpleInputPanel("Skill Name: ",
-				255);
+		SimpleInputPanel skillName = new SimpleInputPanel("Skill Name: ", 255);
 
-		SimpleSpinnerPanel skillBonus = new SimpleSpinnerPanel(
-				"Skill Bonus: ", new SpinnerNumberModel(0,
-						Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
+		SimpleSpinnerPanel skillBonus = new SimpleSpinnerPanel("Skill Bonus: ",
+				new SpinnerNumberModel(0, Integer.MIN_VALUE, Integer.MAX_VALUE, 1));
 
 		skillInput.add(skillName);
 		skillInput.add(skillBonus);
@@ -766,14 +721,12 @@ public class CreatureEditor extends SimpleInternalFrame {
 		skillModel = new DefaultListModel<>();
 
 		if (baseCreature != null) {
-			baseCreature.getMiscData().getSkills()
-					.forEach(skillModel::addElement);
+			baseCreature.getMiscData().getSkills().forEach(skillModel::addElement);
 		}
 
 		addSkillButton.addActionListener((ev) -> {
 			String skillNam = skillName.inputValue.getText();
-			int skillBonu = ((SpinnerNumberModel) skillBonus.inputValue
-					.getModel()).getNumber().intValue();
+			int skillBonu = ((SpinnerNumberModel) skillBonus.inputValue.getModel()).getNumber().intValue();
 
 			skillModel.addElement(new CreatureSkill(skillNam, skillBonu));
 		});
@@ -808,8 +761,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 		JPanel speedDetails = new JPanel();
 		speedDetails.setLayout(new HLayout(2));
 
-		SimpleInputPanel speedType = new SimpleInputPanel("Speed Type: ",
-				255);
+		SimpleInputPanel speedType = new SimpleInputPanel("Speed Type: ", 255);
 
 		SimpleSpinnerPanel speedRate = new SimpleSpinnerPanel("Speed Rate",
 				new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 5));

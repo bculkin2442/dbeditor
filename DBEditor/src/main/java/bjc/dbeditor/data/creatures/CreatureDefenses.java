@@ -1,8 +1,8 @@
 package bjc.dbeditor.data.creatures;
 
 public class CreatureDefenses {
-	private int				naturalArmor;
-	private int				spellResistance;
+	private int		naturalArmor;
+	private int		spellResistance;
 	private CreatureSaves	saves;
 
 	public int getNaturalArmor() {
@@ -17,8 +17,7 @@ public class CreatureDefenses {
 		return saves;
 	}
 
-	public CreatureDefenses(int naturalArmor, int spellResistance,
-			CreatureSaves saves) {
+	public CreatureDefenses(int naturalArmor, int spellResistance, CreatureSaves saves) {
 		this.naturalArmor = naturalArmor;
 		this.spellResistance = spellResistance;
 		this.saves = saves;

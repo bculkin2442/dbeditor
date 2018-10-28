@@ -59,7 +59,6 @@ public class CreatureAttack {
 
 	@Override
 	public String toString() {
-		return "Base Attack/Grapple: +" + baseAttackBonus + "/+"
-				+ grappleMod;
+		return "Base Attack/Grapple: +" + baseAttackBonus + "/+" + grappleMod;
 	}
 }
