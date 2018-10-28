@@ -23,13 +23,23 @@ import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.SimpleTitledBorder;
 import bjc.utils.gui.layout.AutosizeLayout;
 
+/**
+ * Browser for Feat Tags.
+ * @author bjculkin
+ *
+ */
 public class FeatTagBrowser extends SimpleInternalFrame {
 	private static final long serialVersionUID = -2529817913539767911L;
 
 	private IList<String> baseTagList;
 
+	@SuppressWarnings("unused")
 	private IHolder<FeatTag> displayedTag;
 
+	/**
+	 * Create a new feat tag browser.
+	 * @param tagList The list of tags to browse.
+	 */
 	public FeatTagBrowser(IList<String> tagList) {
 		super("Feat Tag Browser");
 
@@ -40,6 +50,9 @@ public class FeatTagBrowser extends SimpleInternalFrame {
 		setupGUI();
 	}
 
+	/**
+	 * Create a new empty feat tag browser.
+	 */
 	public FeatTagBrowser() {
 		this(null);
 	}
