@@ -14,8 +14,8 @@ import javax.swing.ListSelectionModel;
 
 import bjc.dbeditor.data.feat.Feat;
 import bjc.dbeditor.db.FeatDB;
-import bjc.utils.funcdata.FunctionalMap;
-import bjc.utils.funcdata.IList;
+import bjc.funcdata.FunctionalMap;
+import bjc.funcdata.IList;
 import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.SimpleTitledBorder;

@@ -1,7 +1,7 @@
 package bjc.dbeditor.data.creatures;
 
-import bjc.utils.funcdata.FunctionalList;
-import bjc.utils.funcdata.IList;
+import bjc.funcdata.FunctionalList;
+import bjc.funcdata.IList;
 
 public class CreatureMisc {
 	private FunctionalList<CreatureSkill>	skills;

@@ -3,7 +3,7 @@ package bjc.dbeditor.data.creatures.builders;
 import bjc.dbeditor.data.creatures.CreatureAbility;
 import bjc.dbeditor.data.creatures.CreatureAttack;
 import bjc.dbeditor.data.creatures.CreatureOffenses;
-import bjc.utils.funcdata.FunctionalList;
+import bjc.funcdata.FunctionalList;
 
 /**
  * A builder of creature offenses

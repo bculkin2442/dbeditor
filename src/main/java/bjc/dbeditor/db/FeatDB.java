@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 import bjc.dbeditor.data.feat.Feat;
 import bjc.dbeditor.data.feat.FeatBuilder;
-import bjc.utils.funcdata.FunctionalList;
-import bjc.utils.funcdata.IList;
+import bjc.funcdata.FunctionalList;
+import bjc.funcdata.IList;
 
 /**
  * Database for storing feats.

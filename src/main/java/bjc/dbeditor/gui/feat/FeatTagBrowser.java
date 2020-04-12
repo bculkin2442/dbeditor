@@ -14,10 +14,10 @@ import javax.swing.ListSelectionModel;
 
 import bjc.dbeditor.data.feat.FeatTag;
 import bjc.dbeditor.db.FeatTagDB;
-import bjc.utils.data.IHolder;
-import bjc.utils.data.Identity;
-import bjc.utils.funcdata.FunctionalMap;
-import bjc.utils.funcdata.IList;
+import bjc.data.IHolder;
+import bjc.data.Identity;
+import bjc.funcdata.FunctionalMap;
+import bjc.funcdata.IList;
 import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.SimpleTitledBorder;

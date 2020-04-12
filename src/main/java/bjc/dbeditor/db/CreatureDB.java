@@ -26,8 +26,8 @@ import bjc.dbeditor.data.creatures.builders.CreatureDefensesBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureFlavorBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureMiscBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureOffensesBuilder;
-import bjc.utils.funcdata.FunctionalList;
-import bjc.utils.funcdata.IList;
+import bjc.funcdata.FunctionalList;
+import bjc.funcdata.IList;
 
 /**
  * Database for storing creatures.

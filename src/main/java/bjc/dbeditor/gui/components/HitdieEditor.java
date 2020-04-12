@@ -14,7 +14,7 @@ import javax.swing.ListCellRenderer;
 import javax.swing.SpinnerNumberModel;
 
 import bjc.dbeditor.data.creatures.CreatureHitdieRecord;
-import bjc.utils.funcdata.IList;
+import bjc.funcdata.IList;
 import bjc.utils.gui.layout.HLayout;
 import bjc.utils.gui.layout.VLayout;
 import bjc.utils.gui.panels.SimpleSpinnerPanel;

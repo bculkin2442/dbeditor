@@ -1,6 +1,6 @@
 package bjc.dbeditor.data.feat;
 
-import bjc.utils.funcdata.FunctionalList;
+import bjc.funcdata.FunctionalList;
 
 /**
  * Builds feats piece by piece

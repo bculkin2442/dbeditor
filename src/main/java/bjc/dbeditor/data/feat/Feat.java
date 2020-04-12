@@ -1,7 +1,7 @@
 package bjc.dbeditor.data.feat;
 
-import bjc.utils.funcdata.FunctionalList;
-import bjc.utils.funcdata.IList;
+import bjc.funcdata.FunctionalList;
+import bjc.funcdata.IList;
 
 /**
  * Represents a feat that can be taken

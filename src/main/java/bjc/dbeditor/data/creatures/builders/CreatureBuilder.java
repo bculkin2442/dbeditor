@@ -12,7 +12,7 @@ import bjc.dbeditor.data.creatures.CreatureOffenses;
 import bjc.dbeditor.data.creatures.CreatureSize;
 import bjc.dbeditor.data.creatures.CreatureSpeed;
 import bjc.dbeditor.data.creatures.CreatureType;
-import bjc.utils.funcdata.FunctionalList;
+import bjc.funcdata.FunctionalList;
 
 /**
  * Class for building instances of creatures

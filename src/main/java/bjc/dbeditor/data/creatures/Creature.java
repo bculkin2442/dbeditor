@@ -2,8 +2,8 @@ package bjc.dbeditor.data.creatures;
 
 import java.math.BigDecimal;
 
-import bjc.utils.funcdata.FunctionalList;
-import bjc.utils.funcdata.IList;
+import bjc.funcdata.FunctionalList;
+import bjc.funcdata.IList;
 
 /**
  * A creature.
