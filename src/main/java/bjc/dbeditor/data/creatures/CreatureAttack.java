@@ -1,9 +1,19 @@
 package bjc.dbeditor.data.creatures;
 
+/**
+ * Describes attack details for a creature.
+ * @author Ben Culkin
+ *
+ */
 public class CreatureAttack {
 	private int	baseAttackBonus;
 	private int	grappleMod;
 
+	/**
+	 * Create a new set of attack details.
+	 * @param baseAttackBonus The BAB for a creature.
+	 * @param grappleMod The grapple mod for a creature.
+	 */
 	public CreatureAttack(int baseAttackBonus, int grappleMod) {
 		this.baseAttackBonus = baseAttackBonus;
 		this.grappleMod = grappleMod;
@@ -35,10 +45,18 @@ public class CreatureAttack {
 		return true;
 	}
 
+	/**
+	 * Get the BAB for the creature.
+	 * @return The BAB for the creature.
+	 */
 	public int getBaseAttackBonus() {
 		return baseAttackBonus;
 	}
 
+	/**
+	 * Get the grapple modifier for the creature.
+	 * @return The grapple modifier for the creature.
+	 */
 	public int getGrappleMod() {
 		return grappleMod;
 	}

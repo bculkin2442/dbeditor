@@ -41,7 +41,7 @@ import bjc.dbeditor.data.creatures.builders.CreatureDefensesBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureFlavorBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureMiscBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureOffensesBuilder;
-import bjc.dbeditor.db.CreatureDB;
+import bjc.dbeditor.db.CreatureJDBCDB;
 import bjc.dbeditor.db.FeatDB;
 import bjc.dbeditor.gui.components.AbilityEditor;
 import bjc.dbeditor.gui.components.HitdieEditor;
@@ -58,6 +58,12 @@ import bjc.utils.gui.panels.SimpleInputPanel;
 import bjc.utils.gui.panels.SimpleListPanel;
 import bjc.utils.gui.panels.SimpleSpinnerPanel;
 
+/**
+ * GUI form for editing a creature.
+ * 
+ * @author Ben Culkin
+ *
+ */
 public class CreatureEditor extends SimpleInternalFrame {
 	private static final long serialVersionUID = -889902229115548570L;
 
@@ -67,18 +73,18 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 	JTextField nameField;
 
-	private JComboBox<CreatureSize>		sizePicker;
-	private JComboBox<CreatureType>		typePicker;
-	private DefaultListModel<String>	subtypeModel;
+	private JComboBox<CreatureSize> sizePicker;
+	private JComboBox<CreatureType> typePicker;
+	private DefaultListModel<String> subtypeModel;
 
 	private DefaultListModel<CreatureHitdieRecord> hitdiceModel;
 
-	private JSpinner	natArmorSpinner;
-	private JSpinner	spellResSpinner;
+	private JSpinner natArmorSpinner;
+	private JSpinner spellResSpinner;
 
-	private JSpinner	fortSaveSpinner;
-	private JSpinner	reflexSaveSpinner;
-	private JSpinner	willSaveSpinner;
+	private JSpinner fortSaveSpinner;
+	private JSpinner reflexSaveSpinner;
+	private JSpinner willSaveSpinner;
 
 	private JSpinner baseAttackField;
 
@@ -118,17 +124,26 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 	private JTextField alignment;
 
-	private JSpinner	strength;
-	private JSpinner	dexterity;
-	private JSpinner	constitution;
-	private JSpinner	intelligence;
-	private JSpinner	charisma;
-	private JSpinner	wisdom;
+	private JSpinner strength;
+	private JSpinner dexterity;
+	private JSpinner constitution;
+	private JSpinner intelligence;
+	private JSpinner charisma;
+	private JSpinner wisdom;
 
+	/**
+	 * Create a new GUI form, editing no creature by default.
+	 */
 	public CreatureEditor() {
 		this(null);
 	}
 
+	/**
+	 * Create a new GUI form, editing the provided creature by default.
+	 * 
+	 * @param base
+	 *             The creature to edit.
+	 */
 	public CreatureEditor(Creature base) {
 		super("Creature Editor");
 
@@ -172,8 +187,10 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 		defenseBuilder.setSpellResistance((Integer) spellResSpinner.getValue());
 
-		CreatureSaves creatureSaves = new CreatureSaves((Integer) fortSaveSpinner.getValue(),
-				(Integer) reflexSaveSpinner.getValue(), (Integer) willSaveSpinner.getValue());
+		CreatureSaves creatureSaves
+				= new CreatureSaves((Integer) fortSaveSpinner.getValue(),
+						(Integer) reflexSaveSpinner.getValue(),
+						(Integer) willSaveSpinner.getValue());
 
 		defenseBuilder.setSaves(creatureSaves);
 
@@ -181,8 +198,8 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 		CreatureOffensesBuilder offenseBuilder = new CreatureOffensesBuilder();
 
-		CreatureAttack creatureAttack = new CreatureAttack((Integer) baseAttackField.getValue(),
-				(Integer) grappleField.getValue());
+		CreatureAttack creatureAttack = new CreatureAttack(
+				(Integer) baseAttackField.getValue(), (Integer) grappleField.getValue());
 
 		offenseBuilder.setAttackStats(creatureAttack);
 
@@ -199,10 +216,10 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 		builder.setOffenses(offenseBuilder.buildOffenses());
 
-		CreatureAbilityScores scores = new CreatureAbilityScores((Integer) strength.getValue(),
-				(Integer) dexterity.getValue(), (Integer) constitution.getValue(),
-				(Integer) intelligence.getValue(), (Integer) wisdom.getValue(),
-				(Integer) charisma.getValue());
+		CreatureAbilityScores scores = new CreatureAbilityScores(
+				(Integer) strength.getValue(), (Integer) dexterity.getValue(),
+				(Integer) constitution.getValue(), (Integer) intelligence.getValue(),
+				(Integer) wisdom.getValue(), (Integer) charisma.getValue());
 
 		builder.setAbilityScores(scores);
 
@@ -233,11 +250,13 @@ public class CreatureEditor extends SimpleInternalFrame {
 		builder.setFlavor(flavorBuilder.buildFlavor());
 
 		try {
-			CreatureDB.addCreature(builder.buildCreature());
+			CreatureJDBCDB.addCreature(builder.buildCreature());
 
-			SimpleInternalDialogs.showMessage(refFrame, "Info", "Succesfully added creature");
+			SimpleInternalDialogs.showMessage(refFrame, "Info",
+					"Succesfully added creature");
 		} catch (SQLException sqlex) {
-			SimpleInternalDialogs.showError(refFrame, "Error", "Could not save creature to database.");
+			SimpleInternalDialogs.showError(refFrame, "Error",
+					"Could not save creature to database.");
 
 			sqlex.printStackTrace();
 		}
@@ -288,8 +307,9 @@ public class CreatureEditor extends SimpleInternalFrame {
 		JPanel laCRPanel = new JPanel();
 		laCRPanel.setLayout(new VLayout(2));
 
-		SimpleSpinnerPanel crPanel = new SimpleSpinnerPanel("Challenge Rating: ", new SpinnerNumberModel(
-				BigDecimal.ONE, BigDecimal.ZERO, BigDecimal.valueOf(1000), BigDecimal.valueOf(.5)));
+		SimpleSpinnerPanel crPanel = new SimpleSpinnerPanel("Challenge Rating: ",
+				new SpinnerNumberModel(BigDecimal.ONE, BigDecimal.ZERO,
+						BigDecimal.valueOf(1000), BigDecimal.valueOf(.5)));
 		cr = crPanel.inputValue;
 
 		SimpleInputPanel laPanel = new SimpleInputPanel("Level Adjustment: ", 255);
@@ -427,7 +447,8 @@ public class CreatureEditor extends SimpleInternalFrame {
 			detailLayout.show(detailEditorPanel, selectedValue);
 		});
 
-		JSplitPane detailSplitter = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, detailList, detailEditorPanel);
+		JSplitPane detailSplitter = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
+				detailList, detailEditorPanel);
 
 		detailsPanel.add(detailSplitter);
 		return detailsPanel;
@@ -725,7 +746,8 @@ public class CreatureEditor extends SimpleInternalFrame {
 
 		addSkillButton.addActionListener((ev) -> {
 			String skillNam = skillName.inputValue.getText();
-			int skillBonu = ((SpinnerNumberModel) skillBonus.inputValue.getModel()).getNumber().intValue();
+			int skillBonu = ((SpinnerNumberModel) skillBonus.inputValue.getModel())
+					.getNumber().intValue();
 
 			skillModel.addElement(new CreatureSkill(skillNam, skillBonu));
 		});

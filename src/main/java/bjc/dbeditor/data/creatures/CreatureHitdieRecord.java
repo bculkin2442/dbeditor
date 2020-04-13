@@ -1,10 +1,26 @@
 package bjc.dbeditor.data.creatures;
 
+/**
+ * Represents a set of hit-dice for a creature.
+ * 
+ * @author Ben Culkin
+ *
+ */
 public class CreatureHitdieRecord {
-	private int	count;
-	private int	size;
-	private String	type;
+	private int count;
+	private int size;
+	private String type;
 
+	/**
+	 * Create a new hit-dice set.
+	 * 
+	 * @param count
+	 *              The number of hit-dice in this set.
+	 * @param size
+	 *              The size of the the hit-dice in this set.
+	 * @param type
+	 *              The label for this hit-dice set.
+	 */
 	public CreatureHitdieRecord(int count, int size, String type) {
 		this.count = count;
 		this.size = size;
@@ -45,14 +61,29 @@ public class CreatureHitdieRecord {
 		return true;
 	}
 
+	/**
+	 * Get the number of hit-dice in this set.
+	 * 
+	 * @return The number of hit-dice in this set.
+	 */
 	public int getCount() {
 		return count;
 	}
 
+	/**
+	 * Get the size of the hit-dice in this set.
+	 * 
+	 * @return The size of the hit-dice in this set.
+	 */
 	public int getSize() {
 		return size;
 	}
 
+	/**
+	 * Get the label for the hit-dice in this set.
+	 * 
+	 * @return The label for the hit-dice in this set.
+	 */
 	public String getType() {
 		return type;
 	}
@@ -81,6 +112,10 @@ public class CreatureHitdieRecord {
 		return sb.toString();
 	}
 
+	/**
+	 * Get a string with a full description of these hit-dice.
+	 * @return A string with a full description of these hit-dice.
+	 */
 	public String toFullString() {
 		if (type == null || type.equals("")) {
 			return count + "d" + size;

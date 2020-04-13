@@ -12,12 +12,21 @@ import bjc.funcdata.IList;
  *
  */
 public class Creature {
+	// IMPROVE Add some sort of notion of monster genus/species?
+	// Some way to say: all of these are the same sort of thing?
+	// -- Ben Culkin, 4/12/2020
 	private String name;
 
+	// IMPROVE Maybe store face/reach as well?
+	// 	Since it's not necessarily implied by size?
+	// -- Ben Culkin, 4/12/2020
 	private CreatureSize size;
 
-	private CreatureType		type;
-	private FunctionalList<String>	subtypes;
+	// IMPROVE Should these be stored separately?
+	// So as to note the rules associated with that type/subtype?
+	// -- Ben Culkin, 4/12/2020
+	private CreatureType type;
+	private FunctionalList<String> subtypes;
 
 	private FunctionalList<CreatureHitdieRecord> hitdice;
 
@@ -29,10 +38,12 @@ public class Creature {
 
 	private CreatureAbilityScores abilityScores;
 
+	// IMPROVE Should we note if the feature is a bonus feat?
+	// -- Ben Culkin, 4/12/2020
 	private FunctionalList<String> feats;
 
-	private BigDecimal	challengeRating;
-	private String		levelAdjustment;
+	private BigDecimal challengeRating;
+	private String levelAdjustment;
 
 	private String advancement;
 
@@ -228,39 +239,40 @@ public class Creature {
 	 * Create a new creature.
 	 * 
 	 * @param name
-	 *                The name of the creature.
+	 *                        The name of the creature.
 	 * @param size
-	 *                The size of the creature.
+	 *                        The size of the creature.
 	 * @param type
-	 *                The type of the creature.
+	 *                        The type of the creature.
 	 * @param subtypes
-	 *                The subtypes of the creature.
+	 *                        The subtypes of the creature.
 	 * @param hitdice
-	 *                The hitdice of the creature.
+	 *                        The hitdice of the creature.
 	 * @param speeds
-	 *                The speeds of the creature.
+	 *                        The speeds of the creature.
 	 * @param defenses
-	 *                The defenses of the creature.
+	 *                        The defenses of the creature.
 	 * @param offenses
-	 *                The offenses of the creature.
+	 *                        The offenses of the creature.
 	 * @param scores
-	 *                The ability scores of the creature.
+	 *                        The ability scores of the creature.
 	 * @param challengeRating
-	 *                The challenge rating of the creature.
+	 *                        The challenge rating of the creature.
 	 * @param levelAdjustment
-	 *                The level adjustment of the creature.
+	 *                        The level adjustment of the creature.
 	 * @param advancement
-	 *                The advancement details for the creature.
+	 *                        The advancement details for the creature.
 	 * @param miscData
-	 *                The misc. data for the creature.
+	 *                        The misc. data for the creature.
 	 * @param flavor
-	 *                The flavor for the creature.
+	 *                        The flavor for the creature.
 	 */
-	public Creature(String name, CreatureSize size, CreatureType type, FunctionalList<String> subtypes,
-			FunctionalList<CreatureHitdieRecord> hitdice, FunctionalList<CreatureSpeed> speeds,
-			CreatureDefenses defenses, CreatureOffenses offenses, CreatureAbilityScores scores,
-			BigDecimal challengeRating, String levelAdjustment, String advancement, CreatureMisc miscData,
-			CreatureFlavor flavor) {
+	public Creature(String name, CreatureSize size, CreatureType type,
+			FunctionalList<String> subtypes, FunctionalList<CreatureHitdieRecord> hitdice,
+			FunctionalList<CreatureSpeed> speeds, CreatureDefenses defenses,
+			CreatureOffenses offenses, CreatureAbilityScores scores,
+			BigDecimal challengeRating, String levelAdjustment, String advancement,
+			CreatureMisc miscData, CreatureFlavor flavor) {
 		this.name = name;
 		this.size = size;
 		this.type = type;
@@ -284,6 +296,7 @@ public class Creature {
 
 	/**
 	 * Convert the creature into a stat-block string.
+	 * 
 	 * @return The creature as a stat-block.
 	 */
 	public String toFullString() {
@@ -339,7 +352,8 @@ public class Creature {
 		creatureText.deleteCharAt(creatureText.length() - 1);
 
 		creatureText.append("\nSpecial Qualities:");
-		for (CreatureAbility specialQuality : offenses.getSpecialQualities().toIterable()) {
+		for (CreatureAbility specialQuality : offenses.getSpecialQualities()
+				.toIterable()) {
 			creatureText.append(" " + specialQuality + ",");
 		}
 

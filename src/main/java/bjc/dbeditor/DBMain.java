@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import bjc.dbeditor.db.CreatureDB;
+import bjc.dbeditor.db.CreatureJDBCDB;
 import bjc.dbeditor.db.FeatDB;
 import bjc.dbeditor.db.FeatTagDB;
 import bjc.dbeditor.gui.DBEditorGUI;
@@ -39,7 +39,7 @@ public class DBMain {
 
 			try {
 				// Dispose the connections in reverse order
-				CreatureDB.disposeConnection();
+				CreatureJDBCDB.disposeConnection();
 				FeatTagDB.disposeConnection();
 				FeatDB.disposeConnection();
 
@@ -87,7 +87,7 @@ public class DBMain {
 			// Establish individual DB connections
 			FeatDB.initConnection(conn);
 			FeatTagDB.initConnection(conn);
-			CreatureDB.initConnection(conn);
+			CreatureJDBCDB.initConnection(conn);
 
 			System.out.println("Created connection");
 		} catch (SQLException sqlex) {
