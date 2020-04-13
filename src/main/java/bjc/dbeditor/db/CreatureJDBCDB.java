@@ -29,13 +29,19 @@ import bjc.dbeditor.data.creatures.builders.CreatureOffensesBuilder;
 import bjc.funcdata.FunctionalList;
 import bjc.funcdata.IList;
 
+// NOTE Is there something better to do than throw around these SQLExceptions?
+// -- Ben Culkin, 4/12/2020
+
+// TODO Add support for updating creatures.
+// TODO Add support for better querying of creatures
+// -- Ben Culkin, 4/12/2020
 /**
  * Database for storing creatures.
  * 
  * @author bjculkin
  *
  */
-public class CreatureDB {
+public class CreatureJDBCDB {
 	private static Connection dbConn;
 
 	private static PreparedStatement listCreatureNamesStatement;
@@ -56,6 +62,11 @@ public class CreatureDB {
 	private static PreparedStatement	addDependantSkillsStatement;
 	private static PreparedStatement	addDependantSpeedsStatement;
 
+	/**
+	 * Set the database connection to get creatures from.
+	 * @param conn The connection to get creatures from.
+	 * @throws SQLException If something goes wrong during setup.
+	 */
 	public static void initConnection(Connection conn) throws SQLException {
 		dbConn = conn;
 
@@ -105,6 +116,10 @@ public class CreatureDB {
 				"INSERT INTO creature_speeds (creature_name, type, rate) VALUES (?, ?, ?)");
 	}
 
+	/**
+	 * Dispose of all the resources related to the connection, though not the connection itself.
+	 * @throws SQLException If something goes wrong during disposal.
+	 */
 	public static void disposeConnection() throws SQLException {
 		addDependantSpeedsStatement.close();
 		addDependantSkillsStatement.close();
@@ -125,6 +140,11 @@ public class CreatureDB {
 		listCreatureNamesStatement.close();
 	}
 
+	/**
+	 * Get a list of all of the creature names.
+	 * @return A list of all of the named creatures.
+	 * @throws SQLException If something goes wrong.
+	 */
 	public static IList<String> listCreatureNames() throws SQLException {
 		FunctionalList<String> names = new FunctionalList<>();
 
@@ -137,6 +157,12 @@ public class CreatureDB {
 		return names;
 	}
 
+	/**
+	 * Look up a creature by name.
+	 * @param name The name of the creature.
+	 * @return The creature with that name.
+	 * @throws SQLException If something goes wrong.
+	 */
 	public static Creature lookupCreatureByName(String name) throws SQLException {
 		CreatureBuilder creatureBuilder = new CreatureBuilder();
 		creatureBuilder.setName(name);
@@ -251,6 +277,12 @@ public class CreatureDB {
 		return creatureBuilder.buildCreature();
 	}
 
+	/**
+	 * Add a creature to the DB.
+	 * @param add The creature to add.
+	 * @return Whether or not the creature was added succesfully.
+	 * @throws SQLException If something goes wrong.
+	 */
 	public static boolean addCreature(Creature add) throws SQLException {
 		String name = add.getName();
 
