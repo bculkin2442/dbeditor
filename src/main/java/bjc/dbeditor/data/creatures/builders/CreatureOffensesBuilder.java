@@ -9,11 +9,11 @@ import bjc.funcdata.FunctionalList;
  * A builder of creature offenses
  */
 public class CreatureOffensesBuilder {
-	private CreatureAttack			attackStats;
-	private String				attack;
-	private String				fullAttack;
-	private FunctionalList<CreatureAbility>	specialAttacks;
-	private FunctionalList<CreatureAbility>	specialQualities;
+	private CreatureAttack attackStats;
+	private String attack;
+	private String fullAttack;
+	private FunctionalList<CreatureAbility> specialAttacks;
+	private FunctionalList<CreatureAbility> specialQualities;
 
 	/**
 	 * Create a blank builder
@@ -52,6 +52,7 @@ public class CreatureOffensesBuilder {
 	 * Build the offenses this class represents
 	 */
 	public CreatureOffenses buildOffenses() {
-		return new CreatureOffenses(attackStats, attack, fullAttack, specialAttacks, specialQualities);
+		return new CreatureOffenses(attackStats, attack, fullAttack, specialAttacks,
+				specialQualities);
 	}
 }

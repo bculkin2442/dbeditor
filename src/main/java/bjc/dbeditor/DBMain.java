@@ -55,7 +55,7 @@ public class DBMain {
 	 * Main method.
 	 * 
 	 * @param args
-	 *                Unused CLI args.
+	 *             Unused CLI args.
 	 */
 	public static void main(String[] args) {
 		// Load driver
@@ -67,12 +67,14 @@ public class DBMain {
 		}
 
 		/* Get DB username */
-		String username = JOptionPane.showInputDialog(null, "Enter the password for the database",
-				"Enter password", JOptionPane.QUESTION_MESSAGE);
+		String username
+				= JOptionPane.showInputDialog(null, "Enter the password for the database",
+						"Enter password", JOptionPane.QUESTION_MESSAGE);
 
 		/* Get DB pass */
-		String pass = JOptionPane.showInputDialog(null, "Enter the password for the database", "Enter password",
-				JOptionPane.QUESTION_MESSAGE);
+		String pass
+				= JOptionPane.showInputDialog(null, "Enter the password for the database",
+						"Enter password", JOptionPane.QUESTION_MESSAGE);
 
 		if (pass == null || pass == "") {
 			System.out.println("Error: Password must be provided");
@@ -92,7 +94,8 @@ public class DBMain {
 			System.out.println("Created connection");
 		} catch (SQLException sqlex) {
 			// Handle DB failure
-			IllegalStateException isex = new IllegalStateException("ERROR: Could not initialize DB");
+			IllegalStateException isex
+					= new IllegalStateException("ERROR: Could not initialize DB");
 
 			isex.initCause(sqlex);
 

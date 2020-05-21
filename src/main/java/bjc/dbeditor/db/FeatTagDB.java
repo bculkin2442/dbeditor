@@ -18,9 +18,9 @@ import bjc.funcdata.IList;
 public class FeatTagDB {
 	private static Connection dbConn;
 
-	private static PreparedStatement	listTagStatement;
-	private static PreparedStatement	lookupTagStatement;
-	private static PreparedStatement	createTagStatement;
+	private static PreparedStatement listTagStatement;
+	private static PreparedStatement lookupTagStatement;
+	private static PreparedStatement createTagStatement;
 
 	private static PreparedStatement listTagNamesStatement;
 
@@ -54,11 +54,15 @@ public class FeatTagDB {
 	}
 
 	private static void initStatements() throws SQLException {
-		listTagStatement = dbConn.prepareStatement("SELECT name, description FROM feattags");
-		lookupTagStatement = dbConn.prepareStatement("SELECT name, description FROM feattags WHERE name = ?");
-		createTagStatement = dbConn.prepareStatement("INSERT INTO feattags (name, description) VALUES (?, ?)");
+		listTagStatement
+				= dbConn.prepareStatement("SELECT name, description FROM feattags");
+		lookupTagStatement = dbConn.prepareStatement(
+				"SELECT name, description FROM feattags WHERE name = ?");
+		createTagStatement = dbConn.prepareStatement(
+				"INSERT INTO feattags (name, description) VALUES (?, ?)");
 
-		listTagNamesStatement = dbConn.prepareStatement("SELECT name FROM feattags ORDER BY name");
+		listTagNamesStatement
+				= dbConn.prepareStatement("SELECT name FROM feattags ORDER BY name");
 	}
 
 	public static IList<FeatTag> listTags() throws SQLException {
@@ -67,7 +71,8 @@ public class FeatTagDB {
 		ResultSet tagSet = listTagStatement.executeQuery();
 
 		while (tagSet.next() == true) {
-			tagList.add(new FeatTag(tagSet.getString("name"), tagSet.getString("description")));
+			tagList.add(new FeatTag(tagSet.getString("name"),
+					tagSet.getString("description")));
 		}
 
 		tagSet.close();
@@ -106,7 +111,8 @@ public class FeatTagDB {
 
 		try (ResultSet tagSet = lookupTagStatement.executeQuery()) {
 			if (tagSet.next()) {
-				return new FeatTag(tagSet.getString("name"), tagSet.getString("description"));
+				return new FeatTag(tagSet.getString("name"),
+						tagSet.getString("description"));
 			}
 
 			return null;

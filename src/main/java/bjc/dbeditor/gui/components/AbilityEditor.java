@@ -37,7 +37,7 @@ public class AbilityEditor extends JPanel {
 	 * Create a new ability editor.
 	 * 
 	 * @param baseAbilities
-	 *                The list of abilities to edit.
+	 *                      The list of abilities to edit.
 	 */
 	public AbilityEditor(IList<CreatureAbility> baseAbilities) {
 		setLayout(new AutosizeLayout());
@@ -54,7 +54,8 @@ public class AbilityEditor extends JPanel {
 		abilityTypePanel.setLayout(new BorderLayout());
 
 		JLabel abilityTypeLabel = new JLabel("Ability Type: ");
-		JComboBox<CreatureAbilityType> abilityType = new JComboBox<>(CreatureAbilityType.values());
+		JComboBox<CreatureAbilityType> abilityType
+				= new JComboBox<>(CreatureAbilityType.values());
 
 		abilityTypePanel.add(abilityTypeLabel, BorderLayout.LINE_START);
 		abilityTypePanel.add(abilityType, BorderLayout.CENTER);
@@ -84,8 +85,8 @@ public class AbilityEditor extends JPanel {
 		}
 
 		addAbility.addActionListener((ev) -> {
-			CreatureAbility ability = new CreatureAbility(abilityName.inputValue.getText(),
-					abilityDescription.getText(),
+			CreatureAbility ability = new CreatureAbility(
+					abilityName.inputValue.getText(), abilityDescription.getText(),
 					(CreatureAbilityType) abilityType.getSelectedItem());
 
 			abilityModel.addElement(ability);
@@ -114,9 +115,11 @@ public class AbilityEditor extends JPanel {
 		JScrollPane listScroller = new JScrollPane(abilityList);
 		JScrollPane bodyScroller = new JScrollPane(abilityBody);
 
-		JSplitPane displaySplit = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, listScroller, bodyScroller);
+		JSplitPane displaySplit
+				= new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, listScroller, bodyScroller);
 
-		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, abilityCreator, displaySplit);
+		JSplitPane splitPane
+				= new JSplitPane(JSplitPane.VERTICAL_SPLIT, abilityCreator, displaySplit);
 		splitPane.setResizeWeight(0.5);
 
 		add(splitPane);

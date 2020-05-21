@@ -114,6 +114,7 @@ public class CreatureHitdieRecord {
 
 	/**
 	 * Get a string with a full description of these hit-dice.
+	 * 
 	 * @return A string with a full description of these hit-dice.
 	 */
 	public String toFullString() {

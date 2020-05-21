@@ -25,6 +25,7 @@ import bjc.utils.gui.layout.AutosizeLayout;
 
 /**
  * Browser for Feat Tags.
+ * 
  * @author bjculkin
  *
  */
@@ -38,7 +39,9 @@ public class FeatTagBrowser extends SimpleInternalFrame {
 
 	/**
 	 * Create a new feat tag browser.
-	 * @param tagList The list of tags to browse.
+	 * 
+	 * @param tagList
+	 *                The list of tags to browse.
 	 */
 	public FeatTagBrowser(IList<String> tagList) {
 		super("Feat Tag Browser");
@@ -154,7 +157,8 @@ public class FeatTagBrowser extends SimpleInternalFrame {
 
 		detailPanel.add(featTagDisplayPanel, BorderLayout.CENTER);
 
-		JSplitPane mainPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, listPanel, detailPanel);
+		JSplitPane mainPane
+				= new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, listPanel, detailPanel);
 
 		add(mainPane);
 	}

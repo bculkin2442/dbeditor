@@ -90,11 +90,14 @@ public class FeatTagEditor extends SimpleInternalFrame {
 
 		addTagButton.addActionListener((ev) -> {
 			try {
-				FeatTagDB.addFeatTag(new FeatTag(tagNameField.getText(), tagDescriptionArea.getText()));
+				FeatTagDB.addFeatTag(new FeatTag(tagNameField.getText(),
+						tagDescriptionArea.getText()));
 
-				SimpleInternalDialogs.showMessage(refFrame, "Info", "Succesfully added feat tag");
+				SimpleInternalDialogs.showMessage(refFrame, "Info",
+						"Succesfully added feat tag");
 			} catch (SQLException sqlex) {
-				SimpleInternalDialogs.showError(refFrame, "Error", "Could not add feat tag");
+				SimpleInternalDialogs.showError(refFrame, "Error",
+						"Could not add feat tag");
 				sqlex.printStackTrace();
 			}
 		});

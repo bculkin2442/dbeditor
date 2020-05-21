@@ -58,9 +58,8 @@ public class DBEditorGUI {
 		/*
 		 * JMenuItem createCreatureItem = new JMenuItem("Creature...");
 		 * createCreatureItem.setMnemonic('C');
-		 * createCreatureItem.addActionListener((ev) -> { CreatureEditor
-		 * editor = new CreatureEditor(); mainPane.add(editor);
-		 * editor.setVisible(true); });
+		 * createCreatureItem.addActionListener((ev) -> { CreatureEditor editor = new
+		 * CreatureEditor(); mainPane.add(editor); editor.setVisible(true); });
 		 * 
 		 * createMenu.add(createCreatureItem);
 		 */

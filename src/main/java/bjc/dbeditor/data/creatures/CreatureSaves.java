@@ -1,9 +1,9 @@
 package bjc.dbeditor.data.creatures;
 
 public class CreatureSaves {
-	private int	fortitude;
-	private int	reflex;
-	private int	will;
+	private int fortitude;
+	private int reflex;
+	private int will;
 
 	public CreatureSaves(int fortitude, int reflex, int will) {
 		this.fortitude = fortitude;

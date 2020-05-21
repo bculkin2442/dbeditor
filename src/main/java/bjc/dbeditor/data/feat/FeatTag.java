@@ -7,8 +7,8 @@ package bjc.dbeditor.data.feat;
  *
  */
 public class FeatTag {
-	private String	name;
-	private String	description;
+	private String name;
+	private String description;
 
 	public String getName() {
 		return name;
@@ -63,9 +63,9 @@ public class FeatTag {
 	 * Create a new feat type tag
 	 * 
 	 * @param name
-	 *                The name of the tag
+	 *                    The name of the tag
 	 * @param description
-	 *                The description of the tag
+	 *                    The description of the tag
 	 */
 	public FeatTag(String name, String description) {
 		this.name = name;

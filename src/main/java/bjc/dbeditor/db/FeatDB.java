@@ -20,15 +20,15 @@ import bjc.funcdata.IList;
 public class FeatDB {
 	private static Connection dbConnection;
 
-	private static PreparedStatement	lookupFeatNameStatement;
-	private static PreparedStatement	createFeatStatement;
-	private static PreparedStatement	listFeatStatement;
+	private static PreparedStatement lookupFeatNameStatement;
+	private static PreparedStatement createFeatStatement;
+	private static PreparedStatement listFeatStatement;
 
-	private static PreparedStatement	lookupDependantTagsStatement;
-	private static PreparedStatement	lookupDependantFeatsStatement;
+	private static PreparedStatement lookupDependantTagsStatement;
+	private static PreparedStatement lookupDependantFeatsStatement;
 
-	private static PreparedStatement	addDependantTagStatement;
-	private static PreparedStatement	addDependantFeatStatement;
+	private static PreparedStatement addDependantTagStatement;
+	private static PreparedStatement addDependantFeatStatement;
 
 	private static PreparedStatement listFeatNamesStatement;
 
@@ -68,7 +68,8 @@ public class FeatDB {
 
 		for (int i : addDependantFeatStatement.executeBatch()) {
 			if (i < 1) {
-				throw new IllegalStateException("Error: Prerequisite feats not added succesfully.");
+				throw new IllegalStateException(
+						"Error: Prerequisite feats not added succesfully.");
 			}
 		}
 
@@ -123,25 +124,29 @@ public class FeatDB {
 
 	private static void initStatements() throws SQLException {
 		createFeatStatement = dbConnection.prepareStatement("INSERT INTO feats "
-				+ "(name, prereq_nonfeats, description, flavor, source)" + " VALUES (?, ?, ?, ?, ?)");
-		lookupFeatNameStatement = dbConnection.prepareStatement("SELECT name FROM feats WHERE name = ?");
+				+ "(name, prereq_nonfeats, description, flavor, source)"
+				+ " VALUES (?, ?, ?, ?, ?)");
+		lookupFeatNameStatement
+				= dbConnection.prepareStatement("SELECT name FROM feats WHERE name = ?");
 		listFeatStatement = dbConnection.prepareStatement(
-				"SELECT name, prereq_nonfeats, description, flavor, source" + " FROM feats ");
+				"SELECT name, prereq_nonfeats, description, flavor, source"
+						+ " FROM feats ");
 
 		lookupDependantTagsStatement = dbConnection
 				.prepareStatement("SELECT tag_name FROM feat_tags WHERE feat_name = ?");
-		lookupDependantFeatsStatement = dbConnection
-				.prepareStatement("SELECT prereq_name FROM feat_prereqs WHERE feat_name = ?");
+		lookupDependantFeatsStatement = dbConnection.prepareStatement(
+				"SELECT prereq_name FROM feat_prereqs WHERE feat_name = ?");
 
-		addDependantTagStatement = dbConnection
-				.prepareStatement("INSERT INTO feat_tags " + " (feat_name, tag_name) VALUES (?, ?)");
+		addDependantTagStatement = dbConnection.prepareStatement(
+				"INSERT INTO feat_tags " + " (feat_name, tag_name) VALUES (?, ?)");
 		addDependantFeatStatement = dbConnection.prepareStatement(
 				"INSERT INTO feat_prereqs " + " (feat_name, prereq_name) VALUES (?, ?)");
 
-		listFeatNamesStatement = dbConnection.prepareStatement("SELECT name FROM feats ORDER BY name");
+		listFeatNamesStatement
+				= dbConnection.prepareStatement("SELECT name FROM feats ORDER BY name");
 
-		lookupFeatStatement = dbConnection
-				.prepareStatement("SELECT name, prereq_nonfeats, description, flavor, source"
+		lookupFeatStatement = dbConnection.prepareStatement(
+				"SELECT name, prereq_nonfeats, description, flavor, source"
 						+ " FROM feats WHERE name = ?");
 	}
 

@@ -1,8 +1,8 @@
 package bjc.dbeditor.data.creatures;
 
 public class CreatureSkill {
-	private String	skillName;
-	private int	skillBonus;
+	private String skillName;
+	private int skillBonus;
 
 	public CreatureSkill(String skillName, int skillBonus) {
 		this.skillName = skillName;

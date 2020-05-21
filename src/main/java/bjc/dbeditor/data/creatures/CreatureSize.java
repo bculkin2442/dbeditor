@@ -8,5 +8,5 @@ public enum CreatureSize {
 	@Override
 	public String toString() {
 		return StringUtils.capitalize(this.name().toLowerCase());
-	};
+	}
 }

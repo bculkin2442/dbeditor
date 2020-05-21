@@ -18,7 +18,7 @@ public class Creature {
 	private String name;
 
 	// IMPROVE Maybe store face/reach as well?
-	// 	Since it's not necessarily implied by size?
+	// Since it's not necessarily implied by size?
 	// -- Ben Culkin, 4/12/2020
 	private CreatureSize size;
 

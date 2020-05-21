@@ -24,7 +24,8 @@ import bjc.utils.gui.panels.SimpleSpinnerPanel;
  */
 public class HitdieEditor extends JPanel {
 	// List renderer for hitdie
-	private final class HitdieRenderer extends JLabel implements ListCellRenderer<CreatureHitdieRecord> {
+	private final class HitdieRenderer extends JLabel
+			implements ListCellRenderer<CreatureHitdieRecord> {
 		private static final long serialVersionUID = -6874538320973247325L;
 
 		public HitdieRenderer() {
@@ -32,8 +33,9 @@ public class HitdieEditor extends JPanel {
 		}
 
 		@Override
-		public Component getListCellRendererComponent(JList<? extends CreatureHitdieRecord> list,
-				CreatureHitdieRecord value, int index, boolean isSelected, boolean cellHasFocus) {
+		public Component getListCellRendererComponent(
+				JList<? extends CreatureHitdieRecord> list, CreatureHitdieRecord value,
+				int index, boolean isSelected, boolean cellHasFocus) {
 			// Call the right toString method
 			setText(value.toFullString());
 
@@ -125,11 +127,15 @@ public class HitdieEditor extends JPanel {
 		this(null);
 	}
 
-	private void addHitdie(JSpinner hitdieCountSpinner, JSpinner hitdieSizeSpinner, JTextField hitdieClassField) {
-		int dieCount = ((SpinnerNumberModel) hitdieCountSpinner.getModel()).getNumber().intValue();
-		int dieSize = ((SpinnerNumberModel) hitdieSizeSpinner.getModel()).getNumber().intValue();
+	private void addHitdie(JSpinner hitdieCountSpinner, JSpinner hitdieSizeSpinner,
+			JTextField hitdieClassField) {
+		int dieCount = ((SpinnerNumberModel) hitdieCountSpinner.getModel()).getNumber()
+				.intValue();
+		int dieSize = ((SpinnerNumberModel) hitdieSizeSpinner.getModel()).getNumber()
+				.intValue();
 
-		CreatureHitdieRecord record = new CreatureHitdieRecord(dieCount, dieSize, hitdieClassField.getText());
+		CreatureHitdieRecord record
+				= new CreatureHitdieRecord(dieCount, dieSize, hitdieClassField.getText());
 
 		hitdiceModel.addElement(record);
 

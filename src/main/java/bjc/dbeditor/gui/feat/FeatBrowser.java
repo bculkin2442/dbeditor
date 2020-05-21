@@ -129,7 +129,8 @@ public class FeatBrowser extends SimpleInternalFrame {
 		listPanel.add(listScroller, BorderLayout.CENTER);
 		listPanel.add(refreshButton, BorderLayout.PAGE_END);
 
-		JSplitPane mainPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, listPanel, featDisplayPanel);
+		JSplitPane mainPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, listPanel,
+				featDisplayPanel);
 
 		add(mainPane);
 	}

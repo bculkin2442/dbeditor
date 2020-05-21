@@ -2,6 +2,7 @@ package bjc.dbeditor.data.creatures;
 
 /**
  * An ability for a creature.
+ * 
  * @author bjculkin
  *
  */
@@ -23,9 +24,13 @@ public class CreatureAbility {
 
 	/**
 	 * Create a new ability for a creature.
-	 * @param name The name of the ability.
-	 * @param description The description of the ability.
-	 * @param type The type of the ability.
+	 * 
+	 * @param name
+	 *                    The name of the ability.
+	 * @param description
+	 *                    The description of the ability.
+	 * @param type
+	 *                    The type of the ability.
 	 */
 	public CreatureAbility(String name, String description, CreatureAbilityType type) {
 		this.name = name;
@@ -38,7 +43,7 @@ public class CreatureAbility {
 	 */
 	public CreatureAbility() {
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -101,6 +106,7 @@ public class CreatureAbility {
 
 	/**
 	 * Print the ability as a stat. block.
+	 * 
 	 * @return The ability as a stat block.
 	 */
 	public String toFullString() {
