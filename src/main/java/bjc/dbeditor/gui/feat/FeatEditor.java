@@ -21,7 +21,7 @@ import bjc.dbeditor.data.feat.FeatBuilder;
 import bjc.dbeditor.db.FeatDB;
 import bjc.dbeditor.db.FeatTagDB;
 import bjc.funcdata.FunctionalList;
-import bjc.funcdata.IList;
+import bjc.funcdata.ListEx;
 import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.layout.AutosizeLayout;
@@ -75,7 +75,7 @@ public class FeatEditor extends SimpleInternalFrame {
 
 		JTabbedPane detailsPane = new JTabbedPane();
 
-		IList<String> featTags = new FunctionalList<>();
+		ListEx<String> featTags = new FunctionalList<>();
 
 		try {
 			featTags = FeatTagDB.listTagNames();
@@ -90,7 +90,7 @@ public class FeatEditor extends SimpleInternalFrame {
 
 		DropdownListPanel tagPanel = new DropdownListPanel("Tag", tagListModel, featTags);
 
-		IList<String> featNames = new FunctionalList<>();
+		ListEx<String> featNames = new FunctionalList<>();
 
 		try {
 			featNames = FeatDB.listFeatNames();

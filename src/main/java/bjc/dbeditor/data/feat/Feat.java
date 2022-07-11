@@ -1,7 +1,6 @@
 package bjc.dbeditor.data.feat;
 
-import bjc.funcdata.FunctionalList;
-import bjc.funcdata.IList;
+import bjc.funcdata.*;
 
 /**
  * Represents a feat that can be taken
@@ -84,7 +83,7 @@ public class Feat {
 		return description;
 	}
 
-	public IList<String> getFeatPrereqs() {
+	public ListEx<String> getFeatPrereqs() {
 		return featPrereqs.clone();
 	}
 
@@ -96,7 +95,7 @@ public class Feat {
 		return name;
 	}
 
-	public IList<String> getNonFeatPrereqs() {
+	public ListEx<String> getNonFeatPrereqs() {
 		return nonFeatPrereqs.clone();
 	}
 
@@ -104,7 +103,7 @@ public class Feat {
 		return source;
 	}
 
-	public IList<String> getTags() {
+	public ListEx<String> getTags() {
 		return tags.clone();
 	}
 

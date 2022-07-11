@@ -12,12 +12,11 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
 
+import bjc.data.*;
 import bjc.dbeditor.data.feat.FeatTag;
 import bjc.dbeditor.db.FeatTagDB;
-import bjc.data.IHolder;
-import bjc.data.Identity;
 import bjc.funcdata.FunctionalMap;
-import bjc.funcdata.IList;
+import bjc.funcdata.ListEx;
 import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.SimpleTitledBorder;
@@ -32,10 +31,10 @@ import bjc.utils.gui.layout.AutosizeLayout;
 public class FeatTagBrowser extends SimpleInternalFrame {
 	private static final long serialVersionUID = -2529817913539767911L;
 
-	private IList<String> baseTagList;
+	private ListEx<String> baseTagList;
 
 	@SuppressWarnings("unused")
-	private IHolder<FeatTag> displayedTag;
+	private Holder<FeatTag> displayedTag;
 
 	/**
 	 * Create a new feat tag browser.
@@ -43,7 +42,7 @@ public class FeatTagBrowser extends SimpleInternalFrame {
 	 * @param tagList
 	 *                The list of tags to browse.
 	 */
-	public FeatTagBrowser(IList<String> tagList) {
+	public FeatTagBrowser(ListEx<String> tagList) {
 		super("Feat Tag Browser");
 
 		setupFrame();
@@ -67,7 +66,7 @@ public class FeatTagBrowser extends SimpleInternalFrame {
 
 		DefaultListModel<String> featTagListModel = new DefaultListModel<>();
 
-		IList<String> featTagSourceList = baseTagList;
+		ListEx<String> featTagSourceList = baseTagList;
 
 		if (baseTagList == null) {
 			try {
@@ -114,7 +113,7 @@ public class FeatTagBrowser extends SimpleInternalFrame {
 				FeatTag displayedFeatTag;
 
 				if (featTagCache.containsKey(displayedFeatTagName)) {
-					displayedFeatTag = featTagCache.get(displayedFeatTagName);
+					displayedFeatTag = featTagCache.get(displayedFeatTagName).get();
 				} else {
 					try {
 						displayedFeatTag = FeatTagDB.lookupTag(displayedFeatTagName);

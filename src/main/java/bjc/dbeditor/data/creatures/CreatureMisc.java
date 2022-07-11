@@ -1,7 +1,6 @@
 package bjc.dbeditor.data.creatures;
 
-import bjc.funcdata.FunctionalList;
-import bjc.funcdata.IList;
+import bjc.funcdata.*;
 
 /**
  * Misc. data about a creature.
@@ -20,7 +19,7 @@ public class CreatureMisc {
 	 * 
 	 * @return The skills that belong to the creature.
 	 */
-	public IList<CreatureSkill> getSkills() {
+	public ListEx<CreatureSkill> getSkills() {
 		return skills.clone();
 	}
 

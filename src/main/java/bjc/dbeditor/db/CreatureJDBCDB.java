@@ -26,8 +26,7 @@ import bjc.dbeditor.data.creatures.builders.CreatureDefensesBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureFlavorBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureMiscBuilder;
 import bjc.dbeditor.data.creatures.builders.CreatureOffensesBuilder;
-import bjc.funcdata.FunctionalList;
-import bjc.funcdata.IList;
+import bjc.funcdata.*;
 
 // NOTE Is there something better to do than throw around these SQLExceptions?
 // -- Ben Culkin, 4/12/2020
@@ -154,7 +153,7 @@ public class CreatureJDBCDB {
 	 * @throws SQLException
 	 *                      If something goes wrong.
 	 */
-	public static IList<String> listCreatureNames() throws SQLException {
+	public static ListEx<String> listCreatureNames() throws SQLException {
 		FunctionalList<String> names = new FunctionalList<>();
 
 		try (ResultSet nameSet = listCreatureNamesStatement.executeQuery()) {

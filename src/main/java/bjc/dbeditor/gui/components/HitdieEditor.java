@@ -14,7 +14,7 @@ import javax.swing.ListCellRenderer;
 import javax.swing.SpinnerNumberModel;
 
 import bjc.dbeditor.data.creatures.CreatureHitdieRecord;
-import bjc.funcdata.IList;
+import bjc.funcdata.*;
 import bjc.utils.gui.layout.HLayout;
 import bjc.utils.gui.layout.VLayout;
 import bjc.utils.gui.panels.SimpleSpinnerPanel;
@@ -56,7 +56,7 @@ public class HitdieEditor extends JPanel {
 	// The model for holding hitdie
 	public final DefaultListModel<CreatureHitdieRecord> hitdiceModel;
 
-	public HitdieEditor(IList<CreatureHitdieRecord> baseHitdie) {
+	public HitdieEditor(ListEx<CreatureHitdieRecord> baseHitdie) {
 		setLayout(new BorderLayout());
 
 		JPanel hitdieEntryPanel = new JPanel();

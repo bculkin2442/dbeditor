@@ -8,8 +8,7 @@ import java.sql.SQLException;
 
 import bjc.dbeditor.data.feat.Feat;
 import bjc.dbeditor.data.feat.FeatBuilder;
-import bjc.funcdata.FunctionalList;
-import bjc.funcdata.IList;
+import bjc.funcdata.*;
 
 /**
  * Database for storing feats.
@@ -150,7 +149,7 @@ public class FeatDB {
 						+ " FROM feats WHERE name = ?");
 	}
 
-	public static IList<Feat> listFeats() throws SQLException {
+	public static ListEx<Feat> listFeats() throws SQLException {
 		ensureConnection();
 
 		FunctionalList<Feat> featList = new FunctionalList<>();
@@ -206,7 +205,7 @@ public class FeatDB {
 		return builtFeat;
 	}
 
-	public static IList<String> listFeatNames() throws SQLException {
+	public static ListEx<String> listFeatNames() throws SQLException {
 		FunctionalList<String> featNames = new FunctionalList<>();
 
 		ResultSet nameSet = listFeatNamesStatement.executeQuery();

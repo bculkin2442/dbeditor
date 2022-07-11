@@ -45,8 +45,7 @@ import bjc.dbeditor.db.CreatureJDBCDB;
 import bjc.dbeditor.db.FeatDB;
 import bjc.dbeditor.gui.components.AbilityEditor;
 import bjc.dbeditor.gui.components.HitdieEditor;
-import bjc.funcdata.FunctionalList;
-import bjc.funcdata.IList;
+import bjc.funcdata.*;
 import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.SimpleTitledBorder;
@@ -455,7 +454,7 @@ public class CreatureEditor extends SimpleInternalFrame {
 	}
 
 	private JPanel setupFeatPanel() {
-		IList<String> featNames = new FunctionalList<>();
+		ListEx<String> featNames = new FunctionalList<>();
 
 		featModel = new DefaultListModel<>();
 

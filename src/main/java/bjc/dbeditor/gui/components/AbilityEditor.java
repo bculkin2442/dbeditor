@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 
 import bjc.dbeditor.data.creatures.CreatureAbility;
 import bjc.dbeditor.data.creatures.CreatureAbilityType;
-import bjc.funcdata.IList;
+import bjc.funcdata.*;
 import bjc.utils.gui.layout.AutosizeLayout;
 import bjc.utils.gui.layout.HLayout;
 import bjc.utils.gui.panels.SimpleInputPanel;
@@ -39,7 +39,7 @@ public class AbilityEditor extends JPanel {
 	 * @param baseAbilities
 	 *                      The list of abilities to edit.
 	 */
-	public AbilityEditor(IList<CreatureAbility> baseAbilities) {
+	public AbilityEditor(ListEx<CreatureAbility> baseAbilities) {
 		setLayout(new AutosizeLayout());
 
 		JPanel abilityCreator = new JPanel();

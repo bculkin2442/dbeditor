@@ -2,8 +2,7 @@ package bjc.dbeditor.data.creatures;
 
 import java.math.BigDecimal;
 
-import bjc.funcdata.FunctionalList;
-import bjc.funcdata.IList;
+import bjc.funcdata.*;
 
 /**
  * A creature.
@@ -74,7 +73,7 @@ public class Creature {
 	 * 
 	 * @return The feats the creature has.
 	 */
-	public IList<String> getFeats() {
+	public ListEx<String> getFeats() {
 		if (feats == null) {
 			return null;
 		}
@@ -96,7 +95,7 @@ public class Creature {
 	 * 
 	 * @return The subtypes of the creature.
 	 */
-	public IList<String> getSubtypes() {
+	public ListEx<String> getSubtypes() {
 		if (subtypes == null) {
 			return null;
 		}
@@ -109,7 +108,7 @@ public class Creature {
 	 * 
 	 * @return The hitdice of the creature.
 	 */
-	public IList<CreatureHitdieRecord> getHitdice() {
+	public ListEx<CreatureHitdieRecord> getHitdice() {
 		return hitdice.clone();
 	}
 
@@ -118,7 +117,7 @@ public class Creature {
 	 * 
 	 * @return The speeds of the creature.
 	 */
-	public IList<CreatureSpeed> getSpeeds() {
+	public ListEx<CreatureSpeed> getSpeeds() {
 		return speeds.clone();
 	}
 

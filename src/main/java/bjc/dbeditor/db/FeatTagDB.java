@@ -6,8 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import bjc.dbeditor.data.feat.FeatTag;
-import bjc.funcdata.FunctionalList;
-import bjc.funcdata.IList;
+import bjc.funcdata.*;
 
 /**
  * Database for storing feat tags.
@@ -65,7 +64,7 @@ public class FeatTagDB {
 				= dbConn.prepareStatement("SELECT name FROM feattags ORDER BY name");
 	}
 
-	public static IList<FeatTag> listTags() throws SQLException {
+	public static ListEx<FeatTag> listTags() throws SQLException {
 		FunctionalList<FeatTag> tagList = new FunctionalList<>();
 
 		ResultSet tagSet = listTagStatement.executeQuery();
@@ -80,7 +79,7 @@ public class FeatTagDB {
 		return tagList;
 	}
 
-	public static IList<String> listTagNames() throws SQLException {
+	public static ListEx<String> listTagNames() throws SQLException {
 		FunctionalList<String> tagNames = new FunctionalList<>();
 
 		ResultSet nameSet = listTagNamesStatement.executeQuery();

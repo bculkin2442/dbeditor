@@ -1,7 +1,6 @@
 package bjc.dbeditor.data.creatures;
 
-import bjc.funcdata.FunctionalList;
-import bjc.funcdata.IList;
+import bjc.funcdata.*;
 
 /**
  * Offensive details for the creature
@@ -48,7 +47,7 @@ public class CreatureOffenses {
 	 * 
 	 * @return The special attacks of the creature.
 	 */
-	public IList<CreatureAbility> getSpecialAttacks() {
+	public ListEx<CreatureAbility> getSpecialAttacks() {
 		return specialAttacks.clone();
 	}
 
@@ -57,7 +56,7 @@ public class CreatureOffenses {
 	 * 
 	 * @return The special qualities of the creature.
 	 */
-	public IList<CreatureAbility> getSpecialQualities() {
+	public ListEx<CreatureAbility> getSpecialQualities() {
 		return specialQualities.clone();
 	}
 

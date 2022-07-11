@@ -15,7 +15,7 @@ import javax.swing.ListSelectionModel;
 import bjc.dbeditor.data.feat.Feat;
 import bjc.dbeditor.db.FeatDB;
 import bjc.funcdata.FunctionalMap;
-import bjc.funcdata.IList;
+import bjc.funcdata.ListEx;
 import bjc.utils.gui.SimpleInternalDialogs;
 import bjc.utils.gui.SimpleInternalFrame;
 import bjc.utils.gui.SimpleTitledBorder;
@@ -24,9 +24,9 @@ import bjc.utils.gui.layout.AutosizeLayout;
 public class FeatBrowser extends SimpleInternalFrame {
 	private static final long serialVersionUID = -2529817913539767911L;
 
-	private IList<String> baseFeatList;
+	private ListEx<String> baseFeatList;
 
-	public FeatBrowser(IList<String> featList) {
+	public FeatBrowser(ListEx<String> featList) {
 		super("Feat Browser");
 
 		setupFrame();
@@ -47,7 +47,7 @@ public class FeatBrowser extends SimpleInternalFrame {
 
 		DefaultListModel<String> featListModel = new DefaultListModel<>();
 
-		IList<String> featSourceList = baseFeatList;
+		ListEx<String> featSourceList = baseFeatList;
 
 		if (featSourceList == null) {
 			try {
@@ -95,7 +95,7 @@ public class FeatBrowser extends SimpleInternalFrame {
 					Feat displayedFeat;
 
 					if (featCache.containsKey(displayedFeatName)) {
-						displayedFeat = featCache.get(displayedFeatName);
+						displayedFeat = featCache.get(displayedFeatName).get();
 					} else {
 						displayedFeat = FeatDB.lookupFeat(displayedFeatName);
 
